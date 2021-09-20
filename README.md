@@ -145,15 +145,29 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 ## Structure
 
-## Skeleton
-
 ### Sitemap
 
 ![sitemap](https://user-images.githubusercontent.com/76033080/133998983-1e533623-ec48-4d55-ab61-922e2309edfb.png)
 
+### Purchase process / Buyers journey
+
+[Click to open **process overview**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195570/process_overview.pdf)
+
+[Click to open **project hours process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195571/process_project_hours.pdf)
+
+[Click to open **marketing templates process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195572/process_templates.pdf)
+
+## Skeleton
+
 ### Wireframes
 
 See separate [SKELETON.md](/SKELETON.md) file for wireframes.
+
+### Database schema
+
+
+
+
 
 ## Surface
 
