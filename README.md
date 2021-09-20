@@ -154,11 +154,11 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 ### Purchase process / Buyers journey
 
-[Click to open **process overview**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195570/process_overview.pdf)
+[Click to open **process overview**](https://github.com/CatherineTrevor/the_marketing_ally/files/7196040/process_overview.pdf)
 
-[Click to open **project hours process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195923/process_project_hours.pdf)
+[Click to open **project hours process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7196041/process_project_hours.pdf)
 
-[Click to open **marketing templates process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195572/process_templates.pdf)
+[Click to open **marketing template**](https://github.com/CatherineTrevor/the_marketing_ally/files/7196042/process_templates.pdf)
 
 ## Skeleton
 
