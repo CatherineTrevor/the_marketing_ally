@@ -28,7 +28,9 @@
 
 A site promoting the marketing services offered from The Marketing Ally: a marketing consultant assisting small-medium organisations on small, short-term marketing projects, and providing guidance on budgets, plans, copywriting review and general marketing help.
 
-Site visitors can purchase online marketing templates (plans, budgets etc.) using Stripe payments as a guest. Account owners receive a free review of the templates once completed, can buy work hours required for a project, and see their order history. Time slots for project work can be requested, but not booked. This will be a future feature where signed in account owners can book times.
+Site visitors can purchase online marketing templates (plans, budgets etc.) using Stripe payments as a guest. Account owners receive a free review of the templates once completed.
+
+Account owners can also purchase work hours required for a project, and see their order history. Time slots for project work can be requested via Calendly, but require confirmation from site admin. In the future signed in account owners can book timeslots and pay for hours within one transaction, using the Calendly and Stripe integration.
 
 # User Experience Design
 
@@ -36,7 +38,7 @@ Site visitors can purchase online marketing templates (plans, budgets etc.) usin
 
 For small-medium enterprises (SMEs), local to Gothenburg, looking for ad-hoc marketing support, but without the large contracts, costly retainers, or lengthy project pitches offered by larger marketing consultancies / agencies, or without the need to hire staff.
 
-Users can purchase ad-hoc hours for project work, as well as purchase marketing templates online. Purchase of the marketing templates includes a free review of the documentation once completed (i.e. feedback on the budget, strategy, or plan as necessary) for account holders only. Users do not have to be logged in to purchase just the online templates, without the review.
+Users can purchase ad-hoc hours for project work, as well as marketing templates online. Purchase of the marketing templates includes a free review of the documentation once completed (i.e. feedback on the budget, strategy, or plan as necessary) for account holders only; this is to encourage users to leave their information. Users do not have to be logged in to purchase just the online templates without the review.
 
 **Services offered:**
 
@@ -67,18 +69,18 @@ Users can purchase ad-hoc hours for project work, as well as purchase marketing 
 **Options as an account owner**
 
 * Purchase blank marketing templates, including a free online review
-* Purchase 1 hour project work
+* Purchase project hours for work
 * See historic orders 
 
 ### Target audience
 
 Small business owners / sole traders who know what they are doing regarding their business, and know their customers and products, but require ad-hoc assistance with marketing. They do not need an employee or agency for the work, but rather the ability to purchase hours as needed, at a reasonable cost, to get the work done.
 
-It is unnecessary and expensive for them to hire a full marketing agency, consultant, or employee, but rather what they are looking for is a more informal “chat” from someone who has marketing experience and can be a trusted source of feedback/sounding board, and/or create campaigns, but can be turned off at short notice, making budgeting easier. 
+It is unnecessary and expensive for them to hire a full marketing agency, consultant, or employee, but rather what they are looking for is a more informal “chat” from someone who has marketing experience and can be a trusted source of feedback/sounding board, and/or create campaigns, but can be turned off at short notice. This simple fee structure makes budgeting easier. 
 
 Allowing account owners to purchase and book hours through an online booking system fulfils this need.
 
-Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom furhter afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer to compensate for the lack of travel needed from the consultant.
+Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom further afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer for the same rate to compensate for the lack of travel needed from the consultant.
 
 ### User stories
 
@@ -127,7 +129,8 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 | Social links | Bottom right of all pages using Django templating | N/A |
 | Previous projects / Companies worked with | Carousel on the homepage | N/A |
 | Secure purchase project hours | Using Stripe payments | N/A |
-| Secure purchase online templates | Using Stripe payments | N/A |
+| Booking hours | Access to the consultants calendar to request a timeslot | N/A |
+| Securely purchase online templates | Using Stripe payments | N/A |
 | Toasts | Live feedback to the user | N/A |
 | Account profile | Basic account information and purchase history, including status of current hours | N/A |
 | Navbar | Consistant on all pages. Collapsible on mobile devices | N/A |
@@ -138,7 +141,7 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 **Future features**
 
-* Booking system connected to the consultant's calendar, so account users can see live availability and book a meeting at a time convenient for them.
+* Calendly and Stripe integration: rather than having different transactions, the site will benefit from the existing integration between Calendly and Stripe when booking and paying for project hours. At the moment the process is the user can request a timeslot, but it needs to be confirmed by the consultant and payment is an additional transaction.
 * Blog to enhance the consulant's presence in the market and encourage site visitors.
 * Online portal personal to the account owner, which contains their digital work and messages, reducing the need for emails and the risk of missed telephone conversations. This will streamline the collaboration process between consultant and client.
 * Partners: connect with local marketing professionals such as graphic designers, photographers, copy writers to collaborate on projects and recommend the business to their clients.
@@ -153,7 +156,7 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 [Click to open **process overview**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195570/process_overview.pdf)
 
-[Click to open **project hours process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195571/process_project_hours.pdf)
+[Click to open **project hours process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195923/process_project_hours.pdf)
 
 [Click to open **marketing templates process**](https://github.com/CatherineTrevor/the_marketing_ally/files/7195572/process_templates.pdf)
 
