@@ -147,6 +147,14 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 ## Skeleton
 
+### Sitemap
+
+![sitemap](https://user-images.githubusercontent.com/76033080/133998983-1e533623-ec48-4d55-ab61-922e2309edfb.png)
+
+### Wireframes
+
+See separate [SKELETON.md](/SKELETON.md) file for wireframes.
+
 ## Surface
 
 # Technologies Used
