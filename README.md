@@ -78,6 +78,42 @@ It is unnecessary and expensive for them to hire a full marketing agency, consul
 
 Allowing account owners to purchase and book hours through an online booking system fulfils this need.
 
+Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom furhter afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer to compensate for the lack of travel needed from the consultant.
+
+### User stories
+
+**First-time visitors:**
+
+1. I want to quickly understand the purpose of the site and the products/services offered
+2. I want to easily register an account
+3. I want to feel confident that the data I enter is secure
+4. I want to understand the benefits of creating an account
+5. I want to purchase a marketing template quickly and securely, without the need to register an account
+6. I want to easily purchase work hours for a project
+7. I want to complete a contact form, filling in project requirement details for more detailed work
+8. I want to feel confident that my payment was successful and my order received
+9. I want to be informed at every step of the purchase process, including information about any errors
+10. I want to see previous projects carried out by the consultant and/or companies worked with as proof of the level of work carried out
+
+**Returning visitors:**
+
+1. I want to easily log into my account
+2. I want to book project hours and feel confident that the online purchase is secure
+3. I want to book project hours at a time that suits me
+4. I want to see previous hours purchased, and for which project / campaign
+5. I want to purchase online templates
+6. I want to have control over my order bag, increasing and decreasing the quantity of items
+7. I want the ability to delete my order before a purchase is made
+8. I want the ability to review my order before a purchase is made
+9. I want the ability to delete my account
+
+**Site administrator:**
+
+1. I want to log into the administration area quickly and easily
+2. I want to see what orders have been made, by which customers, and the order status
+3. I want to easily add more online templates for users to purchase
+4. I want to securely change hour timeslot requests to confirm booked meetings
+
 ## Scope
 
 ## Structure
