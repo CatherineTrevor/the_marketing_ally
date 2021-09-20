@@ -116,6 +116,33 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 
 ## Scope
 
+### Features
+
+| Feature  | Details  | Internal links |
+|---|---|---|
+| Contact | Basic contact details: email, phone, address | N/A |
+| Request a quote | Complete form to request a quote for more detailed work | N/A |
+| About Us | Background info | N/A |
+| Favicon | Top left of all pages using Django templating | Home page |
+| Social links | Bottom right of all pages using Django templating | N/A |
+| Previous projects / Companies worked with | Carousel on the homepage | N/A |
+| Secure purchase project hours | Using Stripe payments | N/A |
+| Secure purchase online templates | Using Stripe payments | N/A |
+| Toasts | Live feedback to the user | N/A |
+| Account profile | Basic account information and purchase history, including status of current hours | N/A |
+| Navbar | Consistant on all pages. Collapsible on mobile devices | N/A |
+| Footer | Consistant on all pages | N/A |
+| Log In |  | N/A |
+| Log Out | | N/A |
+| Register | Minimum basic information required | N/A |
+
+**Future features**
+
+* Booking system connected to the consultant's calendar, so account users can see live availability and book a meeting at a time convenient for them.
+* Blog to enhance the consulant's presence in the market and encourage site visitors.
+* Online portal personal to the account owner, which contains their digital work and messages, reducing the need for emails and the risk of missed telephone conversations. This will streamline the collaboration process between consultant and client.
+* Partners: connect with local marketing professionals such as graphic designers, photographers, copy writers to collaborate on projects and recommend the business to their clients.
+
 ## Structure
 
 ## Skeleton
