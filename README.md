@@ -165,11 +165,21 @@ See separate [SKELETON.md](/SKELETON.md) file for wireframes.
 
 ### Database schema
 
+The database schema has been generated using [DB Diagram](https://dbdiagram.io/home)
 
-
-
+![database_schema](https://user-images.githubusercontent.com/76033080/134001763-e9dfbf1e-90f5-4e8e-af04-3dc4c69a86a0.png)
 
 ## Surface
+
+**Template**
+
+The site uses the [Tempo template from Bootstrapmade](https://bootstrapmade.com/demo/Tempo/). The template has been heavily modified for the purpose of the project.
+
+**Typography**
+
+**Color scheme**
+
+**Imagery**
 
 # Technologies Used
 
