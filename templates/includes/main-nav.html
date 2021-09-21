@@ -1,45 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">COMPANY LOGO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse position-fixed end-0" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Services</a></li>
-            <li><a class="dropdown-item" href="#">Marketing Templates</a></li>
-            <li><a class="dropdown-item" href="#">Pricing</a></li>       
-            <li><a class="dropdown-item" href="#">Portfolio</a></li>
-            <li><a class="dropdown-item" href="#">FAQs</a></li>                                                 
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="{% url 'home' %}">The Marketing Ally</a></h1>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+        <li class="dropdown"><a href="#"><span>About</span><i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Marketing Templates</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">FAQs</a></li>            
           </ul>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Contact
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Get in touch</a></li>            
-            <li><a class="dropdown-item" href="#">Request a quote</a></li>
+        <li class="dropdown"><a href="#"><span>Contact</span><i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Get in touch</a></li>
+            <li><a href="#">Request a quote</a></li>            
           </ul>
-        </li>      
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Register</a>
-        </li>          
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">account icon</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">basket icon</a>
-        </li>                 
+        </li>
+        <li><a class="nav-link scrollto " href="#">Register</a></li>
+        <li><a class="nav-link scrollto" href="">Account icon</a></li>
+        <li><a class="nav-link scrollto" href="">Basket icon</a></li>        
       </ul>
-    </div>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
   </div>
-</nav>
+</header>
