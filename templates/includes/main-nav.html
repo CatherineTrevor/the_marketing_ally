@@ -4,13 +4,13 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-        <li class="dropdown"><a href="#"><span>About</span><i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="{% url 'home' %}#about"><span>About</span><i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Marketing Templates</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">FAQs</a></li>            
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'home' %}#products">Marketing Templates</a></li>
+            <li><a href="{% url 'home' %}#pricing">Pricing</a></li>
+            <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
+            <li><a href="{% url 'home' %}#faq">FAQs</a></li>            
           </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Contact</span><i class="bi bi-chevron-down"></i></a>
