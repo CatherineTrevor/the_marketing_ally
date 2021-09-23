@@ -1,5 +1,22 @@
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: red !important;
+}
+
+h1, h2, h3, a {
+    font-family: 'Caveat', sans-serif;
+}
+
+.grey-text {
+    color: grey !important;
+}
+
+#main-nav-logo {
+    color: green !important;
+}
+
+#navbar a {
     text-transform: uppercase;
-    background-color: red;
+    text-decoration: none;
+    font-size: 24px;
 }
