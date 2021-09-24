@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.conf import settings
+from django.views.decorators.http import require_POST
 
 from .forms import QuoteRequestForm
 from .models import QuoteRequest
-
 
 def contact(request):
 
@@ -18,6 +18,13 @@ def contact(request):
             'project_description': request.POST['project_description'],                 
         }
         quote_request_form = QuoteRequestForm(form_data)
+        
+        if quote_request_form.is_valid():
+            form = quote_request_form.save(commit=False)
+            form.save()
+    
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('home'))
 
     quote_request_form = QuoteRequestForm()    
     template = 'contact/contact.html'

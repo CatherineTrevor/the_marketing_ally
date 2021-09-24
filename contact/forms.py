@@ -4,9 +4,10 @@ from .models import QuoteRequest
 class QuoteRequestForm(forms.ModelForm):
     class Meta:
         model = QuoteRequest
+        read_only = ()
         fields = ('company_name', 'full_name', 'email',
                   'free_consultation_request', 'project_name',
-                  'project_description',)
+                  'project_description')
 
     def __init__(self, *args, **kwargs):
         """
