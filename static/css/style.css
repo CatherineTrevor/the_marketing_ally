@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 body {
   /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
-  color: #444444;
+  color: #a9a9a9; /* amended color from Bootstrap template */
 }
 
 a {
@@ -62,7 +62,7 @@ a:hover {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: all 0.5s;
+  /*transition: all 0.5s;*/
   z-index: 997;
   padding: 20px 0;
 }
@@ -82,7 +82,8 @@ a:hover {
   max-height: 40px;
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.9);
+  /* background: rgba(0, 0, 0, 0.6); */ /* override Bootstrap made styling */
+  background: #a9a9a9;
   padding: 12px 0;
 }
 
@@ -137,7 +138,7 @@ a:hover {
   background-color: #e43c5c;
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  /*transition: all 0.3s ease-in-out 0s;*/ /* remove Bootstrap made transition */
 }
 .navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
   visibility: visible;
@@ -305,7 +306,8 @@ a:hover {
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); override Bootstrap made styling */
+  background: #a9a9a9;  
   position: absolute;
   bottom: 0;
   top: 0;
@@ -346,8 +348,9 @@ a:hover {
   margin-bottom: 40px;
   font-size: 24px;
 }
+/* Override with project CSS
 #hero .btn-get-started {
-  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 13px;
@@ -362,7 +365,7 @@ a:hover {
 #hero .btn-get-started:hover {
   background: #e43c5c;
   border: 2px solid #e43c5c;
-}
+}*/
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
@@ -1018,13 +1021,13 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #493c3e;
+  /* color: #493c3e; */
 }
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #816a6e;
+  /* color: #816a6e;*/
 }
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;

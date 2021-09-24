@@ -7,7 +7,7 @@
       </p>
     </div>
     <div>
-      <form method='POST' action="{% url 'contact' %}">
+      <form method='POST' action="{% url 'contact' %}" class="form-fields">
         {% csrf_token %}
         {{ quote_request_form.company_name | as_crispy_field }}
         {{ quote_request_form.full_name | as_crispy_field }}          
@@ -15,7 +15,7 @@
         {{ quote_request_form.free_consultation_request | as_crispy_field }}                
         {{ quote_request_form.project_name | as_crispy_field }}
         {{ quote_request_form.project_description | as_crispy_field }}
-      <a href="{% url 'home' %}" class="btn-submit-form scrollto align-items-center justify-content-center">Submit form</a>                  
+      <a href="{% url 'home' %}" class="btn-action scrollto align-items-center justify-content-center">Submit form</a>                  
       </form>
     </div>
   </div>  
