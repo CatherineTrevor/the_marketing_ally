@@ -2,14 +2,29 @@
 {% load static %}
 
 {% block content %}
-<body>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <section id="hero">
-      <div class="hero-container">
-        <h3>Welcome to <strong>The Marketing Ally</strong></h3>
-        <a href="#" class="btn-get-started scrollto">Get in touch</a>
-      </div>
-    </section>
-  </body>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<section id="hero">
+  <div class="hero-container">
+    <h3>Welcome to <strong>The Marketing Ally</strong></h3>
+    <a href="#" class="btn-get-started scrollto">Get in touch</a>
+  </div>
+  <div style="margin:80px">
+    <h1>Contact</h1>
+    <h4>Contact us directly if you have any questions</h4>
+    <p>
+      Please write your name, email address and a message below if you have any questions.
+      One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
+    </p>
+		<form method='POST' action="{% url 'contact' %}">
+      {% csrf_token %}
+      {{ order_form.full_name | as_crispy_field }}  
+      {{ order_form.email | as_crispy_field }}
+      {{ order_form.comment | as_crispy_field }}                 
+      <p>
+        FORM
+      </p>
+    </form>
+  </div> 
+</section>
 {% include 'includes/quote_request.html' %}
 {% endblock %}
