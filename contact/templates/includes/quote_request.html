@@ -1,9 +1,22 @@
-<body>
-    <a href="#" id="quote_request" name="quote_request" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    <section id="hero">
-      <div class="hero-container">
-        <h3>Welcome to <strong>The Marketing Ally</strong></h3>
-        <a href="#" class="btn-get-started scrollto">Request a quote</a>
-      </div>
-    </section>
-  </body>
+<section class="contact">
+  <div class="container">
+    <div class="section-title"  id="request_a_quote" name="request_a_quote">
+      <h3>Quote <span>Request</span></h3>
+      <p>
+        Please complete the form below to request a details quote for longer project collaboration, or to request a booking for your free 20 minute consultation.
+      </p>
+    </div>
+    <div>
+      <form method='POST' action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{ quote_request_form.company_name | as_crispy_field }}
+        {{ quote_request_form.full_name | as_crispy_field }}          
+        {{ quote_request_form.email | as_crispy_field }}
+        {{ quote_request_form.free_consultation_request | as_crispy_field }}                
+        {{ quote_request_form.project_name | as_crispy_field }}
+        {{ quote_request_form.project_description | as_crispy_field }}
+      <a href="{% url 'home' %}" class="btn-submit-form scrollto align-items-center justify-content-center">Submit form</a>                  
+      </form>
+    </div>
+  </div>  
+</section>

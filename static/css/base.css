@@ -24,4 +24,24 @@ h2, h3 {
     text-transform: uppercase;
     text-decoration: none;
     font-size: 24px;
-}
+}  
+
+.btn-submit-form {
+    font-family: "Caveat", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 30px 9px 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    border: 2px solid #fff;
+    color: black;
+    background: grey;
+  }
+
+  .btn-submit-form:hover {
+    background: #e43c5c;
+    border: 2px solid #e43c5c;
+  }
