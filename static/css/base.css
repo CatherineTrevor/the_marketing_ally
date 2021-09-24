@@ -1,8 +1,25 @@
 body {
     font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    background-color: red;
+    background-color: red !important;
 }
+
+h1, h2, h3, a {
+    font-family: 'Caveat', sans-serif;
+}
+
+.grey-text {
+    color: grey !important;
+}
+
+#main-nav-logo {
+    color: green !important;
+}
+
+#navbar a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 24px;
+}  
 
 .btn-submit-form {
     font-family: "Caveat", sans-serif;
@@ -18,6 +35,7 @@ body {
     color: black;
     background: grey;
   }
+
   .btn-submit-form:hover {
     background: #e43c5c;
     border: 2px solid #e43c5c;
