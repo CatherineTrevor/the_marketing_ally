@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.conf import settings
 
-from .forms import OrderForm
-from .models import Order
+from .forms import QuoteRequestForm
+from .models import QuoteRequest
 
 
 def contact(request):
@@ -10,16 +10,19 @@ def contact(request):
     if request.method == 'POST':
 
         form_data = {
+            'company_name': request.POST['company_name'],
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
-            'comment': request.POST['comment'],     
+            'free_consultation_request': request.POST['free_consultation_request'],  
+            'project_name': request.POST['project_name'],
+            'project_description': request.POST['project_description'],                 
         }
-        order_form = OrderForm(form_data)
+        quote_request_form = QuoteRequestForm(form_data)
 
-    order_form = OrderForm()    
+    quote_request_form = QuoteRequestForm()    
     template = 'contact/contact.html'
     context = {
-        'order_form': order_form,
+        'quote_request_form': quote_request_form,
     }
 
     return render(request, template, context)

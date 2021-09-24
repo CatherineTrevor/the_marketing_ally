@@ -1,15 +1,15 @@
 from django.contrib import admin
-from .models import Order
+from .models import QuoteRequest
 
 
-class OrderAdmin(admin.ModelAdmin):
+class QuoteRequestAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('comment',)
+    fields = ('company_name', 'full_name',
+              'email', 'free_consultation_request',
+              'project_name', 'project_description')
 
-    fields = ('comment', 'full_name',
-              'email',)
+    list_display = ('company_name', 'full_name',
+              'email', 'free_consultation_request',
+              'project_name', 'project_description')
 
-    list_display = ('comment', 'full_name',
-              'email',)
-
-admin.site.register(Order)
+admin.site.register(QuoteRequest)

@@ -2,29 +2,50 @@
 {% load static %}
 
 {% block content %}
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-<section id="hero">
-  <div class="hero-container">
-    <h3>Welcome to <strong>The Marketing Ally</strong></h3>
-    <a href="#" class="btn-get-started scrollto">Get in touch</a>
-  </div>
-  <div style="margin:80px">
-    <h1>Contact</h1>
-    <h4>Contact us directly if you have any questions</h4>
-    <p>
-      Please write your name, email address and a message below if you have any questions.
-      One of our staff members will be happy to contact you directly and answer your questions as soon as possible. 
-    </p>
-		<form method='POST' action="{% url 'contact' %}">
-      {% csrf_token %}
-      {{ order_form.full_name | as_crispy_field }}  
-      {{ order_form.email | as_crispy_field }}
-      {{ order_form.comment | as_crispy_field }}                 
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-title">
+      <h3>Get <span>In Touch</span></h3>
       <p>
-        FORM
+        For any questions, or to discuss long term projects, please get in touch, or complete the <a href="{% url 'contact' %}#request_a_quote">Request a Quote form</a> below.
       </p>
-    </form>
-  </div> 
-</section>
+    </div>
+    <div>
+      <iframe width="100%" height="270px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJifVM3mXzT0YRCBrtousk4fQ&key=AIzaSyDHiF95O0YoB-Hfz0OCD747wdJmXA2jKq4"></iframe>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>
+              1 Kungsgatan
+            </p>
+            <p>
+              Next to Domkyrkan
+            </p>
+            <p>
+              Gothenburg
+            </p>
+            <p>
+              422 400
+            </p>
+          </div>
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>sophie@themarketingally.com</p>
+          </div>
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>076-321 234 567</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>  
 {% include 'includes/quote_request.html' %}
 {% endblock %}
