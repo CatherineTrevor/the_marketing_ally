@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="small-header-background"></div>
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <h3>Get <span>In Touch</span></h3>
+        <p>
+          For any questions, or to discuss long term projects, please get in touch, or complete the <a href="{% url 'contact' %}#request_a_quote">Request a Quote form</a> below.
+        </p>
+      </div>
+      <div>
+        <iframe width="100%" height="270px" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJifVM3mXzT0YRCBrtousk4fQ&key=AIzaSyDHiF95O0YoB-Hfz0OCD747wdJmXA2jKq4"></iframe>
+      </div>
+      <div class="row mt-5">
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="address">
+              <i class="bi bi-geo-alt"></i>
+              <h3 class="ml-5">Address:</h3>
+              <p>
+                1 Kungsgatan, Next to Domkyrkan
+              </p>
+              <p>
+                Gothenburg
+              </p>
+              <p>
+                422 400
+              </p>
+            </div>
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h3 class="ml-5">Email:</h3>
+              <p>sophie@themarketingally.com</p>
+            </div>
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h3 class="ml-5">Phone:</h3>
+              <p>076-321 234 567</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  
+
+{% include 'includes/quote_request.html' %}
+{% endblock %}

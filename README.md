@@ -184,6 +184,8 @@ The site uses the [Tempo template from Bootstrapmade](https://bootstrapmade.com/
 
 **Imagery**
 
+See separate [IMAGERY.md](/IMAGERY.md) file for all images and icons.
+
 # Technologies Used
 
 # Testing

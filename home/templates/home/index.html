@@ -6,13 +6,28 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <section id="hero">
     <div class="hero-container">
-      <h3>Welcome to <strong>The Marketing Ally</strong></h3>
-      <h1>TEXT</h1>
-      <h2>TEXT</h2>
-      <a href="#" class="btn-get-started scrollto">Get Started</a>
+      <h1>
+        Welcome to <span class="highlight-text">The Marketing Ally</span>
+      </h1>
+      <div class="row container">
+        <div class="col">
+          <h2>
+            Are you a sole trader, or do you run your own business, but need the occassional marketing support or advice?
+          </h2>
+          <h2>
+            If you are looking for ad-hoc help with marketing campaigns, lead generation, perhaps you need someone to take a look at your marketing budget, 
+            but don't need a long-term contract with an agency - I can help!
+          </h2>    
+        </div>
+      </div>  
+      <a href="{% url 'home' %}#services" class="btn-action scrollto">Get Started</a>
     </div>
   </section>
   {% include 'includes/about.html' %}  
   {% include 'includes/services.html' %} 
+  {% include 'includes/products.html' %} 
+  {% include 'includes/pricing.html' %}   
+  {% include 'includes/portfolio.html' %}
+  {% include 'includes/faqs.html' %}          
 </body>
 {% endblock %}
