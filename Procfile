@@ -1,1 +1,1 @@
-web: gunicorn the_marketing_ally.wsgi:application
+web: gunicorn marketing_ally.wsgi:application
