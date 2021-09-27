@@ -9,8 +9,8 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-  color: #444444;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
+  color: #a9a9a9; /* amended color from Bootstrap template */
 }
 
 a {
@@ -23,9 +23,10 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Nunito", sans-serif;
-}
+/* overridden by base.css */
+/*h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif; 
+}*/
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -61,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: all 0.5s;
+  /*transition: all 0.5s;*/
   z-index: 997;
   padding: 20px 0;
 }
@@ -81,7 +82,8 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 40px;
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(0, 0, 0, 0.9);
+  /* background: rgba(0, 0, 0, 0.6); */ /* override Bootstrap made styling */
+  background: #a9a9a9;
   padding: 12px 0;
 }
 
@@ -112,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
   color: #fff;
   font-size: 15px;
   padding: 0 4px;
@@ -136,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #e43c5c;
   visibility: hidden;
   transform: scaleX(0);
-  transition: all 0.3s ease-in-out 0s;
+  /*transition: all 0.3s ease-in-out 0s;*/ /* remove Bootstrap made transition */
 }
 .navbar a:hover:before, .navbar li:hover > a:before, .navbar .active:before {
   visibility: visible;
@@ -304,7 +306,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
+  /* background: rgba(0, 0, 0, 0.6); override Bootstrap made styling */
+  background: #a9a9a9;  
   position: absolute;
   bottom: 0;
   top: 0;
@@ -345,6 +348,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 40px;
   font-size: 24px;
 }
+/* Override with project CSS
 #hero .btn-get-started {
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
@@ -361,7 +365,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-get-started:hover {
   background: #e43c5c;
   border: 2px solid #e43c5c;
-}
+}*/
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
@@ -464,7 +468,7 @@ section {
   margin-bottom: 0;
 }
 .about .content .btn-learn-more {
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
   font-weight: 600;
   font-size: 14px;
   letter-spacing: 1px;
@@ -597,7 +601,7 @@ section {
   color: #fff;
 }
 .cta .cta-btn {
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
@@ -825,7 +829,7 @@ section {
   color: #e43c5c;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
   font-weight: 600;
   transition: 0.3s;
 }
@@ -1017,13 +1021,13 @@ section {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: #493c3e;
+  /* color: #493c3e; */
 }
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #816a6e;
+  /* color: #816a6e;*/
 }
 .contact .info .email, .contact .info .phone {
   margin-top: 40px;
@@ -1597,7 +1601,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
   color: #777777;
 }
 #footer .footer-top h4 {
