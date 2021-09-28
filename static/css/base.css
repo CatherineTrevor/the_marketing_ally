@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
-h1, h2, h3, a {
+h1, h2, h3, h4, a {
     font-family: 'Caveat', sans-serif !important;
     font-weight: 100;
     text-transform: uppercase;    
@@ -25,6 +25,10 @@ h1, h2, h3, a {
 .nav-link .icon {
     color: white;
     font-size: 30px;
+}
+
+.section-title p {
+    width: 75% !important;
 }
 
 .small-header-background {
