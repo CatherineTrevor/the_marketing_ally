@@ -60,7 +60,8 @@ h1, h2, h3, h4, a {
     text-transform: uppercase;    
 }
 
-.btn-action {
+.btn-action,
+.allauth-form-inner-content .btn-action {
     font-family: 'Caveat', sans-serif;
     text-transform: uppercase;
     font-weight: 400;
@@ -68,6 +69,7 @@ h1, h2, h3, h4, a {
     letter-spacing: 1px;
     display: inline-block;
     padding: 8px 30px 9px 30px;
+    border: none;
     border-radius: 50px;
     transition: 0.5s;
     color: white;
@@ -75,7 +77,8 @@ h1, h2, h3, h4, a {
     text-decoration: none;    
   }
 
-.btn-action:hover {
+.btn-action:hover,
+.allauth-form-inner-content .btn-action:hover {
     background: #a9a9a9;
     color: white;
     border: 2px solid white;

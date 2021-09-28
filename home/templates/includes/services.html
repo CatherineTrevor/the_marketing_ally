@@ -123,9 +123,15 @@
             <label for="physical_120">Face-to-face - 2 hours - €120</label> 
           </p>
           <div>
-            <a class="btn-get-started" href="">
-              Go to checkout
-            </a>
+            {% if user.is_authenticated %}
+              <a class="btn-action" href="">
+                Add to basket
+              </a>
+            {% else %}
+              <a class="btn-action" href="{% url 'account_signup' %}">
+                Register an account
+              </a>
+            {% endif %}            
           </div>                
         </div>
       </div>
