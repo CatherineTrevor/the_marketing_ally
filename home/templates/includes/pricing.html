@@ -1,60 +1,82 @@
 <section id="pricing" class="pricing">
-    <div class="container">
-      <div class="section-title">
-        <h2>Pricing</h2>
-        <h3>Our Competing <span>Prices</span></h3>
-        <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+  <div class="container">
+    <div class="section-title">
+      <h2>Pricing</h2>
+      <h3>
+        Competitive pricing 
+        <span>Structure</span>
+      </h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="box">
+          <h3>Digital: light</h3>
+          <h4><sup>€</sup>75<span> / 90 minutes</span></h4>
+          <ul>
+            <li>Project work</li>
+            <li>Campaign management</li>
+            <li>Select a time convenient to you</li>
+            <p class="description">
+              Best value when you know what you are looking for, and need some work completing ASAP.
+            </p>
+            <p class="description">
+              This does not include any face-to-face meetings, but everything is handled quickly over email.
+            </p>              
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" class="btn-buy">Select</a>
+          </div>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="box">
-            <h3>Free</h3>
-            <h4><sup>$</sup>0<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li class="na">Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
+      <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+        <div class="box recommended">
+          <span class="recommended-badge">Recommended</span>
+          <h3>Face-to-face</h3>
+          <h4><sup>€</sup>75<span> / 60 minutes </span></h4>
+          <ul>
+            <li>Brainstorming</li>
+            <li>Idea reviews</li>
+            <li>At a location convenient to you*</li>
+            <p class="description">
+              This option is recommended when you are unsure how to solve a particular challenge, for example you are entering a new market and don't know where to start.
+            </p>     
+            <p class="description">
+              Meeting in person better allows us to discuss in more detail any marketing campaigns or projects you think you need help with.
+            </p>
+          </ul>
+          <div class="btn-wrap">
+            <a class="btn-buy" {% if user.is_authenticated %} href="#" {% else %} href="#" {% endif %}>Select</a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
-          <div class="box recommended">
-            <span class="recommended-badge">Recommended</span>
-            <h3>Business</h3>
-            <h4><sup>$</sup>19<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li class="na">Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-          <div class="box">
-            <h3>Developer</h3>
-            <h4><sup>$</sup>29<span> / month</span></h4>
-            <ul>
-              <li>Aida dere</li>
-              <li>Nec feugiat nisl</li>
-              <li>Nulla at volutpat dola</li>
-              <li>Pharetra massa</li>
-              <li>Massa ultricies mi</li>
-            </ul>
-            <div class="btn-wrap">
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+        <div class="box">
+          <h3>Digital: full</h3>
+          <h4><sup>€</sup>120<span> / 150 minutes</span></h4>
+          <ul>
+            <li>Marketing budget overview</li>
+            <li>Administration assistance</li>
+            <li>Annual marketing plan guidance</li>
+          </ul>
+          <p class="description">
+            If you wish to split this time over a few days, or weeks, add a note to the booking form, or <a>get in touch</a>.
+          </p>               
+          <div class="btn-wrap">
+            <a href="#" class="btn-buy">Select</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <div class="section-title">
+      <p>
+          To purchase hours and benefit from the competitive pricing structure, you must first <a>register an account</a>.
+      </p>   
+      <p>
+        Once logged in, you can add a maximum of 3 hours to your order and request a timeslot that suits - from the order page you can see my calendar and availability before payment.
+      </p>
+      <p>
+        If there isn't a time suitable, or you want the hours spread over a month, just <a>get in touch</a>.
+      </p>                                
+    </div>       
+  </div>
+</section>

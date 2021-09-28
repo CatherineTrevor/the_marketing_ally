@@ -1,27 +1,35 @@
-<header id="header" class="fixed-top ">
+<header id="header" class="fixed-top">
   <div class="container d-flex align-items-center justify-content-between">
     <h1 class="logo"><a href="{% url 'home' %}">The Marketing Ally</a></h1>
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
-        <li class="dropdown"><a href="#"><span>About</span><i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="{% url 'home' %}#about"><span>About</span><i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Marketing Templates</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">FAQs</a></li>            
+            <li><a href="{% url 'home' %}#services">Services</a></li>
+            <li><a href="{% url 'home' %}#products">Marketing Templates</a></li>
+            <li><a href="{% url 'home' %}#pricing">Pricing</a></li>
+            <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
+            <li><a href="{% url 'home' %}#faq">FAQs</a></li>            
           </ul>
         </li>
-        <li class="dropdown"><a href="#"><span>Contact</span><i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="{% url 'contact' %}"><span>Contact</span><i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">Get in touch</a></li>
-            <li><a href="#">Request a quote</a></li>            
+            <li><a class="navbar-dropdown" href="{% url 'contact' %}">Get in touch</a></li>
+            <li><a class="navbar-dropdown" href="{% url 'contact' %}#request_a_quote">Request a quote</a></li>            
           </ul>
         </li>
-        <li><a class="nav-link scrollto " href="#">Register</a></li>
-        <li><a class="nav-link scrollto" href="">Account icon</a></li>
-        <li><a class="nav-link scrollto" href="">Basket icon</a></li>        
+      {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+            <a href="" class="dropdown-item">Booking management</a>
+        {% endif %} 
+        <a href="#" class="dropdown-item">My Account</a>
+        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+    {% else %}                     
+        <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>
+        <li><a class="nav-link scrollto" href=""><i class="icon bx bi-basket3-fill"></i></a></li> 
+    {% endif %}
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

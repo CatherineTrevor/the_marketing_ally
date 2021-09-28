@@ -1,0 +1,24 @@
+<section class="contact">
+  <div class="container">
+    <div class="section-title"  id="request_a_quote" name="request_a_quote">
+      <h3>Quote <span>Request</span></h3>
+      <p>
+        Please complete the form below to request a details quote for longer project collaboration, or to request a booking for your free 20 minute consultation.
+      </p>
+    </div>
+    <div>
+      <form method='POST' action="{% url 'contact' %}" class="form-fields">
+        {% csrf_token %}
+        {{ quote_request_form.company_name | as_crispy_field }}
+        {{ quote_request_form.full_name | as_crispy_field }}          
+        {{ quote_request_form.email | as_crispy_field }}
+        {{ quote_request_form.free_consultation_request | as_crispy_field }}                
+        {{ quote_request_form.project_name | as_crispy_field }}
+        {{ quote_request_form.project_description | as_crispy_field }}
+        <input type="submit" value="QuoteRequest">
+          <a href="{% url 'home' %}" class="btn-action scrollto align-items-center justify-content-center">Submit form</a>     
+        </input>
+      </form>
+    </div>
+  </div>  
+</section>
