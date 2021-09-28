@@ -4,6 +4,8 @@
 
 **Home page**
 
+* https://icons.getbootstrap.com/icons/person-circle/
+* https://icons.getbootstrap.com/icons/basket3-fill/
 * https://icons.getbootstrap.com/icons/people-fill/
 * https://icons.getbootstrap.com/icons/signpost-split-fill/
 * https://icons.getbootstrap.com/icons/cash-coin/
