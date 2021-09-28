@@ -27,6 +27,10 @@ h1, h2, h3, h4, a {
     font-size: 30px;
 }
 
+.footer-links a {
+    text-decoration: none !important;
+}
+
 .section-title p {
     width: 75% !important;
 }
