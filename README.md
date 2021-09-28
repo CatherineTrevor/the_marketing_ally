@@ -193,3 +193,5 @@ See separate [IMAGERY.md](/IMAGERY.md) file for all images and icons.
 # Deployment
 
 # Credits
+
+* [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
