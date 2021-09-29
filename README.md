@@ -193,3 +193,5 @@ See separate [IMAGERY.md](/IMAGERY.md) file for all images and icons.
 # Deployment
 
 # Credits
+
+* [Help with calendar input](https://tutorialdeep.com/live-editor/bootstrap-datepicker-with-inputbox/)
