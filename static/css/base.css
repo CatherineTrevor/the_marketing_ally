@@ -113,6 +113,13 @@ h1, h2, h3, h4, a {
     }
   }
 
+#sophie_image {
+    background: url(/static/media/sophie.jpg) no-repeat center;
+    background-size: contain;
+    background-color: #4444;
+    height: 500px;
+}
+
 .email a {
     font-size: 24px;
 }
