@@ -6,7 +6,9 @@
 
 Logo: created by myself using MS PowerPoint and [Remove BG](https://www.remove.bg/) to remove the background color.
 
-<img src="media/logo.jpg">
+<img src="static/media/logo.jpg">
+
+Icons
 
 * https://icons.getbootstrap.com/icons/person-circle/
 * https://icons.getbootstrap.com/icons/basket3-fill/
@@ -18,3 +20,13 @@ Logo: created by myself using MS PowerPoint and [Remove BG](https://www.remove.b
 * https://icons.getbootstrap.com/icons/lightbulb-fill/
 * https://icons.getbootstrap.com/icons/table/
 * https://icons.getbootstrap.com/icons/watch/
+
+Images
+
+<img src="static/media/hero.jpg">
+
+[Sourced from Pixaby](https://pixabay.com/) Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336378">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336378">Pixabay</a>
+
+<img src="static/media/hero2.jpg">
+
+[Sourced from Pixaby](https://pixabay.com/) Image by <a href="https://pixabay.com/users/nietjuh-2218222/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3076954">Ylanite Koppens</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3076954">Pixabay</a>
