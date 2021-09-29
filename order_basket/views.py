@@ -30,10 +30,13 @@ def order_basket(request):
     template = 'order_basket/order_basket.html'
     context = {
         'order_request_form': order_request_form,
+        'stripe_public_key': 'pk_test_51JXPgOAz3izc7KdhHtbrfowpOlxVe3gGMyEh84gBe3nyNpAxDd4VW1Qx017TSCk85GWSEDLqaSXQb96PeytE9hrQ00lbNXI96U',
+        'client_secret': 'test client secret',
     }
 
     return render(request, template, context)
 
+
 def calendar(request):
 
-        return render(request, 'order_basket/calendar.html')
+    return render(request, 'order_basket/calendar.html')
