@@ -33,3 +33,7 @@ def order_basket(request):
     }
 
     return render(request, template, context)
+
+def calendar(request):
+
+        return render(request, 'order_basket/calendar.html')
