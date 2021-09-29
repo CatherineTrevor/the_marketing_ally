@@ -3,14 +3,15 @@
 
 {% block content %}
 <div class="small-header-background"></div>
-<section id="contact" class="contact">
+<section id="order_basket" class="order_basket">
     <div class="container">
         <div class="section-title">
-        <h3>Your <span>Order</span></h3>
-        <p>
-            Purchase project hours and request timeslot here
-        </p>
+            <h3>Place an <span>Order</span></h3>
+            <p>
+                Purchase project hours, marketing templates, and request a timeslot here
+            </p>
         </div>
     </div>
+    {% include 'includes/project_hours.html' %}
 </section>
 {% endblock %}
