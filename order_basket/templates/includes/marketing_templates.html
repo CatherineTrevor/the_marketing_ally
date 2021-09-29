@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-lg-6 offset-3">
+            <h3 class="title">Purchase marketing templates</h3>
+            <p class="description">
+                If you are logged into an account at time of purchase, you will receive your review within 5 working days.
+            </p>
+            <p class="description">
+                <a href="{% url 'account_signup' %}">Register!</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Add to basket</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>  
+                        <th scope="col">Free review included</th>                                                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row"><input type="checkbox" id="budget_template_MBT" name="budget_template_MBT"></input></th>
+                        <th scope="row">Marketing budget</th>
+                        <th scope="row">Take control of where your money goes and the value you get from it.</th>
+                        <th scope="row"><input type="checkbox" id="free_review_MBT" name="free_review_MBT" {% if user.is_authenticated %} checked disabled {% else %} disabled {% endif %}></input></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" id="plan_template_MPT" name="plan_template_MPT"></input></th>
+                        <th scope="row">Marketing plan</th>
+                        <th scope="row">Put together a marketing plan to give focus to your activities</th>
+                        <th scope="row"><input type="checkbox" id="free_review_MPT" name="free_review_MPT" {% if user.is_authenticated %} checked disabled {% else %} disabled {% endif %}></input></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" id="email_template_ET" name="email_template_ET"></input></th>
+                        <th scope="row">Email templates</th>
+                        <th scope="row">Professional introduction email, with options for you to complete your details and add a bit your personality to it!</th>
+                        <th scope="row"><input type="checkbox" id="free_review_ET" name="free_review_ET" {% if user.is_authenticated %} checked disabled {% else %} disabled {% endif %}></input></th>
+                    </tr>
+                    <tr>
+                        <th scope="row"><input type="checkbox" id="kpi_template_KPI" name="kpi_template_KPI"></input></th>
+                        <th scope="row">Marketing Key Performance Indicator</th>
+                        <th scope="row">Connect your spend, with what you acheive from them with a monthly KPI report.</th>
+                        <th scope="row"><input type="checkbox" id="free_review_KPI" name="free_review_KPI" {% if user.is_authenticated %} checked disabled {% else %} disabled {% endif %}></input></th>
+                    </tr>                                                                      
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
