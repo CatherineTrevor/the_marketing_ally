@@ -4,6 +4,10 @@
 
 **Home page**
 
+Logo: created by myself using MS PowerPoint and [Remove BG](https://www.remove.bg/) to remove the background color.
+
+<img src="media/logo.jpg">
+
 * https://icons.getbootstrap.com/icons/person-circle/
 * https://icons.getbootstrap.com/icons/basket3-fill/
 * https://icons.getbootstrap.com/icons/people-fill/

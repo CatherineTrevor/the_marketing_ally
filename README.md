@@ -195,3 +195,5 @@ See separate [IMAGERY.md](/IMAGERY.md) file for all images and icons.
 # Credits
 
 * [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
+* [Remove BG - remove the white background from the logo](https://www.remove.bg/)
+* [Help with the logo](https://stackoverflow.com/questions/14775507/link-my-logo-to-homepage-html/14775562)
