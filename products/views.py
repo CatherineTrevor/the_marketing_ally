@@ -1,17 +1,20 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
-from django.db.models.functions import Lower
 
 from .models import Product, Category
 from .forms import ProductForm
 
 
-
 def products(request):
 
-    return render(request, 'products/products.html')
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+
+    return render(request, 'products/products.html', context)
 
 
 @login_required
@@ -26,7 +29,7 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('product_admin', args=[product.id]))
+            return redirect(reverse('products'))
         else:
             messages.error(request,
                            ('Failed to add product. '
