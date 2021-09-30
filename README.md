@@ -78,8 +78,6 @@ Small business owners / sole traders who know what they are doing regarding thei
 
 It is unnecessary and expensive for them to hire a full marketing agency, consultant, or employee, but rather what they are looking for is a more informal “chat” from someone who has marketing experience and can be a trusted source of feedback/sounding board, and/or create campaigns, but can be turned off at short notice. This simple fee structure makes budgeting easier. 
 
-Allowing account owners to purchase and book hours through an online booking system fulfils this need.
-
 Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom further afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer for the same rate to compensate for the lack of travel needed from the consultant.
 
 ### User stories
@@ -180,7 +178,11 @@ The site uses the [Tempo template from Bootstrapmade](https://bootstrapmade.com/
 
 **Typography**
 
+The site uses Caveat and Montserrat from [Google fonts](https://fonts.google.com/specimen/Caveat?preview.text=The%20Marketing%20Ally&preview.text_type=custom#license), with sans-serif should either of those fonts not load.
+
 **Color scheme**
+
+The site uses a mix of standard black (#000000), and shades of grey (#a9a9a9) and red (#e43c5c).
 
 **Imagery**
 
@@ -188,12 +190,70 @@ See separate [IMAGERY.md](/IMAGERY.md) file for all images and icons.
 
 # Technologies Used
 
+The site uses the following languages;
+
+* HTML5
+* CSS
+* JavaScript
+* jQuery
+* Python
+
+The project was created on GitHub and uses the following libraries and frameworks:
+
+ - [Balsamiq](https://balsamiq.cloud/) - used to create all wireframes
+ - [Bootstrap Made](https://bootstrapmade.com/demo/Tempo/) - the site layout uses the Tempo template from Bootstrap Made, which has been heavily modified
+ - [Google Fonts](https://fonts.google.com/) - Caveat, Montserrat, sans-serif
+ - [Django](https://www.djangoproject.com/) - the main site framework, including Allauth and Admin
+ - [Heroku](https://id.heroku.com/login) - for site deployment
+ - [DB Diagram](https://dbdiagram.io/home) - used to generate the database schema layout
+ - [PEP 8](https://www.python.org/dev/peps/pep-0008) - help following PEP 8 styling guidelines
+ - [Free Formatter HTML](https://www.freeformatter.com/html-formatter.html) - for HTML code formatting
+ - [Free Formatter CSS](https://www.freeformatter.com/css-beautifier.html) - to beautify CSS code
+ - [Code Beautify](https://codebeautify.org/python-formatter-beautifier) - help with line indentation in Python
+ - [Grammarly](https://app.grammarly.com/) [(Example)](supporting_docs/grammarly_example.jpg) - the free service to double check grammar and spelling 
+ - [Monday.com](https://view.monday.com/1395852594-25c75140f7633755c3bd0aa1947579cf?r=use1) - used for project/task management 
+ - [Am I responsive](http://ami.responsivedesign.is/) - supplied the responsive image for the top of README.md
+ - [Remove BG](https://www.remove.bg/) - remove background from Am I Responsive image
+ - [Google Maps](https://www.google.se/maps) - interactive map on contact page
+
 # Testing
+
+[See separate Testing file](TESTING.md) for information on testing and issues.
 
 # Deployment
 
+**How to fork the GitHub Repository**
+
+[See separate Deployment file](DEPLOYMENT.md) for information about site deployment using Heroku.
+
+Forking the repository allows you to make a copy of the original in your GitHub account, and make changes without affecting the original.
+
+1. Log onto Github.
+2. From the list of repositories, select CatherineTrevor/the_marketing_ally.
+3. At the top of the repository, select the "Fork" button.
+4. This should create a copy within your account.
+
+**How to run this project locally**
+
+1. Log onto Github: create an account if required.
+2. From the list of repositories, select CatherineTrevor/the_marketing_ally.
+3. Click the "Code" dropdown within the menu above the commits.
+4. Copy the URL address, or Download ZIP and save locally.
+5. Open your chosen IDE and navigate to the location you want the cloned directory to be saved.
+6. Type git clone and copy the URL within the CLI and press enter.
+7. Alternatively, select "Open with Github Desktop".
+
 # Credits
 
+* [Add Django dropdown in admin](https://stackoverflow.com/questions/8252101/django-admin-drop-down-selections)
 * [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
 * [Remove BG - remove the white background from the logo](https://www.remove.bg/)
 * [Help with the logo](https://stackoverflow.com/questions/14775507/link-my-logo-to-homepage-html/14775562)
+* [Google maps help](https://developers.google.com/maps/documentation/embed/map-generator)
+* [Telusko MVC tutorial](https://www.youtube.com/watch?v=GGkFg52Ot5o)
+* [Django apps research](https://stackoverflow.com/questions/32795227/what-is-the-purpose-of-apps-py-in-django-1-9)
+* [Django signals research](https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-django-signals.html)
+* [General Django help](https://docs.djangoproject.com/en/3.2/ref/csrf/)
+* Code Institute Slack community
+* Narender Singh, Code Institute mentor for his time, support and guidance
+* Ex-colleagues, friends and family for their support and time testing the site
