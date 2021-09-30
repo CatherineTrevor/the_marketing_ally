@@ -1,9 +1,13 @@
+{% load static %}
+
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center justify-content-between">
-    <h1 class="logo"><a href="{% url 'home' %}">The Marketing Ally</a></h1>
+    <a href="{% url 'home' %}">
+      <img src="{% static 'media/logo.jpg' %}" style="width:50px;height:50px;"/>
+    </a>
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'home' %}">Home</a></li>
         <li class="dropdown"><a href="{% url 'home' %}#about"><span>About</span><i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="{% url 'home' %}#services">Services</a></li>
@@ -19,9 +23,23 @@
             <li><a class="navbar-dropdown" href="{% url 'contact' %}#request_a_quote">Request a quote</a></li>            
           </ul>
         </li>
-        <li><a class="nav-link scrollto " href="#">Register</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'account_login' %}">Account icon</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'order_basket' %}">Basket icon</a></li>        
+      {% if request.user.is_authenticated %}
+      <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>       
+        {% if request.user.is_superuser %}
+        <li class="dropdown"><a href=""><span>Administration</span><i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="" class="dropdown-item">Manage bookings</a></li>
+            <li><a href="{% url 'products' %}" class="dropdown-item">Product overview</a></li>
+            <li><a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a></li>            
+          </ul>
+        {% else %}
+        <li><a class="nav-link scrollto" href="#"><i class="icon bx bi-person-circle"></i></a></li> <!-- Connect to user profile page once logged in-->
+        {% endif %}       
+    {% else %}                     
+        <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
+        <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>        
+    {% endif %}
+        <li><a class="nav-link scrollto" href=""><i class="icon bx bi-basket3-fill"></i></a></li>     
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

@@ -15,9 +15,7 @@
         {{ quote_request_form.free_consultation_request | as_crispy_field }}                
         {{ quote_request_form.project_name | as_crispy_field }}
         {{ quote_request_form.project_description | as_crispy_field }}
-        <input type="submit" value="QuoteRequest">
-          <a href="{% url 'home' %}" class="btn-action scrollto align-items-center justify-content-center">Submit form</a>     
-        </input>
+        <a href="{% url 'home' %}" class="btn-action scrollto align-items-center justify-content-center">Submit form</a>     
       </form>
     </div>
   </div>  
