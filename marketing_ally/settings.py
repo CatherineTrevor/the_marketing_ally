@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'home',
     'contact',
     'order_basket',
+    'checkout',
 
     # other
 
