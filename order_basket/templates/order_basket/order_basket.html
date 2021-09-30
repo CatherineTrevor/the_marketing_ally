@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'order_basket/css/order_basket.css' %}">
-{% endblock %}
-
 {% block content %}
 <div class="small-header-background"></div>
 <section id="order_basket" class="order_basket">
@@ -17,6 +13,9 @@
         </div>
     </div>
     {% include 'includes/project_hours.html' %}
-    {% include 'includes/marketing_templates.html' %}  
+    {% include 'includes/marketing_templates.html' %}
+    <div class="d-flex justify-content-center col-lg-12 mb-3">
+        <a href="{% url 'bag' %}" class="btn-action">Add to basket</a>          
+    </div>      
 </section>
 {% endblock %}
