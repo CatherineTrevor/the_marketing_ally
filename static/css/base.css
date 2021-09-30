@@ -2,6 +2,10 @@ body {
     font-family: 'Montserrat', sans-serif !important;
 }
 
+section {
+  padding-bottom: 100px;
+}
+
 p a {
     color: black !important;
     text-decoration: none;
@@ -220,3 +224,71 @@ h1, h2, h3, h4, a {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#homepage-footer {
+    color: #444444;
+    font-size: 14px;
+    background: #f6f4f4;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    height: 400px;
+  }
+
+  #homepage-footer .footer-contact {
+    margin-bottom: 30px;
+  }
+  #homepage-footer .footer-contact h4 {
+    font-size: 22px;
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+  }
+  #homepage-footer .footer-contact p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+    /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
+    color: #777777;
+  }
+  #homepage-footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444444;
+    position: relative;
+    padding-bottom: 12px;
+  }
+  #homepage-footer .footer-links {
+    margin-bottom: 30px;
+  }
+  #homepage-footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #homepage-footer .footer-links ul i {
+    padding-right: 2px;
+    color: #ea6981;
+    font-size: 18px;
+    line-height: 1;
+  }
+  #homepage-footer .footer-links ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+  }
+  #homepage-footer .footer-links ul li:first-child {
+    padding-top: 0;
+  }
+  #homepage-footer .footer-links ul a {
+    color: #777777;
+    transition: 0.3s;
+    display: inline-block;
+    line-height: 1;
+  }
+  #homepage-footer .footer-links ul a:hover {
+    text-decoration: none;
+    color: #e43c5c;
+  }
