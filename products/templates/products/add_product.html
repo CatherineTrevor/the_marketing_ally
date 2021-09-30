@@ -6,7 +6,7 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="section-title">
-            <h3>Product <span>Management</span></h3>
+            <h3>Site <span>Administration</span></h3>
             <p>
               Add a new product
             </p>
@@ -16,11 +16,7 @@
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
                     {% endfor %}
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>

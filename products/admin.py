@@ -7,8 +7,6 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'price',
-        'is_digital',
-        'max_hours',
     )
 
     ordering = ('name',)
@@ -16,8 +14,8 @@ class ProductAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
-        'friendly_name',
         'name',
+        'is_available_guest_user'
     )
 
 
