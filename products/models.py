@@ -15,6 +15,8 @@ class Category(models.Model):
     friendly_name = models.CharField(max_length=254, default="Project Hours", choices=options)
     is_available_guest_user = models.BooleanField(null=True, blank=True)
 
+    objects = models.Manager()    
+
     def __str__(self):
         return self.name
 
