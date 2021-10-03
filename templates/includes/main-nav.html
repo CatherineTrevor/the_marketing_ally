@@ -39,7 +39,7 @@
         <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
         <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>        
     {% endif %}
-        <li><a class="nav-link scrollto" href=""><i class="icon bx bi-basket3-fill"></i></a></li>     
+        <li><a class="nav-link scrollto" href="{% url 'order_basket' %}"><i class="icon bx bi-basket3-fill"></i></a></li>     
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
