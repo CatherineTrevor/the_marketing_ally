@@ -6,8 +6,13 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
+    options = (
+        ('1', 'Project Hours'),
+        ('2', 'Marketing Templates'),
+        ('3', 'Free consultation')
+    )
     name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, default="Project Hours")
+    friendly_name = models.CharField(max_length=254, default="Project Hours", choices=options)
     is_available_guest_user = models.BooleanField(null=True, blank=True)
 
     def __str__(self):
