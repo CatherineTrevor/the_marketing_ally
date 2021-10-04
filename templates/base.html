@@ -74,12 +74,17 @@
         {% include 'includes/main-nav.html' %}
     {% endblock %}
 
+    {% block extra_page_header %}
+    {% endblock %}
+
         {% if messages %}
         <div class="messages-container"></div>
     {% endif %}
 
     {% block content %}
-    {% endblock %}  
+    {% endblock %}
+    
+    {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
     {% endblock %}
