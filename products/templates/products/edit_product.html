@@ -2,11 +2,30 @@
 {% load static %}
 
 {% block content %}
-
-<div>
-    <h1>
-        edit_products.html
-    </h1>
-</div>
-
+    <section id="edit_products">
+        <div class="overlay"></div>  
+        <div class="container">
+            <div class="section-title">
+                <h3>Site <span>Administration</span></h3>
+                <p>
+                    Edit product details
+                </p>           
+            </div>
+                  
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field | as_crispy_field }}
+                        {% endfor %}
+                        <div class="text-right">
+                            <a class="btn-action" href="{% url 'products' %}">Cancel</a>
+                            <button class="btn-action" type="submit">Update Product</button>
+                        </div>
+                    </form>
+                </div>            
+            </div>
+        </div>
+    </section>
 {% endblock %}
