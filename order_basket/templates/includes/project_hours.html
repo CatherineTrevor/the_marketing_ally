@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row text-center">
+        <div class="col-lg-6 offset-3">
+            <h3 class="title">Purchase project hours</h3>
+            <p class="description">
+                Select the options below to book and pay for hours required. 
+            </p>
+            <p class="description">
+                You must be <a href="{% url 'account_login' %}">logged into your account</a> to purchase hours and book a timeslot.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 offset-2">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Select</th>
+                        <th scope="col">Digital or Face-to-face</th>
+                        <th scope="col">Time allocation (minutes)</th>  
+                        <th scope="col">Cost</th>                                                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                        {% if product.category.name == 'project_hours' %}
+                        <tr>
+                            <th scope="row"><input type="checkbox" id="digital_90" name="digital_90" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
+                            <th scope="row">{{ product.name }}</th>
+                            <th scope="row">{{ product.time_allocation_mins }}</th>
+                            <th scope="row">€{{ product.price }}</th>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}                                                                       
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-center col-lg-12 mb-3">
+            {% if user.is_authenticated %}
+                <a href="" class="btn-action">Add to basket</a>
+            {% else %}
+                <a href="" class="btn-action">Log in</a>
+            {% endif %}            
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-center col-lg-12 mb-3">
+            <a href="{% url 'calendar' %}" class="btn-action">Open calendar</a>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-lg-8 offset-2">
+            <p>
+                <a href="{% url 'calendar' %}">Click here</a> to open my calendar and check availability before selecting your purchase option.
+            </p>
+            <p>
+                Once you have added the required project hours into your basket, you provide two timeslot options. I will confirm your booked time within 24 hours of receiving your order.
+            </p> 
+            <p>
+                In the future this process will be automated, thanks to the awesome power of <a href="">Calendly!</a>
+            </p>                               
+        </div>
+    </div>
+</div>

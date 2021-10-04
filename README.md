@@ -245,6 +245,8 @@ Forking the repository allows you to make a copy of the original in your GitHub 
 
 # Credits
 
+
+* [Help with calendar input](https://tutorialdeep.com/live-editor/bootstrap-datepicker-with-inputbox/)
 * [Add Django dropdown in admin](https://stackoverflow.com/questions/8252101/django-admin-drop-down-selections)
 * [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
 * [Remove BG - remove the white background from the logo](https://www.remove.bg/)
