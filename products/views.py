@@ -10,7 +10,7 @@ from .forms import ProductForm
 @login_required
 def all_products(request):
 
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('price')
     categories = None
     sort = None
     direction = None

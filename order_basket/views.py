@@ -3,13 +3,21 @@ from django.shortcuts import (
 )
 from django.contrib import messages
 
+from products.models import Product, Category
+
 # from products.models import Product
 
 
 def order_basket(request):
     """ A view that renders the bag contents page """
 
-    return render(request, 'order_basket/order_basket.html')
+    products = Product.objects.all().order_by('price')
+
+    context = {
+        'products': products,
+    }
+
+    return render(request, 'order_basket/order_basket.html', context)
 
 def calendar(request):
 

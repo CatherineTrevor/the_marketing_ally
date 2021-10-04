@@ -17,35 +17,21 @@
                     <tr>
                         <th scope="col">Select</th>
                         <th scope="col">Digital or Face-to-face</th>
-                        <th scope="col">Time</th>  
+                        <th scope="col">Time allocation (minutes)</th>  
                         <th scope="col">Cost</th>                                                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row"><input type="checkbox" id="digital_90" name="digital_90" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
-                        <th scope="row">Digital</th>
-                        <th scope="row">1.5 hours</th>
-                        <th scope="row">€75</th>
-                    </tr>
-                    <tr>
-                        <th scope="row"><input type="checkbox" id="physical_60" name="physical_60" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
-                        <th scope="row">F2F</th>
-                        <th scope="row">1 hour</th>
-                        <th scope="row">€75</th>
-                    </tr>
-                    <tr>
-                        <th scope="row"><input type="checkbox" id="digital_150" name="digital_150" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
-                        <th scope="row">Digital</th>
-                        <th scope="row">2.5 hours</th>
-                        <th scope="row">€120</th>
-                    </tr>
-                    <tr>
-                        <th scope="row"><input type="checkbox" id="physical_120" name="physical_120" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
-                        <th scope="row">F2F</th>
-                        <th scope="row">2 hours</th>
-                        <th scope="row">€120</th>
-                    </tr>                                                                        
+                    {% for product in products %}
+                        {% if product.category.name == 'project_hours' %}
+                        <tr>
+                            <th scope="row"><input type="checkbox" id="digital_90" name="digital_90" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input></th>
+                            <th scope="row">{{ product.name }}</th>
+                            <th scope="row">{{ product.time_allocation_mins }}</th>
+                            <th scope="row">€{{ product.price }}</th>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}                                                                       
                 </tbody>
             </table>
         </div>
