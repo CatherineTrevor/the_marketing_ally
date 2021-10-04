@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'order_basket',
     'checkout',
     'products',
+    'administration',
 
     # other
 
