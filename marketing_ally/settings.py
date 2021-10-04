@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'contact',
+    'order_basket',
+    'checkout',
+    'products',
 
     # other
 
@@ -84,11 +87,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                # 'order_basket.contexts.bag_contents',                
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
                 'crispy_forms.templatetags.crispy_forms_field',
-            ]            
+            ]
         },
     },
 ]
@@ -172,9 +177,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # if 'USE_AWS' in os.environ:
-    
     # Cache control
-#    AWS_S3_OBJECT_PARAMETERS = {
+ #   AWS_S3_OBJECT_PARAMETERS = {
 #        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
 #        'CacheControl': 'max-age=94608000',
 #    }
@@ -194,7 +198,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
     # Override static and media URLs in production
 #    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-#    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'    
+#    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+# Stripe
+STRIPE_CURRENCY = 'eur'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="add_products">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="section-title">
+            <h3>Site <span>Administration</span></h3>
+            <p>
+                Add a new product
+            </p>           
+        </div>
+        <div class="row">
+            <p>
+                NB: If adding a new product for Project Hours, <strong>do not </strong> attach an image file.
+            </p>
+            <p>
+                NB: If adding a new product for Marketing Templates, you must <strong>attach an image </strong>, but <strong>enter 0 for 
+                Time allocation mins and max time multiplier.</strong>
+            </p>              
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field | as_crispy_field }}
+                    {% endfor %}
+                    <div class="text-right">
+                        <a class="btn-action" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn-action" type="submit">Add Product</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+</section>
+{% endblock %}

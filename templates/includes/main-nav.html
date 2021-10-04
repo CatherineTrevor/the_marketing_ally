@@ -24,16 +24,22 @@
           </ul>
         </li>
       {% if request.user.is_authenticated %}
+      <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>       
         {% if request.user.is_superuser %}
-            <a href="" class="dropdown-item">Booking management</a>
-        {% endif %} 
-        <a href="#" class="dropdown-item">My Account</a>
-        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+        <li class="dropdown"><a href=""><span>Administration</span><i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="" class="dropdown-item">Manage bookings</a></li>
+            <li><a href="{% url 'products' %}" class="dropdown-item">Product overview</a></li>
+            <li><a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a></li>            
+          </ul>
+        {% else %}
+        <li><a class="nav-link scrollto" href="#"><i class="icon bx bi-person-circle"></i></a></li> <!-- Connect to user profile page once logged in-->
+        {% endif %}       
     {% else %}                     
         <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>
-        <li><a class="nav-link scrollto" href=""><i class="icon bx bi-basket3-fill"></i></a></li> 
+        <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>        
     {% endif %}
+        <li><a class="nav-link scrollto" href="{% url 'order_basket' %}"><i class="icon bx bi-basket3-fill"></i></a></li>     
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="small-header-background"></div>
+    <div class="container">
+        <div class="section-title">
+            <h3>Check <span>Availability</span></h3>
+            <p>
+                Find a timeslot that works for you, then enter two timeslot options before purchasing project hours.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23e43c5c&ctz=Europe%2FStockholm&showPrint=0&title=The%20Marketing%20Ally%20-%20availability&mode=WEEK&src=cTA4MjhqMGwybHFuMDk1cWhiZnJldDZqMDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%234285F4" style="border-width:0; color:blueviolet" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="section-title">
+                <h3>Enter <span>Two Options</span></h3>
+                <p>
+                    I will confirm within 24 hours of booking
+                </p>
+            </div>            
+            <div class="section-title mb-3 col">
+                <div class="col-lg-12">
+                    <h3>Timeslot <span>Option 1</span></h3>
+                </div>
+                <div class="col-lg-8 offset-2 mt-3">
+                    <input type="text" class="form-control datepicker" id="timeslot_option_1" placeholder="Enter a preferred time and date"/>
+                </div>
+            </div> 
+            <div class="section-title mb-3 col">
+                <div class="col-lg-12">
+                    <h3>Timeslot <span>Option 2</span></h3>
+                </div>
+                <div class="col-lg-8 offset-2 mt-3">
+                    <input type="text" class="form-control datepicker" id="timeslot_option_2" placeholder="Enter an alternative time and date"/>
+                </div>
+            </div> 
+            <div class="d-flex justify-content-center col-lg-12 mb-3">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'order_basket' %}" class="btn-action">Save and back to order</a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn-action">Log in before booking hours</a>
+                {% endif %}            
+            </div>             
+        </div>              
+    </div>     
+{% endblock %}
+
+{% block postloadjs %}
+{{  blocksuper }}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script src="{% static 'order_basket/js/calendar.js' %}"></script>
+{% endblock %}  

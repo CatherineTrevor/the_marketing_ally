@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="small-header-background"></div>
+<h1>
+    Bag
+</h1>
+<div class="d-flex justify-content-center col-lg-12 mb-3">
+    <a href="{% url 'checkout' %}" class="btn-action">Secure checkout</a>          
+</div>    
+{% endblock %}
