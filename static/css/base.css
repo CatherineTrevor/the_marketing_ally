@@ -21,6 +21,12 @@ h1, h2, h3, h4, a {
     text-transform: uppercase;    
 }
 
+#add_header {
+  background-color:black;
+  height: 100px;
+  transition: none;
+}
+
 .highlight-text {
     color: #e43c5c!important;
 }
