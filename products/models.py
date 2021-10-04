@@ -31,9 +31,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=0)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-    time_allocation_mins = models.DecimalField(max_digits=6, decimal_places=0, blank=True)
+    time_allocation_mins = models.DecimalField(max_digits=6, decimal_places=0, blank=True, null=True)
     is_digital = models.BooleanField(null=False)
-    max_time_multiplier = models.DecimalField(max_digits=6, decimal_places=0, blank=True)
+    max_time_multiplier = models.DecimalField(max_digits=6, decimal_places=1, blank=True, null=True)
 
     objects = models.Manager()
 

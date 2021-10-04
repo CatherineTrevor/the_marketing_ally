@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_page_header  %}
+
+{% include 'includes/additional_header.html' %}
+
+{% endblock %}
+
 {% block content %}
     <section id="edit_products">
         <div class="overlay"></div>  
