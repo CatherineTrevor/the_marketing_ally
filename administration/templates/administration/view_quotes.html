@@ -13,67 +13,44 @@
             <div class="section-title">
                 <h3>Site <span>Administration</span></h3>
                 <p>
-                  Quote requests
+                  Quote and booking requests
                 </p>
               </div>
             <div class="row">
-                {% for quote in products %}                    
-                    {% if product.category.name == "project_hours" %}                        
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-                                    <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mt-1 mb-0">
-                                                €{{ product.price|floatformat:0 }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                Minutes: {{ product.time_allocation_mins|floatformat:0 }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                Digital work: {{ product.is_digital }}
-                                            </p>                                                
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="row mt-5">
                 <h1>
-                    Marketing Templates
+                    Quote Requests
                 </h1>
-                {% for product in products %}                    
-                    {% if product.category.name == "marketing_templates" %}                        
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                {% for quote in requests %}                                       
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div class="card h-100 border-0">
                                 <div class="card-body pb-0">
-                                    <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
+                                    <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }} {{ quote.consultation_status }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
                                             <p class="mt-1 mb-0">
-                                                €{{ product.price|floatformat:0 }}
+                                                Contact Name: {{ quote.full_name }}
                                             </p>
                                             <p class="mt-1 mb-0">
-                                                Image: 
-                                            </p>                     
+                                                Email: {{ quote.email }}
+                                            </p>
+                                            <p class="mt-1 mb-0">
+                                                Phone: {{ quote.phone }}
+                                            </p>  
+                                            <p class="mt-1 mb-0">
+                                                Free consultation request: {{ quote.free_consultation_request }}
+                                            </p>  
+                                            <p class="mt-1 mb-0">
+                                                Project Name: {{ quote.project_name }}
+                                            </p> 
+                                            <p class="mt-1 mb-0">
+                                                Project Description: {{ quote.project_description }}
+                                            </p>                                                                                                                                                                                                                                                             
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                    <a href="#">Edit</a> | 
+                                                    <a class="text-danger" href="#">Delete</a>
                                                 </small>
                                             {% endif %}
                                         </div>
@@ -81,9 +58,8 @@
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
                 {% endfor %}
-            </div>            
+            </div>          
         </div>
     </section>
 {% endblock %}

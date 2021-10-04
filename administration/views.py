@@ -5,4 +5,10 @@ from contact.models import QuoteRequest
 
 def view_quotes(request):
 
-    return render(request, 'administration/view_quotes.html')
+    requests = QuoteRequest.objects.all()
+
+    context = {
+        'requests': requests,
+    }
+
+    return render(request, 'administration/view_quotes.html', context)
