@@ -56,26 +56,17 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">Product Name: {{ product.name }}</p>
+                                    <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left">
-                                                €{{ product.price }}
+                                            <p class="mt-1 mb-0">
+                                                €{{ product.price|floatformat:0 }}
                                             </p>
-                                            <p class="small mt-1 mb-0">
-                                                {{ product.category.friendly_name }}
-                                            </p>
-                                            <p class="lead mb-0 text-left">
-                                                {{ product.time_allocation_mins }}
-                                            </p>
-                                            <p class="small mt-1 mb-0">
-                                                {{ product.is_digital }}
-                                            </p>                                              
-                                            <p class="small mt-1 mb-0">
-                                                {{ product.max_time_multiplier }}
-                                            </p>                                            
+                                            <p class="mt-1 mb-0">
+                                                Image: 
+                                            </p>                     
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="">Edit</a> | 
