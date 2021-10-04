@@ -7,9 +7,9 @@ class Category(models.Model):
         verbose_name_plural = 'Categories'
 
     options = (
-        ('1', 'Project Hours'),
-        ('2', 'Marketing Templates'),
-        ('3', 'Free consultation')
+        ('Project Hours', 'Project Hours'),
+        ('Marketing Templates', 'Marketing Templates'),
+        ('Free consultation', 'Free consultation')
     )
     friendly_name = models.CharField(max_length=254, default="Project Hours", choices=options)
     name = models.CharField(max_length=254)    
