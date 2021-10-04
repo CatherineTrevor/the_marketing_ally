@@ -14,6 +14,12 @@ class ProductAdmin(admin.ModelAdmin):
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
+        'friendly_name',
+        'is_available_guest_user'
+    )
+
+    readonly_fields = (
+        'friendly_name',
         'name',
         'is_available_guest_user'
     )
