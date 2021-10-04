@@ -12,10 +12,11 @@
         {{ quote_request_form.company_name | as_crispy_field }}
         {{ quote_request_form.full_name | as_crispy_field }}          
         {{ quote_request_form.email | as_crispy_field }}
+        <div id="form-phone">{{ quote_request_form.phone | as_crispy_field }}</div>     
         {{ quote_request_form.free_consultation_request | as_crispy_field }}                
         {{ quote_request_form.project_name | as_crispy_field }}
         {{ quote_request_form.project_description | as_crispy_field }}
-        <a href="{% url 'home' %}" class="btn-action scrollto align-items-center justify-content-center">Submit form</a>     
+        <button type="submit" class="btn-action justify-content-center">Submit form</button>     
       </form>
     </div>
   </div>  

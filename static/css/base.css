@@ -149,6 +149,13 @@ h1, h2, h3, h4, a {
     text-transform: uppercase;    
 }
 
+/* Phone field in contact form style to match Stripe-style-input*/
+#form-phone .stripe-style-input {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  line-height: 1.5;
+}
+
 .btn-action,
 .allauth-form-inner-content .btn-action {
     font-family: 'Caveat', sans-serif;

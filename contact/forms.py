@@ -6,7 +6,7 @@ class QuoteRequestForm(forms.ModelForm):
         model = QuoteRequest
         read_only = ()
         fields = ('company_name', 'full_name', 'email',
-                  'free_consultation_request', 'project_name',
+                  'phone', 'free_consultation_request', 'project_name',
                   'project_description')
 
     def __init__(self, *args, **kwargs):
@@ -16,12 +16,13 @@ class QuoteRequestForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'company_name': 'Company Name',            
+            'company_name': 'Company Name',
             'full_name': 'Full Name',
             'email': 'Email Address',
+            'phone': '',
             'free_consultation_request': 'Please tick',
             'project_name': 'Project Name',
-            'project_description': 'Project description'           
+            'project_description': 'Project description',
         }
 
         for field in self.fields:
