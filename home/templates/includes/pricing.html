@@ -10,64 +10,64 @@
     <div class="row">
       <div class="col-lg-4 col-md-6">
         <div class="box">
-          <h3>Digital: light</h3>
-          <h4><sup>€</sup>75<span> / 90 minutes</span></h4>
-          <ul>
-            <li>Project work</li>
-            <li>Campaign management</li>
-            <li>Select a time convenient to you</li>
-            <p class="description">
-              Best value when you know what you are looking for, and need some work completing ASAP.
-            </p>
-            <p class="description">
-              This does not include any face-to-face meetings, but everything is handled quickly over email.
-            </p>              
-          </ul>
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Select</a>
-          </div>
+          {% for product in products %}
+            {% if product.pricing_priority == 2 %}
+              <h3>{{ product.name }}</h3>
+              <h4><sup>€</sup>{{ product.price }}<span> / {{ product.time_allocation_mins }} minutes</span></h4>
+              <ul>
+                <li>{{ product.description_1 }}</li>
+                <li>{{ product.description_2 }}</li>
+                <li>{{ product.description_3 }}</li>
+                <li>{{ product.description_4 }}</li>             
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-action">Select</a>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
         <div class="box recommended">
           <span class="recommended-badge">Recommended</span>
-          <h3>Face-to-face</h3>
-          <h4><sup>€</sup>75<span> / 60 minutes </span></h4>
-          <ul>
-            <li>Brainstorming</li>
-            <li>Idea reviews</li>
-            <li>At a location convenient to you*</li>
-            <p class="description">
-              This option is recommended when you are unsure how to solve a particular challenge, for example you are entering a new market and don't know where to start.
-            </p>     
-            <p class="description">
-              Meeting in person better allows us to discuss in more detail any marketing campaigns or projects you think you need help with.
-            </p>
-          </ul>
-          <div class="btn-wrap">
-            <a class="btn-buy" {% if user.is_authenticated %} href="#" {% else %} href="#" {% endif %}>Select</a>
-          </div>
+          {% for product in products %}
+            {% if product.pricing_priority == 2 %}
+              <h3>{{ product.name }}</h3>
+              <h4><sup>€</sup>{{ product.price }}<span> / {{ product.time_allocation_mins }} minutes</span></h4>
+              <ul>
+                <li>{{ product.description_1 }}</li>
+                <li>{{ product.description_2 }}</li>
+                <li>{{ product.description_3 }}</li>
+                <li>{{ product.description_4 }}</li>                                
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-action">Select</a>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+      <div class="col-lg-4 col-md-6">
         <div class="box">
-          <h3>Digital: full</h3>
-          <h4><sup>€</sup>120<span> / 150 minutes</span></h4>
-          <ul>
-            <li>Marketing budget overview</li>
-            <li>Administration assistance</li>
-            <li>Annual marketing plan guidance</li>
-          </ul>
-          <p class="description">
-            If you wish to split this time over a few days, or weeks, add a note to the booking form, or <a>get in touch</a>.
-          </p>               
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Select</a>
-          </div>
+          {% for product in products %}
+            {% if product.pricing_priority == 2 %}
+              <h3>{{ product.name }}</h3>
+              <h4><sup>€</sup>{{ product.price }}<span> / {{ product.time_allocation_mins }} minutes</span></h4>
+              <ul>
+                <li>{{ product.description_1 }}</li>
+                <li>{{ product.description_2 }}</li>
+                <li>{{ product.description_3 }}</li>
+                <li>{{ product.description_4 }}</li>                                
+              </ul>        
+              <div class="btn-wrap">
+                <a href="#" class="btn-action">Select</a>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
     </div>
-    <div class="section-title">
+    <div class="row section-title">
       <p>
           To purchase hours and benefit from the competitive pricing structure, you must first <a>register an account</a>.
       </p>   
