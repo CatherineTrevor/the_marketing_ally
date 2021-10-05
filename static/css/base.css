@@ -1,3 +1,7 @@
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
+
 body {
     font-family: 'Montserrat', sans-serif !important;
 }
@@ -21,20 +25,33 @@ h1, h2, h3, h4, a {
     text-transform: uppercase;    
 }
 
+/* provide black background to navbar on pages other than homepage */
 #add_header {
-  background-color:black;
-  height: 100px;
-  transition: none;
+    background-color:black;
+    height: 100px;
+    transition: none;
+}
+
+.email a {
+  font-size: 24px;
+}
+
+.section-title p {
+  width: 75% !important;
 }
 
 .highlight-text {
     color: #e43c5c!important;
 }
 
+/*--------------------------------------------------------------
+Navigation
+--------------------------------------------------------------*/
+
 #navbar a {
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 20px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
 }  
 
 .navbar-dropdown {
@@ -44,85 +61,92 @@ h1, h2, h3, h4, a {
 .nav-link .icon {
     font-size: 20px;
 }
+
 /*--------------------------------------------------------------
-# Hero 2 Section - code taken from Bootstrap Made Tempo template and modified
+Footer
 --------------------------------------------------------------*/
-#hero2 {
-    width: 100%;
-    height: 25vh;
-    background: url("/static/media/hero2.jpg") top center;
-    background-size: cover;
-    position: relative;
+
+#homepage-footer {
+    background: #f6f4f4;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    color: #444444;
+    font-size: 14px;
+    height: 400px;
 }
-#hero2:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.6);  
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-#hero2 .hero-container {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 15px;
-}
-#hero2 h3 {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    font-size: 26px;
-    padding: 10px 30px;
+
+#homepage-footer .footer-contact {
     margin-bottom: 30px;
-    border-radius: 50px;
 }
-#hero2 h1 {
-    margin: 0 0 10px 0;
-    font-size: 48px;
+
+#homepage-footer .footer-contact h4 {
+    font-size: 22px;
     font-weight: 700;
-    line-height: 56px;
-    text-transform: uppercase;
-    color: #fff;
-}
-#hero2 h2 {
-    color: #eee;    
-    margin-bottom: 40px;
-    font-size: 24px;
+    line-height: 1;  
+    margin: 0 0 30px 0;
+    padding: 2px 0 2px 0;
 }
 
-  @media (min-width: 1024px) {
-    #hero2 {
-      background-attachment: fixed;
-    }
-  }
-  @media (max-width: 768px) {
-    #hero2 h3 {
-      font-size: 22px;
-    }
-    #hero2 h1 {
-      font-size: 28px;
-      line-height: 36px;
-    }
-    #hero2 h2 {
-      font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 30px;
-    }
-  }
-  @media (max-height: 500px) {
-    #hero2 {
-      height: 150vh;
-    }
-  }
+#homepage-footer .footer-contact p {
+    color: #777777;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 0;
+}
 
+#homepage-footer h4 {
+  color: #444444;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+#homepage-footer .footer-links {
+    margin-bottom: 30px;
+}
+
+#homepage-footer .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#homepage-footer .footer-links ul i {
+    color: #ea6981;
+    font-size: 18px;
+    line-height: 1;
+    padding-right: 2px;  
+}
+
+#homepage-footer .footer-links ul li {
+    align-items: center;
+    display: flex;
+    padding: 10px 0;
+}
+
+#homepage-footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#homepage-footer .footer-links ul a {
+    color: #777777;
+    display: inline-block;
+    line-height: 1;
+    transition: 0.3s;  
+}
+
+#homepage-footer .footer-links ul a:hover {
+    color: #e43c5c;
+    text-decoration: none;
+}
+
+.footer-links a {
+    text-decoration: none !important;
+}
+
+/*--------------------------------------------------------------
+Homepage all sections
+--------------------------------------------------------------*/
 #sophie_image {
     background: url(/static/media/sophie.jpg) no-repeat center;
     background-size: contain;
@@ -130,17 +154,99 @@ h1, h2, h3, h4, a {
     height: 500px;
 }
 
-.email a {
-    font-size: 24px;
+#template_img {
+    background-color: #ced4da;
+    max-width: 50%;
 }
 
-.footer-links a {
-    text-decoration: none !important;
+/*--------------------------------------------------------------
+Hero 2 Section - code taken from Bootstrap Made Tempo template and modified
+--------------------------------------------------------------*/
+#hero2 {
+  background: url("/static/media/hero2.jpg") top center;
+  background-size: cover;
+  height: 25vh;
+  position: relative;
+  width: 100%;    
 }
 
-.section-title p {
-    width: 75% !important;
+#hero2:before {
+  background: rgba(0, 0, 0, 0.6);  
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
+
+#hero2 .hero-container {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 0 15px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+#hero2 h1 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+#hero2 h2 {
+  color: #eee;    
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+#hero2 h3 {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 50px;
+color: #fff;
+font-size: 26px;
+margin-bottom: 30px;
+padding: 10px 30px;
+}
+
+/* additional hero banner media queries */
+@media (min-width: 1024px) {
+  #hero2 {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+  #hero2 h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero2 h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+  #hero2 h3 {
+    font-size: 22px;
+  }    
+}
+@media (max-height: 500px) {
+  #hero2 {
+    height: 150vh;
+  }
+}
+
+/*--------------------------------------------------------------
+Forms
+--------------------------------------------------------------*/
 
 .form-fields {
     font-family: 'Caveat', sans-serif !important;
@@ -151,49 +257,46 @@ h1, h2, h3, h4, a {
 
 /* Phone field in contact form style to match Stripe-style-input*/
 #form-phone .stripe-style-input {
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    line-height: 1.5;
 }
 
-#template_img {
-  background-color: #ced4da;
-  max-width: 50%;
-}
+/*--------------------------------------------------------------
+Allauth files and forms - code taken from Code Institue Boutique Ado project and modified
+--------------------------------------------------------------*/
 
 .btn-action,
 .allauth-form-inner-content .btn-action {
-    font-family: 'Caveat', sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 8px 30px 9px 30px;
+    background: #e43c5c;
     border: none;
     border-radius: 50px;
-    transition: 0.5s;
     color: white;
-    background: #e43c5c;
-    text-decoration: none;    
-  }
+    display: inline-block;
+    font-family: 'Caveat', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 8px 30px 9px 30px;
+    text-decoration: none;   
+    text-transform: uppercase;
+    transition: 0.5s;
+}
 
 .btn-action:hover,
 .allauth-form-inner-content .btn-action:hover {
     background: #a9a9a9;
-    color: white;
     border: 2px solid white;
-  }
-
-  /* Allauth form formatting - taken from Code Institute course and modified */
+    color: white;
+}
 
 .allauth-form-inner-content .section-title {
     padding-bottom: 0px !important;
 }
 
 .allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d;  text-secondary */
+    margin-top: 1.5rem;
+    color: #6c757d;
 }
 
 .allauth-form-inner-content input {
@@ -212,101 +315,32 @@ h1, h2, h3, h4, a {
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
 	/* btn */
-	display: inline-block;
-    font-weight: 400;
+    background-color: #000;
+    border: 1px solid #000; 
+    border-radius: 0; 
     color: #fff;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: .375rem .75rem;
     text-align: center;
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;    
+    user-select: none;
     vertical-align: middle;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    user-select: none;
-    background-color: #000;
-    border: 1px solid #000;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0;
-
-    /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
-	color: #fff;
     background-color: #222;
     border-color: #222;
+    color: #fff;
 }
 
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#homepage-footer {
-    color: #444444;
-    font-size: 14px;
-    background: #f6f4f4;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    height: 400px;
-  }
-
-  #homepage-footer .footer-contact {
-    margin-bottom: 30px;
-  }
-  #homepage-footer .footer-contact h4 {
-    font-size: 22px;
-    margin: 0 0 30px 0;
-    padding: 2px 0 2px 0;
-    line-height: 1;
-    font-weight: 700;
-  }
-  #homepage-footer .footer-contact p {
-    font-size: 14px;
-    line-height: 24px;
-    margin-bottom: 0;
-    /* font-family: "Poppins", sans-serif; */ /* overridden by base.css */
-    color: #777777;
-  }
-  #homepage-footer h4 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #444444;
-    position: relative;
-    padding-bottom: 12px;
-  }
-  #homepage-footer .footer-links {
-    margin-bottom: 30px;
-  }
-  #homepage-footer .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  #homepage-footer .footer-links ul i {
-    padding-right: 2px;
-    color: #ea6981;
-    font-size: 18px;
-    line-height: 1;
-  }
-  #homepage-footer .footer-links ul li {
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-  }
-  #homepage-footer .footer-links ul li:first-child {
-    padding-top: 0;
-  }
-  #homepage-footer .footer-links ul a {
-    color: #777777;
-    transition: 0.3s;
-    display: inline-block;
-    line-height: 1;
-  }
-  #homepage-footer .footer-links ul a:hover {
-    text-decoration: none;
-    color: #e43c5c;
-  }
