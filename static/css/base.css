@@ -156,6 +156,11 @@ h1, h2, h3, h4, a {
   line-height: 1.5;
 }
 
+#template_img {
+  background-color: #ced4da;
+  max-width: 50%;
+}
+
 .btn-action,
 .allauth-form-inner-content .btn-action {
     font-family: 'Caveat', sans-serif;

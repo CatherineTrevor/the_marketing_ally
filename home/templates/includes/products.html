@@ -14,57 +14,27 @@
             <p>
                 All templates cost €10 and come with a free review for registered account holders.
             </p>            
-            <p class="description">
-                <a href="">Sign up here!</a>
-            </p>             
+            <a class="btn-action mt-3" href="{% url 'account_signup' %}">Sign up here!</a>          
         </div>
         <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bi-paperclip"></i></div>
-                    <h4 class="title">
-                        <a href="">Marketing budget</a>
-                    </h4>
-                    <p class="description">
-                        Get a clear overview of your marketing spend, quarter by quarter - this gives you control over which marketing activities provide you with real value, so you know where to spend it.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bi-paperclip"></i></div>
-                    <h4 class="title">
-                        <a href="">Marketing plan</a>
-                    </h4>
-                    <p class="description">
-                        Have a clear overview of the activities you want to carry out, quarter by quarter - this allows you to spend your time more efficiently.
-                    </p>        
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bi-paperclip"></i></div>
-                    <h4 class="title">
-                        <a href="">Email wording templates</a>
-                    </h4>
-                    <p class="description">
-                        Need to send an introduction email, but don't know where to start? The internet is full of generic examples - register an account before purchasing a template and I will include a free
-                        review.
-                    </p>         
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                <div class="icon-box">
-                    <div class="icon"><i class="bx bi-paperclip"></i></div>
-                    <h4 class="title">
-                        <a href="">Marketing KPIs</a>
-                    </h4>
-                    <p class="description">
-                        Connect your budget and plan by implementing a monthly key performance indicator (KPI) report. Even as a sole trader, this can be a powerful tool to help you clearly see where business
-                        is coming from in connection to your spend.
-                    </p>         
-                </div>
-            </div>            
+            {% for product in products %}
+                {% if product.category.name == 'marketing_templates' %}
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box">
+                            <h4 class="title">
+                                {{ product.name }}
+                            </h4>
+                            <a href="#"><img id="template_img" class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                            <p class="description">
+                                Get a clear overview of your marketing spend, quarter by quarter - this gives you control over which marketing activities provide you with real value, so you know where to spend it.
+                            </p>
+                            <a href="#" class="icon" title="Add to basket">
+                                <i class="icon bx bi-basket3-fill"></i>
+                            </a>
+                        </div>                  
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="section-title">
             <p>
