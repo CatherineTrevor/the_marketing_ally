@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_page_header  %}
+
+{% include 'includes/additional_header.html' %}
+
+{% endblock %}
+
+{% block content %}
+    <section id="products_overview">
+        <div class="container">
+            <div class="section-title">
+                <h3>Site <span>Administration</span></h3>
+                <p>
+                    Update Quote Request
+                </p>
+                </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <form method="POST" action="{% url 'edit_quotes' quote.id %}" class="form mb-2" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for field in form %}
+                            {{ field | as_crispy_field }}
+                        {% endfor %}
+                        <div class="text-right">
+                            <a class="btn-action" href="{% url 'view_quotes' %}">Cancel</a>
+                            <button class="btn-action" type="submit">Update Quote Request</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
