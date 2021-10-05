@@ -13,14 +13,15 @@
             <div class="section-title">
                 <h3>Site <span>Administration</span></h3>
                 <p>
-                  Quote and booking requests
+                    Quote and booking requests
                 </p>
-              </div>
+                </div>
             <div class="row">
                 <h1>
-                    Quote Requests
+                    Open Quote Requests
                 </h1>
-                {% for quote in requests %}                                       
+                {% for quote in requests %}
+                    {% if quote.query_closed == False %}                                       
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                             <div class="card h-200 border-0">
                                 <div class="card-body pb-0">
@@ -30,22 +31,22 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="mt-1 mb-0">
-                                                Contact Name: {{ quote.full_name }}
+                                                <strong>Contact Name: </strong> {{ quote.full_name }}
                                             </p>
                                             <p class="mt-1 mb-0">
-                                                Email: {{ quote.email }}
+                                                <strong>Email: </strong> {{ quote.email }}
                                             </p>
                                             <p class="mt-1 mb-0">
-                                                Phone: {{ quote.phone }}
+                                                <strong>Phone: </strong> {{ quote.phone }}
                                             </p>  
                                             <p class="mt-1 mb-0">
-                                                Free consultation request: {{ quote.free_consultation_request }}
+                                                <strong>Free consultation: </strong>  {{ quote.free_consultation_request }}
                                             </p>  
                                             <p class="mt-1 mb-0">
-                                                Project Name: {{ quote.project_name }}
+                                                <strong>Project Name: </strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %}
                                             </p> 
                                             <p class="mt-1 mb-0">
-                                                Project Description: {{ quote.project_description }}
+                                                <strong>Project Description: </strong> {% if quote.project_description %} {{ quote.project_description }} {% else %} N/A {% endif %}
                                             </p>                                                                                                                                                                                                                                                             
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
@@ -58,8 +59,22 @@
                                 </div>
                             </div>
                         </div>
+                    {% endif %}
                 {% endfor %}
-            </div>          
+            </div>
+            <div class="row">
+                <h1>
+                    Closed Quote Requests
+                </h1>
+                {% for quote in requests %}
+                    {% if quote.query_closed == True %}                                       
+                        <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                            <p class="description"> {{ quote.company_name }} | {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %} </p>
+                            <p class="description"> {{ quote.notes }}</p>                            
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>                        
         </div>
     </section>
 {% endblock %}
