@@ -5,7 +5,10 @@
             <p class="description">
                 If you are logged into an account at time of purchase, you will receive your review within 5 working days.
             </p>
+            {% if user.is_authenticated %}
+            {% else %}
             <a class="btn-action mb-4" href="{% url 'account_signup' %}">Register!</a>
+            {% endif %}
         </div>
     </div>
     <div class="row">
@@ -31,7 +34,7 @@
                                     <th scope="row" data-item_id="{{ product.id }}">{{ product.name }}</th>
                                     <th scope="row"><img src="{{ product.image.url }}" style="height: 50px; width: 50px;"></th>
                                     <th scope="row">€{{ product.price }}</th>              
-                                    <th scope="row"><input type="submit" class="btn-action" value="Add to Bag" id="add_to-basket" name="add_to_basket"></input></th>
+                                    <th scope="row"><input type="submit" class="btn-action" value="Add to basket" id="add_to-basket" name="add_to_basket"></input></th>
                                 </tr>                                                      
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">                               
                             {% endif %}

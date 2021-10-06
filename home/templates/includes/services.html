@@ -100,24 +100,31 @@
         <div class="icon-box">
           <div class="icon"><i class="bx bi-watch"></i></div>
           <h4 class="title">Purchase project hours</h4>
-            {% for product in products %}
-            {% if product.category.name == 'project_hours' %}
-              <p class="description text-left">
-                <input type="checkbox" id="add_to_basket" name="add_to_basket" {% if user.is_authenticated %}{% else %} disabled {% endif %}></input>
-                <label for="add_to_basket">{{ product.name }} - €{{ product.price }}</label>
-              </p>
-            {% endif %}
-          {% endfor %}     
-          <p class="description text-left">       
-            <a href="{% url 'account_login' %}">Sign in</a> to book and pay for project hours. 
-          </p>
-          <p class="description text-left">
-            You can request a timeslot on the booking form before payment.
-          </p>
+          <div>
+            <p class="description text-left">       
+              <a href="{% url 'account_login' %}">Sign in</a> to book and pay for project hours. 
+            </p>
+            <p class="description text-left">
+              You can request a timeslot on the booking form before payment.
+            </p>
+          </div>
+          {% for product in products %}
+          <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+              {% csrf_token %} 
+              {% if product.category.name == 'project_hours' %}
+                  <div class="col text-left">
+                      <h4 class="title" data-item_id="{{ product.id }}">
+                        <i class="ri-check-double-line"></i> {{ product.name }} - €{{ product.price }}
+                      </h4>                                                          
+                      <input type="hidden" name="redirect_url" value="{{ request.path }}">                                    
+                  </div>                  
+              {% endif %}
+          </form>
+      {% endfor %}
           <div>
             {% if user.is_authenticated %}
-              <a class="btn-action" href="">
-                Add to basket
+              <a class="btn-action" href="{% url 'order_basket' %}">
+                Go to order basket
               </a>
             {% else %}
               <a class="btn-action" href="{% url 'account_signup' %}">
