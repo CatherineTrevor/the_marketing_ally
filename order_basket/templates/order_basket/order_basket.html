@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<div class="small-header-background"></div>
 <section id="order_basket" class="order_basket">
     <div class="container">
         <div class="section-title">
@@ -15,7 +14,7 @@
     {% include 'includes/project_hours.html' %}
     {% include 'includes/marketing_templates.html' %}
     <div class="d-flex justify-content-center col-lg-12 mb-3">
-        <a href="{% url 'view_bag' %}" class="btn-action">Add to basket</a>          
+        <a href="{% url 'view_bag' %}" class="btn-action">View order</a>          
     </div>      
 </section>
 {% endblock %}

@@ -23,31 +23,31 @@ def calendar(request):
     return render(request, 'order_basket/calendar.html')
 
 
-def view_bag(request):
+def view_bag(request,):
 
     return render(request, 'order_basket/bag.html')
 
 
 def add_to_bag(request, product_id):
-    
     """ Add a quantity of the specified product to the shopping bag """
 
     product = get_object_or_404(Product, pk=product_id)
-    quantity = int(request.POST.get('quantity'))
+    # quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
 
     bag = request.session.get('bag', {})
 
     if product_id in list(bag.keys()):
-        bag[product_id] += quantity
+        bag[product_id] += 1
         messages.success(request,
                             (f'Updated {product.name} '
                             f'quantity to {bag[product_id]}'))
     else:
-        bag[product_id] = quantity
+        bag[product_id] = 1
         messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
+    print(bag)
     return redirect(redirect_url)
 
 
