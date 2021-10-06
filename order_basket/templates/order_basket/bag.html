@@ -76,7 +76,14 @@
                     </div>
                 {% endif %}
             </div>
-        </div>     
+        </div> 
+        <div class="row">
+            <div class="d-flex justify-content-center col-lg-12 mb-3">     
+                {% if user.is_authenticated %}
+                <a class="btn-action" href="{% url 'checkout' %}">Secure checkout</a>
+                {% endif %}
+            </div>
+        </div>    
     </div>
 </section>
 {% endblock %}
