@@ -144,6 +144,26 @@ Footer
     text-decoration: none !important;
 }
 
+
+/*--------------------------------------------------------------
+Toasts - taken from Code Institute Boutique Ado project and modified
+--------------------------------------------------------------*/
+
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 90px;
+  z-index: 99999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
+
 /*--------------------------------------------------------------
 Homepage all sections
 --------------------------------------------------------------*/
