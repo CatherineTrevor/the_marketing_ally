@@ -5,7 +5,10 @@
             <p class="description">
                 If you are logged into an account at time of purchase, you will receive your review within 5 working days.
             </p>
+            {% if user.is_authenticated %}
+            {% else %}
             <a class="btn-action mb-4" href="{% url 'account_signup' %}">Register!</a>
+            {% endif %}
         </div>
     </div>
     <div class="row">
@@ -13,29 +16,33 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">Add to basket</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Free review</th>        
+                        <th scope="col">Template Name</th>
                         <th scope="col">Thumbnail</th>  
-                        <th scope="col">Price</th>                          
-                        <th scope="col">Free review included</th>                                                        
+                        <th scope="col">Price</th>     
+                        <th scope="col"></th>                                                                  
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         {% for product in products %}
-                        {% if product.category.name == 'marketing_templates' %}
-                            <tr>
-                                <th scope="row"><input type="checkbox" id="add_to-basket" name="add_to_basket"></input></th>
-                                <th scope="row">{{ product.name }}</th>
-                                <th scope="row">IMAGE HERE</th>
-                                <th scope="row">€{{ product.price }}</th>
-                                <th scope="row"><input type="checkbox" id="marketing_template_review" name="marketing_template_review" {% if user.is_authenticated %} checked disabled {% else %} disabled {% endif %}></input></th>                                
-                            </tr>
+                        <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                            {% csrf_token %}                                  
+                            {% if product.category.name == 'marketing_templates' %}
+                                <tr>
+                                    <th scope="row">{% if user.is_authenticated %} <p>Free review included </p> {% else %} {% endif %}</input></th>                
+                                    <th scope="row" data-item_id="{{ product.id }}">{{ product.name }}</th>
+                                    <th scope="row"><img src="{{ product.image.url }}" style="height: 50px; width: 50px;"></th>
+                                    <th scope="row">€{{ product.price }}</th>              
+                                    <th scope="row"><input type="submit" class="btn-action" value="Add to basket" id="add_to-basket" name="add_to_basket"></input></th>
+                                </tr>                                                      
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                               
                             {% endif %}
-                        {% endfor %}
+                        </form>
+                    {% endfor %}                            
                     </tr>                                                    
                 </tbody>
             </table>
         </div>
-    </div>
+    </div>   
 </div>

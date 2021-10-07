@@ -1,6 +1,7 @@
 from django import forms
 from .models import QuoteRequest
 
+
 class QuoteRequestForm(forms.ModelForm):
     class Meta:
         model = QuoteRequest
@@ -20,7 +21,7 @@ class QuoteRequestForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone': '',
-            'free_consultation_request': 'Please tick',
+            'free_consultation_request': '',
             'project_name': 'Project Name',
             'project_description': 'Project description',
         }

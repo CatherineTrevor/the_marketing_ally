@@ -4,17 +4,17 @@ from .models import QuoteRequest
 
 class QuoteRequestAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('email', 'free_consultation_request',
-              'project_name', 'project_description')
+    readonly_fields = ('free_consultation_request', 'request_date',
+                       'project_name', 'project_description')
 
-    fields = ('consultation_status', 'company_name', 'full_name',
+    fields = ('query_closed', 'status', 'company_name', 'full_name',
               'email', 'phone', 'free_consultation_request',
-              'project_name', 'project_description', 'notes')
+              'project_name', 'project_description', 'request_date', 'notes')
 
-    list_display = ('company_name', 'consultation_status', 'full_name',
-              'project_name',)
+    list_display = ('company_name', 'status', 'full_name',
+                    'project_name', 'query_closed')
 
-    ordering = ['full_name']
+    ordering = ['request_date']
 
 
 admin.site.register(QuoteRequest, QuoteRequestAdmin)
