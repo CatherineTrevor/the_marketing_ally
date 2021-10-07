@@ -33,7 +33,7 @@
             <li><a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a></li>            
           </ul>
         {% else %}
-        <li><a class="nav-link scrollto" href="#"><i class="icon bx bi-person-circle"></i></a></li> <!-- Connect to user profile page once logged in-->
+        <li><a class="nav-link scrollto" href="{% url 'profile' %}"><i class="icon bx bi-person-circle"></i></a></li>
         {% endif %}       
     {% else %}                     
         <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
