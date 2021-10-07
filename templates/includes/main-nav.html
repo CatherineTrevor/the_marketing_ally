@@ -14,7 +14,8 @@
             <li><a href="{% url 'home' %}#products">Marketing Templates</a></li>
             <li><a href="{% url 'home' %}#pricing">Pricing</a></li>
             <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
-            <li><a href="{% url 'home' %}#faq">FAQs</a></li>            
+            <li><a href="{% url 'home' %}#faq">FAQs</a></li>
+            <li><a href="{% url 'order_basket' %}">Place an order</a></li>             
           </ul>
         </li>
         <li class="dropdown"><a href="{% url 'contact' %}"><span>Contact</span><i class="bi bi-chevron-down"></i></a>
@@ -33,13 +34,13 @@
             <li><a href="{% url 'add_product' %}" class="dropdown-item">Add a product</a></li>            
           </ul>
         {% else %}
-        <li><a class="nav-link scrollto" href="{% url 'profile' %}"><i class="icon bx bi-person-circle"></i></a></li>
+        <li><a class="nav-link scrollto" href="{% url 'profile' %}" title="View profile"><i class="icon bx bi-person-circle"></i></a></li>
         {% endif %}       
     {% else %}                     
         <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
-        <li><a class="nav-link scrollto" href="{% url 'account_login' %}"><i class="icon bx bi-person-circle"></i></a></li>        
+        <li><a class="nav-link scrollto" href="{% url 'account_login' %}" title="Log in"><i class="icon bx bi-person-circle"></i></a></li>        
     {% endif %}
-        <li><a class="nav-link scrollto" href="{% url 'order_basket' %}"><i class="icon bx bi-basket3-fill"></i></a></li>     
+        <li><a class="nav-link scrollto" href="{% url 'view_bag' %}" title="View order basket"><i class="icon bx bi-basket3-fill"></i></a></li>     
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
