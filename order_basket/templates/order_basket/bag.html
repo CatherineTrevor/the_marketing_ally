@@ -79,8 +79,14 @@
         </div> 
         <div class="row">
             <div class="d-flex justify-content-center col-lg-12 mb-3">     
-                {% if user.is_authenticated %}
-                <a class="btn-action" href="{% url 'checkout' %}">Secure checkout</a>
+                {% if bag_items %}
+                    {% if user.is_authenticated %}
+                    <a class="btn-action" href="{% url 'checkout' %}">Secure checkout</a>
+                    {% else %}
+                    <a class="btn-action" href="{% url 'checkout' %}">Checkout as guest</a>                
+                    {% endif %}
+                    {% else %}
+                    <a class="btn-action" href="{% url 'order_basket' %}">Visit order page</a>   
                 {% endif %}
             </div>
         </div>    
