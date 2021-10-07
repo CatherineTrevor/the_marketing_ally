@@ -4,17 +4,21 @@ from .models import OrderRequest
 
 class OrderRequestAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('id', 'account_company_name', 'timeslot_option_1',
-                       'timeslot_option_2', 'project_name',
-                       'project_description', 'is_digital')
+    readonly_fields = ('order_number', 'date',
+                       'delivery_cost', 'order_total',
+                       'grand_total', 'original_bag',
+                       'stripe_pid')
 
-    fields = ('id', 'account_company_name', 'timeslot_option_1',
-              'timeslot_option_2', 'project_name', 'project_description',
-              'is_digital', 'total_booking_hours', 'total_order_value',
-              'order_status', 'order_timeslot_confirmed')
+    fields = ('order_number', 'user_profile', 'date', 'full_name',
+              'email', 'phone_number', 'country',
+              'postcode', 'town_or_city', 'street_address1',
+              'street_address2', 'county', 'delivery_cost',
+              'order_total', 'grand_total', 'original_bag',
+              'stripe_pid')
 
-    list_display = ('id', 'account_company_name', 'order_status',
-                    'order_timeslot_confirmed')
+    list_display = ('order_number', 'date', 'full_name',
+                    'order_total', 'delivery_cost',
+                    'grand_total',)
 
 
 admin.site.register(OrderRequest, OrderRequestAdmin)
