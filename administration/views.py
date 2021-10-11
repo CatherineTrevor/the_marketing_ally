@@ -36,7 +36,7 @@ def edit_quotes(request, quote_id):
                             'Please ensure the form is valid.'))
     else:
         form = QuoteRequestForm(instance=quote)
-        messages.info(request, f'You are editing {quote.id}')
+        messages.info(request, f'You are editing {quote.company_name}')
 
     template = 'administration/edit_quotes.html'
     context = {

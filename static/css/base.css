@@ -385,6 +385,14 @@ Contact page
 Administration
 --------------------------------------------------------------*/
 
-#quotes_overview {
+#quotes_overview, #add_products {
+  padding-bottom: 100px;
+}
+
+/*--------------------------------------------------------------
+Checkout
+--------------------------------------------------------------*/
+
+#checkout {
   padding-bottom: 100px;
 }
