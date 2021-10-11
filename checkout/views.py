@@ -6,11 +6,11 @@ from django.contrib import messages
 from django.views.decorators.http import require_POST
 
 from .forms import OrderRequestForm
-from .models import OrderRequest
+from .models import OrderRequest, OrderLineItem
 
 from products.models import Product
-# from profiles.models import UserProfile
-# from profiles.forms import UserProfileForm
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 from order_basket.contexts import bag_contents
 
 import stripe
@@ -61,7 +61,25 @@ def checkout(request):
             form.stripe_pid = pid
             form.original_bag = json.dumps(bag)
             form.save()
+            for item_id, item_data in bag.items():
+                try:
+                    product = Product.objects.get(id=item_id)
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=item_data,
+                    )
+                    order_line_item.save()
+                except Product.DoesNotExist:
+                    messages.error(request, (
+                        "One of the products in your bag wasn't "
+                        "found in our database. "
+                        "Please call us for assistance!")
+                    )
+                    form.delete()
+                    return redirect(reverse('view_bag'))            
 
+            
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_confirmation',
@@ -76,10 +94,12 @@ def checkout(request):
                         "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
+        current_bag = bag_contents(request)
+        total = current_bag['grand_total']
         stripe_total = 150
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
-            amount = 100,
+            amount=100,
             currency=settings.STRIPE_CURRENCY,
         )
 
@@ -87,7 +107,7 @@ def checkout(request):
         # the user maintains in their profile
         if request.user.is_authenticated:
             try:
-                # profile = UserProfile.objects.get(user=request.user)
+                profile = UserProfile.objects.get(user=request.user)
                 order_request_form = OrderRequestForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -127,7 +147,7 @@ def checkout_confirmation(request, order_number):
     order_request = get_object_or_404(OrderRequest, order_number=order_number)
 
     if request.user.is_authenticated:
-        # profile = UserProfile.objects.get(user=request.user)
+        profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order_request.user_profile = profile
         order_request.save()
