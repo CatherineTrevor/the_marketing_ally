@@ -9,8 +9,8 @@ from .forms import OrderRequestForm
 from .models import OrderRequest
 
 from products.models import Product
-from profiles.models import UserProfile
-from profiles.forms import UserProfileForm
+# from profiles.models import UserProfile
+# from profiles.forms import UserProfileForm
 from order_basket.contexts import bag_contents
 
 import stripe
@@ -87,7 +87,7 @@ def checkout(request):
         # the user maintains in their profile
         if request.user.is_authenticated:
             try:
-                profile = UserProfile.objects.get(user=request.user)
+                # profile = UserProfile.objects.get(user=request.user)
                 order_request_form = OrderRequestForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
@@ -127,7 +127,7 @@ def checkout_confirmation(request, order_number):
     order_request = get_object_or_404(OrderRequest, order_number=order_number)
 
     if request.user.is_authenticated:
-        profile = UserProfile.objects.get(user=request.user)
+        # profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order_request.user_profile = profile
         order_request.save()
