@@ -6,6 +6,26 @@
         </div>
         <ul class="faq-list">
             <li>
+                <div data-bs-toggle="collapse" class="collapsed question" href="#faq0">
+                    How does it work?
+                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                </div>
+                <div id="faq0" class="collapse" data-bs-parent=".faq-list">
+                   <p>
+                       You sign up for an account, and purchase up to 3 hours maximum, either digital work, or a face-to-face meeting, within the Gothenburg area.
+                   </p>
+                    <p>
+                        When purchasing these hours you can access my calendar to see when I am available, and provide the chose of 2 timeslots that suit you.
+                    </p>
+                    <p>
+                        You receive a confirmation email (usually within a few hours) confirming the timed slot for your project hours. In the future this part of the process will be automated.
+                    </p> 
+                    <p>
+                        Make sure to give a brief explanation of the project and work required, so I can get up to speed. If I have any questions, I will get in touch.
+                    </p>                                
+                </div>
+            </li>            
+            <li>
                 <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">
                     I think I need some help with marketing, but am not really sure...
                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
@@ -16,7 +36,7 @@
                        options.
                    </p>
                     <p>
-                        Take advantage of my <a href="#">free 20 minute consultation</a> available to all new clients. Together we can discuss what help you might need, and then put together a solution. 
+                        Take advantage of my <a href="{% url 'contact' %}#request_a_quote">free 20 minute consultation</a> available to all new clients. Together we can discuss what help you might need, and then put together a solution. 
                         It allows us both to understand if we should work together and what I can do to help.
                     </p>
                     <p>
@@ -45,7 +65,7 @@
                         It is so important to look after your regulars; but it is also important to find new ones too.
                     </p>   
                     <p>
-                        Benefit from a <a href="">free 20-minute consultation</a> and we can chat about your personal situation.
+                        Benefit from a <a href="{% url 'contact' %}#request_a_quote">free 20-minute consultation</a> and we can chat about your personal situation.
                     </p>                                                                            
                 </div>
             </li>            
@@ -80,7 +100,9 @@
                         If you are a registered users, you have 6 months from the date of purchase to send the document to me.
                     </p>                    
                     <p>
-                        Email it to <a href="">sophie@themarketingally.com</a> and I will reply within 5 working days (usually quicker).
+                        Email it to <a href="mailto:sophie%40themarketingally%2ecom?subject=Enquiry for The Marketing Ally&body=Thanks in advance for your message!
+                        %0A%0APlease add your message here and I'll get back to you as soon as I can.%0A%0AThanks!%0A%0ASophie - The Marketing Ally">sophie@themarketingally.com</a>
+                        and I will reply within 5 working days (usually quicker).
                     </p>                             
                 </div>
             </li>  
@@ -109,7 +131,7 @@
                 </div>
                 <div id="faq6" class="collapse" data-bs-parent=".faq-list">
                     <p>
-                        Certainly - to get the best value for a longer term project, complete the <a href="">request a quote form</a> and I will get in touch to discuss a package with you.                        
+                        Certainly - to get the best value for a longer term project, complete the <a href="{% url 'contact' %}#request_a_quote">request a quote form</a> and I will get in touch to discuss a package with you.                        
                 </div>
             </li>                                            
         </ul>
