@@ -56,11 +56,11 @@ def checkout(request):
 
         order_request_form = OrderRequestForm(form_data)
         if order_request_form.is_valid():
-            form = order_request_form.save(commit=False)
+            order = order_request_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
-            form.stripe_pid = pid
-            form.original_bag = json.dumps(bag)
-            form.save()
+            order.stripe_pid = pid
+            order.original_bag = json.dumps(bag)
+            order.save()
             for item_id, item_data in bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -76,14 +76,13 @@ def checkout(request):
                         "found in our database. "
                         "Please call us for assistance!")
                     )
-                    form.delete()
-                    return redirect(reverse('view_bag'))            
+                    order.delete()
+                    return redirect(reverse('view_bag'))
 
-            
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_confirmation',
-                                    args=[form.order_number]))
+                                    args=[order.order_number]))
         else:
             messages.error(request, ('There was an error with your form. '
                                      'Please double check your information.'))
