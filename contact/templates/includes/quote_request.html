@@ -1,23 +1,21 @@
-<section class="contact">
-  <div class="container">
-    <div class="section-title"  id="request_a_quote" name="request_a_quote">
-      <h3>Quote <span>Request</span></h3>
-      <p>
-        Please complete the form below to request a details quote for longer project collaboration, or to request a booking for your free 20 minute consultation.
-      </p>
-    </div>
-    <div>
-      <form method='POST' action="{% url 'contact' %}" class="form-fields">
-        {% csrf_token %}
-        {{ quote_request_form.company_name | as_crispy_field }}
-        {{ quote_request_form.full_name | as_crispy_field }}          
-        {{ quote_request_form.email | as_crispy_field }}
-        <div id="form-phone">{{ quote_request_form.phone | as_crispy_field }}</div>     
-        {{ quote_request_form.free_consultation_request | as_crispy_field }}                
-        {{ quote_request_form.project_name | as_crispy_field }}
-        {{ quote_request_form.project_description | as_crispy_field }}
-        <button type="submit" class="btn-action justify-content-center">Submit form</button>     
-      </form>
-    </div>
-  </div>  
-</section>
+<div class="container" id="quote">
+  <div class="section-title"  id="request_a_quote" name="request_a_quote">
+    <h3>Quote <span>Request</span></h3>
+    <p>
+      Please complete the form below to request a details quote for longer project collaboration, or to request a booking for your free 20 minute consultation.
+    </p>
+  </div>
+  <div>
+    <form method='POST' action="{% url 'contact' %}" class="form-fields">
+      {% csrf_token %}
+      {{ quote_request_form.company_name | as_crispy_field }}
+      {{ quote_request_form.full_name | as_crispy_field }}          
+      {{ quote_request_form.email | as_crispy_field }}
+      <div id="form-phone">{{ quote_request_form.phone | as_crispy_field }}</div>     
+      {{ quote_request_form.free_consultation_request | as_crispy_field }}                
+      {{ quote_request_form.project_name | as_crispy_field }}
+      {{ quote_request_form.project_description | as_crispy_field }}
+      <button type="submit" class="btn-action justify-content-center">Submit form</button>     
+    </form>
+  </div>
+</div>  

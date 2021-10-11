@@ -368,3 +368,23 @@ Allauth files and forms - code taken from Code Institue Boutique Ado project and
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+/*--------------------------------------------------------------
+Contact page
+--------------------------------------------------------------*/
+
+#quote {
+  padding-bottom: 120px;
+}
+
+#quote .stripe-style-input {
+  font-size: 20px;
+}
+
+/*--------------------------------------------------------------
+Administration
+--------------------------------------------------------------*/
+
+#quotes_overview {
+  padding-bottom: 100px;
+}

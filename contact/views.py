@@ -1,6 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 
 from .forms import QuoteRequestForm
+from .models import QuoteRequest
 
 
 def contact(request):
@@ -11,7 +13,7 @@ def contact(request):
             'company_name': request.POST['company_name'],
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
-            'free_consultation_request': request.POST['free_consultation_request'],
+            'free_consultation_request': request.POST.get('free_consultation_request'),
             'project_name': request.POST['project_name'],
             'project_description': request.POST['project_description'],
         }
@@ -22,12 +24,26 @@ def contact(request):
             form.save()
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('home'))
+            return redirect(reverse('contact_received', args=[form.id]))
 
     quote_request_form = QuoteRequestForm()
     template = 'contact/contact.html'
     context = {
         'quote_request_form': quote_request_form,
+    }
+
+    return render(request, template, context)
+
+
+def contact_received(request, id):
+
+    quote_request = get_object_or_404(QuoteRequest, id=id)
+
+    messages.success(request, (f'Request received!'))
+
+    template = 'contact/contact_received.html'
+    context = {
+        'quote_request': quote_request,
     }
 
     return render(request, template, context)

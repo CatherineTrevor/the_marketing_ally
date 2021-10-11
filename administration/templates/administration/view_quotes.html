@@ -8,73 +8,72 @@
 {% endblock %}
 
 {% block content %}
-    <section id="products_overview">
-        <div class="container">
-            <div class="section-title">
-                <h3>Site <span>Administration</span></h3>
-                <p>
-                    Quote and booking requests
-                </p>
-                </div>
-            <div class="row">
-                <h1>
-                    Open Quote Requests
-                </h1>
-                {% for quote in requests %}
-                    {% if quote.query_closed == False %}                                       
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                            <div class="card h-200 border-0">
-                                <div class="card-body pb-0">
-                                    <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }} {{ quote.consultation_status }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mt-1 mb-0">
-                                                <strong>Contact Name: </strong> {{ quote.full_name }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                <strong>Email: </strong> {{ quote.email }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                <strong>Phone: </strong> {{ quote.phone }}
-                                            </p>  
-                                            <p class="mt-1 mb-0">
-                                                <strong>Free consultation: </strong>  {{ quote.free_consultation_request }}
-                                            </p>  
-                                            <p class="mt-1 mb-0">
-                                                <strong>Project Name: </strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %}
-                                            </p> 
-                                            <p class="mt-1 mb-0">
-                                                <strong>Project Description: </strong> {% if quote.project_description %} {{ quote.project_description }} {% else %} N/A {% endif %}
-                                            </p>                                                                                                                                                                                                                                                             
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_quotes' quote.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="#">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+<div class="container" id="quotes_overview">
+    <div class="section-title">
+        <h3>Site <span>Administration</span></h3>
+        <p>
+            Quote and booking requests
+        </p>
+        </div>
+    <div class="row">
+        <h1>
+            Open Quote Requests
+        </h1>
+        {% for quote in requests %}
+            {% if quote.query_closed == False %}                                       
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                    <div class="card h-200 border-0">
+                        <div class="card-body pb-0">
+                            <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }} {{ quote.consultation_status }}</p>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="mt-1 mb-0">
+                                        <strong>Contact Name: </strong> {{ quote.full_name }}
+                                    </p>
+                                    <p class="mt-1 mb-0">
+                                        <strong>Email: </strong> {{ quote.email }}
+                                    </p>
+                                    <p class="mt-1 mb-0">
+                                        <strong>Phone: </strong> {{ quote.phone }}
+                                    </p>  
+                                    <p class="mt-1 mb-0">
+                                        <strong>Free consultation: </strong>  {{ quote.free_consultation_request }}
+                                    </p>  
+                                    <p class="mt-1 mb-0">
+                                        <strong>Project Name: </strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %}
+                                    </p> 
+                                    <p class="mt-1 mb-0">
+                                        <strong>Project Description: </strong> {% if quote.project_description %} {{ quote.project_description }} {% else %} N/A {% endif %}
+                                    </p>                                                                                                                                                                                                                                                             
+                                    {% if request.user.is_superuser %}
+                                        <small class="ml-3">
+                                            <a href="{% url 'edit_quotes' quote.id %}">Edit</a> | 
+                                            <a class="text-danger" href="#">Delete</a>
+                                        </small>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="row">
-                <h1>
-                    Closed Quote Requests
-                </h1>
-                {% for quote in requests %}
-                    {% if quote.query_closed == True %}                                       
-                        <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
-                            <p class="description"> {{ quote.company_name }} | {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %} </p>
-                            <p class="description"> {{ quote.notes }}</p>                            
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>                        
-        </div>
-    </section>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row mt-5 mb-5">
+        <h1>
+            Closed Quote Requests
+        </h1>
+        {% for quote in requests %}
+            {% if quote.query_closed == True %}                                       
+                <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                    <p class="description"> <strong>Company Name:</strong> {{ quote.company_name }} </p>
+                    <p class="description"> <strong>Project Name:</strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %} </p>
+                    <p class="description"> <strong>Administration Notes:</strong> {{ quote.notes }}</p>                            
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>                        
+</div>
 {% endblock %}
