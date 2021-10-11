@@ -129,10 +129,12 @@ WSGI_APPLICATION = 'marketing_ally.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
+    print('loading database url')
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
+    print('loading sqlite database')
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
