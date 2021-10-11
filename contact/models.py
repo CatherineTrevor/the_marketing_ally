@@ -13,7 +13,7 @@ class QuoteRequest(models.Model):
         ('3', 'Consultation booked, query closed'),
         ('4', 'Quote sent, query closed'),
     )
-    id = models.BigAutoField(primary_key=True, default=uuid.uuid4())
+    id = models.BigAutoField(primary_key=True)
     company_name = models.CharField(max_length=50, null=False, blank=False)
     full_name = models.CharField(max_length=50, null=False)
     request_date = models.DateTimeField(default=datetime.now)
