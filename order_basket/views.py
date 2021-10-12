@@ -32,19 +32,24 @@ def add_to_bag(request, product_id):
     """ Add a quantity of the specified product to the shopping bag """
 
     product = get_object_or_404(Product, pk=product_id)
-    quantity = 5
+    total_mins = []
+    minutes = int(product.time_allocation_mins)
+    print('hours', minutes)
     redirect_url = request.POST.get('redirect_url')
 
     bag = request.session.get('bag', {})
 
-    if product_id in list(bag.keys()):
-        bag[product_id] += 1
-        messages.success(request,
-                            (f'Updated {product.name} '
-                            f'quantity to {bag[product_id]}'))
-    else:
-        bag[product_id] = 1
-        messages.success(request, f'Added {product.name} to your bag')
+    """ Ensure customer cannot have more than 180 minutes of project time in bag """
+
+    for product_id in bag:
+        total_mins.append(minutes)
+        bag_total = sum(total_mins)
+        print('total hours', total_mins, bag_total)
+        if bag_total >= 180:
+            messages.error(request, (f'You have exceeded your hours'))
+            return redirect(redirect_url)
+
+    messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
     print(bag)
@@ -88,10 +93,10 @@ def add_to_bag(request, product_id):
                               f'from your bag'))
 
     request.session['bag'] = bag
-    return redirect(reverse('view_bag'))
+    return redirect(reverse('view_bag')) """
 
 
-def remove_from_bag(request, item_id):
+""" def remove_from_bag(request, item_id):
     Remove the item from the shopping bag
 
     try:
