@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+{% endblock %}
+
+{% block extra_page_header  %}
+
+{% include 'includes/additional_header.html' %}
+
+{% endblock %}
+
 {% block content %}
-    <div class="small-header-background"></div>
     <div class="container">
         <div class="section-title">
             <h3>Check <span>Availability</span></h3>
@@ -16,18 +26,26 @@
             </div>
         </div>
         <div class="row">
+            {% if user.is_authenticated %}
             <div class="section-title">
                 <h3>Enter <span>Two Options</span></h3>
                 <p>
                     I will confirm within 24 hours of booking
                 </p>
-            </div>            
+            </div>
             <div class="section-title mb-3 col">
                 <div class="col-lg-12">
                     <h3>Timeslot <span>Option 1</span></h3>
                 </div>
                 <div class="col-lg-8 offset-2 mt-3">
-                    <input type="text" class="form-control datepicker" id="timeslot_option_1" placeholder="Enter a preferred time and date"/>
+                    <div class="form-group">
+                        <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                        </div>
+                    </div>
                 </div>
             </div> 
             <div class="section-title mb-3 col">
@@ -35,11 +53,17 @@
                     <h3>Timeslot <span>Option 2</span></h3>
                 </div>
                 <div class="col-lg-8 offset-2 mt-3">
-                    <input type="text" class="form-control datepicker" id="timeslot_option_2" placeholder="Enter an alternative time and date"/>
+                    <div class="form-group">
+                        <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                          <input type='text' class="form-control" />
+                          <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                        </div>
+                    </div>
                 </div>
             </div> 
             <div class="d-flex justify-content-center col-lg-12 mb-3">
-                {% if user.is_authenticated %}
                     <a href="{% url 'order_basket' %}" class="btn-action">Save and back to order</a>
                 {% else %}
                     <a href="{% url 'account_login' %}" class="btn-action">Log in before booking hours</a>
@@ -51,6 +75,11 @@
 
 {% block postloadjs %}
 {{  blocksuper }}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <script src="{% static 'order_basket/js/calendar.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="{% static 'order_basket/js/calendar.js' %}"></script>    
 {% endblock %}  
