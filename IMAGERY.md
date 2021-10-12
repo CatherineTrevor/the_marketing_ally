@@ -20,6 +20,7 @@ Icons
 * https://icons.getbootstrap.com/icons/lightbulb-fill/
 * https://icons.getbootstrap.com/icons/table/
 * https://icons.getbootstrap.com/icons/watch/
+* https://icons.getbootstrap.com/icons/cup-fill/
 
 Images
 
