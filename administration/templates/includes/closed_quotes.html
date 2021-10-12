@@ -1,0 +1,14 @@
+<div class="row mt-5 mb-5">
+    <h1>
+        Closed Quote Requests
+    </h1>
+    {% for quote in requests %}
+        {% if quote.query_closed == True %}                                       
+            <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                <p class="description"> <strong>Company Name:</strong> {{ quote.company_name }} </p>
+                <p class="description"> <strong>Project Name:</strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %} </p>
+                <p class="description"> <strong>Administration Notes:</strong> {{ quote.notes }}</p>                            
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>      

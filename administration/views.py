@@ -4,14 +4,17 @@ from django.contrib.auth.decorators import login_required
 
 from contact.models import QuoteRequest
 from contact.forms import QuoteRequestForm
+from checkout.models import OrderRequest
 
 
 def view_quotes(request):
 
     requests = QuoteRequest.objects.all()
+    orders = OrderRequest.objects.all()
 
     context = {
         'requests': requests,
+        'orders': orders,
     }
 
     return render(request, 'administration/view_quotes.html', context)
