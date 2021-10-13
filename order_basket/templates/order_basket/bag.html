@@ -14,7 +14,7 @@
 
 {% block content %}
     <div class="container padding-bottom-100" id="shopping_bag">
-        <div class="section-title">
+        <div class="section-title mb-5">
             <h3>My <span>Basket</span></h3>
         </div>
         <div class="row mb-5">
@@ -26,11 +26,11 @@
                     <a href="{% url 'calendar' %}" class="btn-action">Open calendar</a>
                 </div>
             </div>
-            <div class="row mt-5">                               
+            <div class="row mt-5 mb-5">                               
                         {% if bag_items %}
                             {% for item in bag_items %}
                                 {% if item.product.category.name == 'project_hours' %}
-                                    <div class="col-lg-4 col-sm-6">
+                                    <div class="col-lg-4 col-sm-6 mb-5">
                                         <p class="mb-2">
                                             <strong>Product: </strong>{{ item.product.name }}
                                         </p>
