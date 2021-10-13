@@ -7,23 +7,30 @@ from contact.forms import QuoteRequestForm
 from checkout.models import OrderRequest
 
 
+@login_required
 def view_quotes(request):
+    """ View customer orders and quote / contact requests """
 
-    requests = QuoteRequest.objects.all()
-    orders = OrderRequest.objects.all()
+    customer_contact = QuoteRequest.objects.all()
+    customer_order = OrderRequest.objects.all()
+
+    template = 'administration/view_quotes.html'
 
     context = {
-        'requests': requests,
-        'orders': orders,
+        'customer_contact': customer_contact,
+        'customer_order': customer_order,
     }
 
-    return render(request, 'administration/view_quotes.html', context)
+    return render(request, template, context)
+
 
 @login_required
 def edit_quotes(request, quote_id):
     """ Edit a customer quote request """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only administration can enter this area.')
+        messages.error(request,
+                      ('You must be logged in as an '
+                       'administrator to access this area.'))
         return redirect(reverse('home'))
 
     quote = get_object_or_404(QuoteRequest, pk=quote_id)
@@ -33,10 +40,10 @@ def edit_quotes(request, quote_id):
             form.save()
             messages.success(request, 'Quote succesfully update!')
             return redirect(reverse('view_quotes'))
-        else:
-            messages.error(request,
-                           ('Failed to update quote request. '
-                            'Please ensure the form is valid.'))
+
+        messages.error(request,
+                       ('Failed to update quote request. '
+                        'Please ensure the form is valid.'))
     else:
         form = QuoteRequestForm(instance=quote)
         messages.info(request, f'You are editing {quote.company_name}')
