@@ -15,61 +15,64 @@
             Quote and booking requests
         </p>
         <p>
-            You must log into the admin site to update quote request status and close a query. 
-        </p>       
+            You must log into the admin site to update quote request status and close a query.
+        </p>
     </div>
-    <div class="row open_quotes">
+    <div class="row open-quotes">
         <div data-bs-toggle="collapse" class="collapsed question" href="#open_quotes">
             <h3>
-                Open Quote Requests 
+                Open Contact / Quote Requests
                 <span>
                     <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                 </span>
             </h3>
         </div>
-        <div id="open_quotes" class="collapse" data-bs-parent=".open_quotes">                                      
-                <div class="col-sm-6 col-md-6 col-lg-12">
-                    {% for quote in customer_contact %}
-                    {% if quote.query_closed == False %} 
-                    <div class="card h-200 border-0">
-                        <div class="card-body pb-0">
-                            <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }} {{ quote.consultation_status }}</p>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left">
-                                <div class="col">
-                                    <p class="mt-1 mb-0">
-                                        <strong>Contact Name: </strong> {{ quote.full_name }}
-                                    </p>
-                                    <p class="mt-1 mb-0">
-                                        <strong>Email: </strong> {{ quote.email }}
-                                    </p>
-                                    <p class="mt-1 mb-0">
-                                        <strong>Phone: </strong> {{ quote.phone }}
-                                    </p>  
-                                    <p class="mt-1 mb-0">
-                                        <strong>Free consultation: </strong>  {{ quote.free_consultation_request }}
-                                    </p>  
-                                    <p class="mt-1 mb-0">
-                                        <strong>Project Name: </strong> {% if quote.project_name %} {{ quote.project_name }} {% else %} N/A {% endif %}
-                                    </p> 
-                                    <p class="mt-1 mb-0">
-                                        <strong>Project Description: </strong> {% if quote.project_description %} {{ quote.project_description }} {% else %} N/A {% endif %}
-                                    </p>                                                                                                                                                                                                                                                             
-                                    {% if request.user.is_superuser %}
-                                        <small class="ml-3">
-                                            <a href="{% url 'edit_quotes' quote.id %}">Edit</a> | 
-                                            <a class="text-danger" href="#">Delete</a>
-                                        </small>
-                                    {% endif %}
-                            </div>
+        <div id="open_quotes" class="collapse" data-bs-parent=".open-quotes">
+            <div class="col-sm-6 col-md-6 col-lg-12">
+                {% for quote in customer_contact %}
+                {% if quote.query_closed == False %}
+                <div class="card h-200 border-0">
+                    <div class="card-body pb-0">
+                        <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }}
+                            {{ quote.consultation_status }}
+                        </p>
+                        {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_quotes' quote.id %}">Edit</a>
+                        </small>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                        <div class="col">
+                            <p class="mt-1 mb-0">
+                                <strong>Contact Name: </strong> {{ quote.full_name }}
+                            </p>
+                            <p class="mt-1 mb-0">
+                                <strong>Email: </strong> {{ quote.email }}
+                            </p>
+                            <p class="mt-1 mb-0">
+                                <strong>Phone: </strong> {{ quote.phone }}
+                            </p>
+                            <p class="mt-1 mb-0">
+                                <strong>Free consultation: </strong> {{ quote.free_consultation_request }}
+                            </p>
+                            <p class="mt-1 mb-0">
+                                <strong>Project Name: </strong> {% if quote.project_name %} {{ quote.project_name }}
+                                {% else %} N/A {% endif %}
+                            </p>
+                            <p class="mt-1 mb-0">
+                                <strong>Project Description: </strong> {% if quote.project_description %}
+                                {{ quote.project_description }} {% else %} N/A {% endif %}
+                            </p>
                         </div>
                     </div>
-                    {% endif %}
-                    {% endfor %}
                 </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
-    </div> 
-    {% include 'includes/view_bookings.html' %}  
-    {% include 'includes/closed_quotes.html' %}                        
+    </div>
+    {% include 'includes/view_bookings.html' %}
+    {% include 'includes/closed_quotes.html' %}
 </div>
 {% endblock %}

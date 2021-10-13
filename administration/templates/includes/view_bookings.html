@@ -1,44 +1,44 @@
-<div class="row faq-list">
-    <div data-bs-toggle="collapse" class="collapsed question" href="#open_quotes">
-        <h1>
-            Open Orders 
+<div class="row open-orders">
+    <div data-bs-toggle="collapse" class="collapsed question" href="#open_orders">
+        <h3>
+            Open Order Requests
             <span>
                 <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
             </span>
-        </h1>
+        </h3>
     </div>
-    <div class="row">
-        {% for order in orders %}                                      
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                <div class="card h-200 border-0">
-                    <div class="card-body pb-0">
-                        <p class="lead font-weight-bold mb-0">Account Name: {{ order.user_profile }}</p>
-                    </div>
-                    <div class="card-footer bg-white pt-0 border-0 text-left">
-                        <div class="row">
-                            <div class="col">
-                                <p class="mt-1 mb-0">
-                                    <strong>Contact Name:</strong> {{ order.full_name }}  
-                                </p>
-                                <p class="mt-1 mb-0">
-                                    <strong>Email: </strong> {{ order.email }} 
-                                </p>
-                                <p class="mt-1 mb-0">
-                                    <strong>Total: </strong> €{{ order.grand_total }}
-                                </p> 
-                                <p class="mt-1 mb-0">
-                                    <strong>Products purchased: </strong>
-                                    <ul>
-                                        {% for item in order.lineitems.all %}
-                                        <li>{{ item.product.name }}</li> 
-                                    {% endfor %}     
-                                    </ul>
-                                </p>                                                                                                                                                                                                              
-                            </div>
-                        </div>
+    <div id="open_orders" class="collapse" data-bs-parent=".open-orders">
+        <div class="col-sm-6 col-md-6 col-lg-12">
+            {% for order in customer_orders %}
+            <div class="card h-200 border-0">
+                <div class="card-body pb-0">
+                    <p class="lead font-weight-bold mb-0">Account Name:
+                        {% if order.user_profile == None %} Guest Purchase {% else %} {{ order.user_profile }}
+                        {% endif %}</p>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 text-left">
+                    <div class="col">
+                        <p class="mt-1 mb-0">
+                            <strong>Contact Name:</strong> {{ order.full_name }}
+                        </p>
+                        <p class="mt-1 mb-0">
+                            <strong>Email: </strong> {{ order.email }}
+                        </p>
+                        <p class="mt-1 mb-0">
+                            <strong>Total: </strong> €{{ order.grand_total }}
+                        </p>
+                        <p class="mt-1 mb-0">
+                            <strong>Products purchased: </strong>
+                            <ul>
+                                {% for item in order.lineitems.all %}
+                                <li>{{ item.product.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </p>
                     </div>
                 </div>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
-</div>    
+</div>

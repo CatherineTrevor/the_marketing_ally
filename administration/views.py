@@ -12,13 +12,13 @@ def view_quotes(request):
     """ View customer orders and quote / contact requests """
 
     customer_contact = QuoteRequest.objects.all()
-    customer_order = OrderRequest.objects.all()
+    customer_orders = OrderRequest.objects.all()
 
     template = 'administration/view_quotes.html'
 
     context = {
         'customer_contact': customer_contact,
-        'customer_order': customer_order,
+        'customer_orders': customer_orders,
     }
 
     return render(request, template, context)
@@ -29,8 +29,8 @@ def edit_quotes(request, quote_id):
     """ Edit a customer quote request """
     if not request.user.is_superuser:
         messages.error(request,
-                      ('You must be logged in as an '
-                       'administrator to access this area.'))
+                       ('You must be logged in as an '
+                        'administrator to access this area.'))
         return redirect(reverse('home'))
 
     quote = get_object_or_404(QuoteRequest, pk=quote_id)
