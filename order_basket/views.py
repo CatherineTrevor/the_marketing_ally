@@ -1,13 +1,18 @@
 from django.shortcuts import (
-    render, redirect, reverse, HttpResponse, get_object_or_404
+    render, redirect, get_object_or_404
 )
 from django.contrib import messages
 
 from products.models import Product
 
+def calendar(request):
+    """A view that renders the calendar """
+
+    return render(request, 'order_basket/calendar.html')
+
 
 def order_basket(request):
-    """ A view that renders the bag contents page """
+    """ Render the order basket from which customers can add products """
 
     products = Product.objects.all().order_by('price')
 
@@ -18,12 +23,8 @@ def order_basket(request):
     return render(request, 'order_basket/order_basket.html', context)
 
 
-def calendar(request):
-
-    return render(request, 'order_basket/calendar.html')
-
-
 def view_bag(request,):
+    """ A view to render the bag contents """
 
     return render(request, 'order_basket/bag.html')
 
@@ -32,27 +33,21 @@ def add_to_bag(request, product_id):
     """ Add a quantity of the specified product to the shopping bag """
 
     product = get_object_or_404(Product, pk=product_id)
-    total_mins = []
-    minutes = int(product.time_allocation_mins)
-    print('hours', minutes)
+    quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
 
     bag = request.session.get('bag', {})
 
-    """ Ensure customer cannot have more than 180 minutes of project time in bag """
-
-    for product_id in bag:
-        total_mins.append(minutes)
-        bag_total = sum(total_mins)
-        print('total hours', total_mins, bag_total)
-        if bag_total >= 180:
-            messages.error(request, (f'You have exceeded your hours'))
-            return redirect(redirect_url)
-
-    messages.success(request, f'Added {product.name} to your bag')
+    if product_id in list(bag.keys()):
+        bag[product_id] += 1
+        messages.success(request,
+                            (f'Updated {product.name} '
+                            f'quantity to {bag[product_id]}'))
+    else:
+        bag[product_id] = quantity
+        messages.success(request, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
-    print(bag)
     return redirect(redirect_url)
 
 
