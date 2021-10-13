@@ -7,20 +7,30 @@
 
 {% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+{% endblock %}
+
 {% block content %}
     <div class="container padding-bottom-100" id="shopping_bag">
         <div class="section-title">
             <h3>My <span>Basket</span></h3>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <h3 class="title">
                 Project Hours
             </h3>
-            <div class="row">                               
+            <div class="row">
+                <div class="d-flex justify-content-center col-lg-12 mb-3">
+                    <a href="{% url 'calendar' %}" class="btn-action">Open calendar</a>
+                </div>
+            </div>
+            <div class="row mt-5">                               
                         {% if bag_items %}
                             {% for item in bag_items %}
-                                {% if item.product.category.name == 'project_hours' %}             
-                                    <div class="col-lg-3 col-sm-6 mb-2">
+                                {% if item.product.category.name == 'project_hours' %}
+                                    <div class="col-lg-4 col-sm-6">
                                         <p class="mb-2">
                                             <strong>Product: </strong>{{ item.product.name }}
                                         </p>
@@ -31,8 +41,38 @@
                                             <strong>Product price: </strong>€{{ item.product.price }}
                                         </p>
                                     </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="col-lg-6 text-center">
+                                            <p><strong>Timeslot option 1</strong></p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                                                    <input type='text' class="form-control" />
+                                                    <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="col-lg-6 text-center">
+                                            <p><strong>Timeslot option 2</strong></p>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                                                    <input type='text' class="form-control"/>
+                                                    <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                 
                                     {% endif %}
-                            {% endfor %}
+                            {% endfor %}                           
                         {% else %}
                     <div class="row">
                         <p class="description">
@@ -97,3 +137,14 @@
         </div>    
     </div>
 {% endblock %}
+
+{% block postloadjs %}
+{{  blocksuper }}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="{% static 'order_basket/js/calendar.js' %}"></script>    
+{% endblock %}  

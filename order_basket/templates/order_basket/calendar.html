@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
-{% endblock %}
-
 {% block extra_page_header  %}
 
 {% include 'includes/additional_header.html' %}
@@ -25,52 +20,12 @@
             <div class="col-lg-12 d-flex justify-content-center">
                 <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23e43c5c&ctz=Europe%2FStockholm&showPrint=0&title=The%20Marketing%20Ally%20-%20availability&mode=WEEK&src=cTA4MjhqMGwybHFuMDk1cWhiZnJldDZqMDBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%234285F4" style="border-width:0; color:blueviolet" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             </div>
-        </div>
-        <div class="row">
-            {% if user.is_authenticated %}
-            <div class="section-title">
-                <h3>Enter <span>Two Options</span></h3>
-                <p>
-                    I will confirm within 24 hours of booking
-                </p>
-            </div>
-            <div class="section-title mb-3 col">
-                <div class="col-lg-12">
-                    <h3>Timeslot <span>Option 1</span></h3>
-                </div>
-                <div class="col-lg-8 offset-2 mt-3">
-                    <div class="form-group">
-                        <div class='input-group date datetimepicker' id='timeslot_option_1'>
-                          <input type='text' class="form-control" />
-                          <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="section-title mb-3 col">
-                <div class="col-lg-12">
-                    <h3>Timeslot <span>Option 2</span></h3>
-                </div>
-                <div class="col-lg-8 offset-2 mt-3">
-                    <div class="form-group">
-                        <div class='input-group date datetimepicker' id='timeslot_option_1'>
-                          <input type='text' class="form-control" />
-                          <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                          </span>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-            {% endif %}         
         </div> 
         <div class="row">
         {% if user.is_authenticated %}
         <div class="d-flex justify-content-center mt-5"> 
-            <a class="btn-action" href="{% url 'order_basket' %}">
-                Save
+            <a class="btn-action" href="{% url 'view_bag' %}">
+                Back to bag
                 </a>
         </div>
         {% else %}
@@ -92,14 +47,3 @@
 </section>
    
 {% endblock %}
-
-{% block postloadjs %}
-{{  blocksuper }}
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
-
-<script src="{% static 'order_basket/js/calendar.js' %}"></script>    
-{% endblock %}  
