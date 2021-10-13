@@ -41,8 +41,8 @@
                                         <a href="{% url 'account_login' %}" class="btn-action">Log in</a>
                                         {% endif %}
                                     </th>                                                                
-                                </tr>                                                      
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                               
+                                </tr>        
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                                                                         
                             {% endif %}
                         </form>
                     {% endfor %}   
