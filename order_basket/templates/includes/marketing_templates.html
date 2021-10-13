@@ -20,7 +20,7 @@
                         <th scope="col">Template Name</th>
                         <th scope="col">Thumbnail</th>  
                         <th scope="col">Price</th>     
-                        <th scope="col"></th>                                                                
+                        <th scope="col"></th>                                                                  
                     </tr>
                 </thead>
                 <tbody>
@@ -30,13 +30,13 @@
                             {% csrf_token %}                                  
                             {% if product.category.name == 'marketing_templates' %}
                                 <tr>
-                                    <th scope="row">{% if user.is_authenticated %} <p>Included </p> {% else %} {% endif %}</input></th>                
+                                    <th scope="row">{% if user.is_authenticated %} <p>Free review included </p> {% else %} {% endif %}</input></th>                
                                     <th scope="row" data-item_id="{{ product.id }}">{{ product.name }}</th>
                                     <th scope="row"><img src="{{ product.image.url }}" style="height: 50px; width: 50px;"></th>
                                     <th scope="row">€{{ product.price }}</th>              
                                     <th scope="row"><input type="submit" class="btn-action" value="Add to basket" id="add_to-basket" name="add_to_basket"></input></th>
-                                </tr>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                       
+                                </tr>                                                      
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                               
                             {% endif %}
                         </form>
                     {% endfor %}                            

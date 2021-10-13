@@ -8,134 +8,117 @@
 {% endblock %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
 {% endblock %}
 
 {% block content %}
-    <div class="container padding-bottom-100" id="shopping_bag">
-        <div class="section-title mb-5">
-            <h3>My <span>Basket</span></h3>
-        </div>
+<div class="container padding-bottom-100" id="shopping_bag">
+    <div class="section-title mb-5">
+        <h3>My <span>Basket</span></h3>
+    </div>
+    <div class="row mb-3">
+        <h3 class="title">
+            Project Hours
+        </h3>
         <div class="row mb-5">
-            <h3 class="title">
-                Project Hours
-            </h3>
-            <div class="row">
-                <div class="d-flex justify-content-center col-lg-12 mb-3">
-                    <a href="{% url 'calendar' %}" class="btn-action">Open calendar</a>
-                </div>
-            </div>
-            <div class="row mt-5 mb-5">                               
-                        {% if bag_items %}
-                            {% for item in bag_items %}
-                                {% if item.product.category.name == 'project_hours' %}
-                                    <div class="col-lg-4 col-sm-6 mb-5">
-                                        <p class="mb-2">
-                                            <strong>Product: </strong>{{ item.product.name }}
-                                        </p>
-                                        <p class="mb-2">
-                                            <strong>Project time: </strong>{{ item.product.time_allocation_mins }} minutes
-                                        </p>                            
-                                        <p class="mb-2">
-                                            <strong>Product price: </strong>€{{ item.product.price }}
-                                        </p>
-                                    </div>
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="col-lg-6 text-center">
-                                            <p><strong>Timeslot option 1</strong></p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class='input-group date datetimepicker' id='timeslot_option_1'>
-                                                    <input type='text' class="form-control" />
-                                                    <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-4 col-sm-6">
-                                        <div class="col-lg-6 text-center">
-                                            <p><strong>Timeslot option 2</strong></p>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <div class='input-group date datetimepicker' id='timeslot_option_1'>
-                                                    <input type='text' class="form-control"/>
-                                                    <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-calendar"></span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>                 
-                                    {% endif %}
-                            {% endfor %}                           
-                        {% else %}
-                    <div class="row">
-                        <p class="description">
-                            <strong>You do not have any project hours in your basket.</strong>
-                        </p>
-                    </div>                    
-                {% endif %}
-            </div>
-        </div>        
-        <div class="row">
-            <h3 class="title">
-                Marketing Templates
-            </h3>
-            <div class="row">
-                {% if bag_items %}
-                    {% for item in bag_items %}
-                        {% if item.product.category.name == 'marketing_templates' %}                    
-                        <div class="col-lg-4 col-sm-6 mb-2">
-                            <p class="mb-2">
-                                <strong>Template: </strong> {{ item.product.name }}
-                            </p>
-                            <p class="mb-2">
-                                <strong>Product price: </strong> ${{ item.product.price }}
-                            </p>                   
-                            {% if user.is_authenticated %} 
-                                <p class="my-0 font-weight-bold">
-                                    A free review of your completed {{ item.product.name }} is included in your purchase.
-                                </p>
-                            {% endif %}
-                            <img class="mt-3" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" style="height: 75px; width: 75px;">
-                        </div>
-                        {% endif %}
-                    {% endfor %}
-                    {% else %}
-                    <div class="row">
-                        <p class="description">
-                            <strong>You do not have any marketing templates in your basket.</strong>
-                        </p>
-                    </div>                    
-                {% endif %}
-            </div>
-        </div> 
-        <div class="row">
-                {% if bag_items %}
-                <div class="d-flex justify-content-end col-lg-12 mb-3">
-                    <p>
-                        <strong>Total: </strong>€{{ grand_total }}
+            {% if bag_items %}
+                {% for item in bag_items %}
+                {% if item.product.category.name == 'project_hours' %}
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <p class="mb-2">
+                        <strong>Product: </strong>{{ item.product.name }}
+                    </p>
+                    <p class="mb-2">
+                        <strong>Project time: </strong>{{ item.product.time_allocation_mins }} minutes
+                    </p>
+                    <p class="mb-2">
+                        <strong>Product price: </strong>€{{ item.product.price }}
                     </p>
                 </div>
-                <div class="d-flex justify-content-end col-lg-12 mb-3">
-                    {% if user.is_authenticated %}
-                    <a class="btn-action" href="{% url 'checkout' %}">Secure checkout</a>
-                    {% else %}
-                    <a class="btn-action" href="{% url 'checkout' %}">Checkout as guest</a>                
-                    {% endif %}
-                    {% else %}  
-                {% endif %}
+                <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 text-center">
+                        <p><strong>Timeslot option 1</strong></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex justify-content-end col-lg-12 mb-3">     
-                    <a class="btn-action" href="{% url 'order_basket' %}">Order page</a> 
-                </div>                
-        </div>    
+                <div class="col-lg-4 col-sm-6">
+                    <div class="col-lg-6 text-center">
+                        <p><strong>Timeslot option 2</strong></p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <div class='input-group date datetimepicker' id='timeslot_option_1'>
+                                <input type='text' class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}     
+            {% endif %}
+        </div>
     </div>
+    <div class="row">
+        <h3 class="title mb-3">
+            Marketing Templates
+        </h3>
+        <div class="row">
+            {% if bag_items %}
+            {% for item in bag_items %}
+            {% if item.product.category.name == 'marketing_templates' %}
+            <div class="col-lg-3 col-sm-6 mb-2">
+                <p>
+                    Template: {{ item.product.name }}
+                </p>
+                <p class="mb-2">Price: ${{ item.product.price }}</p>
+                {% if user.is_authenticated %}
+                <p class="my-0 font-weight-bold">
+                    A free review of your completed {{ item.product.name }} is included in your purchase.
+                </p>
+                {% endif %}
+                <img class="mt-3" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"
+                    style="height: 75px; width: 75px;">
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% if bag_items %}
+        <div class="d-flex justify-content-end col-lg-12 mb-3">
+            <p>
+                <strong>Total: </strong>€{{ grand_total }}
+            </p>
+        </div>
+        <div class="d-flex justify-content-end col-lg-12 mb-3">
+            {% if user.is_authenticated %}
+            <a class="btn-action" href="{% url 'checkout' %}">Secure checkout</a>
+            {% else %}
+            <a class="btn-action" href="{% url 'checkout' %}">Checkout as guest</a>
+            {% endif %}
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="d-flex justify-content-end col-lg-12 mb-3">
+            <a class="btn-action" href="{% url 'order_basket' %}">Order page</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
@@ -144,7 +127,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js">
+</script>
 
-<script src="{% static 'order_basket/js/calendar.js' %}"></script>    
-{% endblock %}  
+<script src="{% static 'order_basket/js/calendar.js' %}"></script>
+{% endblock %}
