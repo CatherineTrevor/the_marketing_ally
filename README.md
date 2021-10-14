@@ -1,7 +1,7 @@
 # The Marketing Ally
 
 <div align="center">
-    <img src="" width="600">
+    <img src="static/media/am_i_responsive.jpg" width="600">
 </div>
 
 <a href="" target="_blank">View the live site here</a>
@@ -26,7 +26,7 @@
 
 # Project Overview
 
-A site promoting the marketing services offered from The Marketing Ally: a marketing consultant assisting small-medium organisations on small, short-term marketing projects, and providing guidance on budgets, plans, copywriting review and general marketing help.
+A site promoting the marketing services offered from The Marketing Ally: a marketing consultant assisting small-medium organisations with small, short-term marketing projects, and providing guidance on budgets, plans, copywriting review and general marketing help.
 
 Site visitors can purchase online marketing templates (plans, budgets etc.) using Stripe payments as a guest. Account owners receive a free review of the templates once completed.
 
@@ -38,7 +38,7 @@ Account owners can also purchase work hours required for a project, and see thei
 
 For small-medium enterprises (SMEs), local to Gothenburg, looking for ad-hoc marketing support, but without the large contracts, costly retainers, or lengthy project pitches offered by larger marketing consultancies / agencies, or without the need to hire staff.
 
-Users can purchase ad-hoc hours for project work, as well as marketing templates online. Purchase of the marketing templates includes a free review of the documentation once completed (i.e. feedback on the budget, strategy, or plan as necessary) for account holders only; this is to encourage users to leave their information. Users do not have to be logged in to purchase just the online templates without the review.
+Users can purchase ad-hoc hours for project work, as well as marketing templates online. Purchase of the marketing templates includes a free review of the documentation once completed (i.e. feedback on the budget, strategy, or plan as necessary) for account holders only; this is to encourage users to leave their information. Users do not have to be logged in to purchase the online templates without the review.
 
 **Services offered:**
 
@@ -56,10 +56,10 @@ Users can purchase ad-hoc hours for project work, as well as marketing templates
 
 | Face-to-face (F2F)  | Digital  | Cost | Purchase / Book online | Account required |
 |---|---|---| --- | --- | 
-| 30 minutes | 45 minutes |  FREE | Yes | No |
+| 20 minutes | 20 minutes |  FREE | Yes | No |
 | Template purchase and online review  | | €15 | Yes | For review |
 | 1 hour | 1.5 hours | €75 per booking | Yes | Yes |
-| 2 hours | 2.5 hours | €120 per booking (€60 per hour) | Yes | Yes |
+| 2 hours | 2.5 hours | €120 per booking | Yes | Yes |
 
 **Options as a guest**
 
@@ -80,6 +80,8 @@ It is unnecessary and expensive for them to hire a full marketing agency, consul
 
 Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom further afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer for the same rate to compensate for the lack of travel needed from the consultant.
 
+Site visitors can only purchase a maximum of 3 hours worth of project hours. For any more they are advised to get in touch.
+
 ### User stories
 
 **First-time visitors:**
@@ -93,26 +95,24 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 7. I want to complete a contact form, filling in project requirement details for more detailed work
 8. I want to feel confident that my payment was successful and my order received
 9. I want to be informed at every step of the purchase process, including information about any errors
-10. I want to see previous projects carried out by the consultant and/or companies worked with as proof of the level of work carried out
+10. I want to see information about previous projects carried out by the consultant and/or companies worked with as proof of the level of work carried out
 
 **Returning visitors:**
 
 1. I want to easily log into my account
 2. I want to book project hours and feel confident that the online purchase is secure
-3. I want to book project hours at a time that suits me
+3. I want to see the consultant's availability before making a purchase 
 4. I want to see previous hours purchased, and for which project / campaign
 5. I want to purchase online templates
 6. I want to have control over my order bag, increasing and decreasing the quantity of items
 7. I want the ability to delete my order before a purchase is made
 8. I want the ability to review my order before a purchase is made
-9. I want the ability to delete my account
 
 **Site administrator:**
 
 1. I want to log into the administration area quickly and easily
 2. I want to see what orders have been made, by which customers, and the order status
 3. I want to easily add more online templates for users to purchase
-4. I want to securely change hour timeslot requests to confirm booked meetings
 
 ## Scope
 
@@ -125,12 +125,12 @@ Businesses in the main are local to Gothenburg to provide physical meetings, how
 | About Us | Background info | N/A |
 | Favicon | Top left of all pages using Django templating | Home page |
 | Social links | Bottom right of all pages using Django templating | N/A |
-| Previous projects / Companies worked with | Carousel on the homepage | N/A |
+| Previous projects / Companies worked with | Information on the homepage | N/A |
 | Secure purchase project hours | Using Stripe payments | N/A |
 | Booking hours | Access to the consultants calendar to request a timeslot | N/A |
 | Securely purchase online templates | Using Stripe payments | N/A |
 | Toasts | Live feedback to the user | N/A |
-| Account profile | Basic account information and purchase history, including status of current hours | N/A |
+| Account profile | Basic account information and purchase history | N/A |
 | Navbar | Consistant on all pages. Collapsible on mobile devices | N/A |
 | Footer | Consistant on all pages | N/A |
 | Log In |  | N/A |
@@ -210,7 +210,7 @@ The project was created on GitHub and uses the following libraries and framework
  - [Free Formatter HTML](https://www.freeformatter.com/html-formatter.html) - for HTML code formatting
  - [Free Formatter CSS](https://www.freeformatter.com/css-beautifier.html) - to beautify CSS code
  - [Code Beautify](https://codebeautify.org/python-formatter-beautifier) - help with line indentation in Python
- - [Grammarly](https://app.grammarly.com/) [(Example)](supporting_docs/grammarly_example.jpg) - the free service to double check grammar and spelling 
+ - [Grammarly](https://app.grammarly.com/) - the free service to double check grammar and spelling 
  - [Monday.com](https://view.monday.com/1395852594-25c75140f7633755c3bd0aa1947579cf?r=use1) - used for project/task management 
  - [Am I responsive](http://ami.responsivedesign.is/) - supplied the responsive image for the top of README.md
  - [Remove BG](https://www.remove.bg/) - remove background from Am I Responsive image
@@ -245,7 +245,6 @@ Forking the repository allows you to make a copy of the original in your GitHub 
 
 # Credits
 
-
 * [Help with calendar input](https://tutorialdeep.com/live-editor/bootstrap-datepicker-with-inputbox/)(https://stackoverflow.com/questions/40035730/bootstrap-date-time-picker/40035938)
 * [Add Django dropdown in admin](https://stackoverflow.com/questions/8252101/django-admin-drop-down-selections)
 * [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
@@ -257,6 +256,8 @@ Forking the repository allows you to make a copy of the original in your GitHub 
 * [Django apps research](https://stackoverflow.com/questions/32795227/what-is-the-purpose-of-apps-py-in-django-1-9)
 * [Django signals research](https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-django-signals.html)
 * [General Django help](https://docs.djangoproject.com/en/3.2/ref/csrf/)
+* [General help](https://stackoverflow.com/)
 * Code Institute Slack community
 * Narender Singh, Code Institute mentor for his time, support and guidance
 * Ex-colleagues, friends and family for their support and time testing the site
+* Tutors at the Code Institute, in particular Alan for his support with Heroku deployment
