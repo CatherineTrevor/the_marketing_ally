@@ -1,4 +1,4 @@
-<section id="products" class="services padding-bottom-30"><a name="products"></a>
+<section id="products" class="services padding-bottom-30">
     <div class="container">
         <div class="section-title">
             <h2>
@@ -26,7 +26,7 @@
                                 <h4 class="title" data-item_id="{{ product.id }}">
                                     {{ product.name }}
                                 </h4>
-                                <a href="#"><img id="template_img" class="card-img-top img-fluid mb-3" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
+                                <a href="#"><img class="template_img card-img-top img-fluid mb-3" src="{{ product.image.url }}" alt="{{ product.name }}"></a>
                                 <p class="description">
                                     {{ product.description_1 }}
                                 </p>
@@ -36,7 +36,7 @@
                                 <p class="description">
                                     {{ product.description_3 }}
                                 </p>                                                           
-                                <input type="submit" class="btn-action" value="Add to Bag" id="add_to-basket" name="add_to_basket"></input>
+                                <input type="submit" class="btn-action" value="Add to Bag" name="add_to_basket">
                                 <input type="hidden" name="redirect_url" value="{% url 'view_bag' %}">                                    
                             </div>                  
                     </form>

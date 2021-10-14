@@ -185,9 +185,9 @@ Homepage all sections
     height: 500px;
 }
 
-#template_img {
+.template_img {
     background-color: #ced4da;
-    max-width: 50%;
+    max-width: 100px !important;
 }
 
 #faq {
@@ -407,15 +407,24 @@ Allauth files and forms - code taken from Code Institue Boutique Ado project and
 /*--------------------------------------------------------------
 Contact page
 --------------------------------------------------------------*/
+.google-map {
+  height: 270px;
+  width: 100%;
+}
+
+.contact .info .email a {
+  font-size: 16px;
+}
+
+.contact .info .address {
+  margin-top: 40px;
+}
 
 #quote .stripe-style-input {
   font-size: 24px;
 }
 
 @media (max-width: 768px) {
-  .contact .info .email a {
-    font-size: 16px;
-  }
   #quote .form-fields {
     font-size: 18px;
   }
