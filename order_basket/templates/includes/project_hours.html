@@ -1,6 +1,5 @@
-<div class="container">
-    <div class="row text-center">
-        <div class="col-lg-6 offset-3">
+    <div class="row text-center container">
+        <div class="col-lg-6 col-sm-12 offset-lg-3">
             <h3 class="title">Purchase project hours</h3>
             <p class="description">
                 Select the options below to book and pay for hours required. 
@@ -14,14 +13,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8 offset-2">
+        <div class="col-lg-8 col-sm-6 offset-lg-2">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Digital or Face-to-face</th>
                         <th scope="col">Time allocation (minutes)</th>  
-                        <th scope="col">Cost</th>  
-                        <th scope="col"></th>                                                       
+                        <th scope="col">Cost</th> 
+                        <th scope="col"></th>                                                   
                     </tr>
                 </thead>
                 <tbody>
@@ -37,8 +36,6 @@
                                     <th scope="row">
                                         {% if user.is_authenticated %}
                                         <input type="submit" class="btn-action" value="Add to basket" id="add_to-basket" name="add_to_basket"></input>
-                                        {% else %} 
-                                        <a href="{% url 'account_login' %}" class="btn-action">Log in</a>
                                         {% endif %}
                                     </th>                                                                
                                 </tr>                                                      
@@ -52,7 +49,7 @@
         </div>
     </div>
     <div class="row text-center">
-        <div class="col-lg-8 offset-2">
+        <div class="col-lg-8 col-sm-6 offset-lg-2">
             <p>
                 Open my calendar and check availability before selecting your purchase option.
             </p>
@@ -69,4 +66,3 @@
             <a href="{% url 'calendar' %}" class="btn-action">Open calendar</a>
         </div>
     </div>
-</div>
