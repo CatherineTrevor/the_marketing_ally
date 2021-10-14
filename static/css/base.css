@@ -148,6 +148,13 @@ Footer
     text-decoration: none !important;
 }
 
+@media (max-width: 768px) {
+  #footer.fixed-bottom {
+    height: 100px;
+    position: relative;
+  }
+}
+
 
 /*--------------------------------------------------------------
 Toasts - taken from Code Institute Boutique Ado project and modified
@@ -185,6 +192,21 @@ Homepage all sections
 
 #faq {
   padding-bottom: 100px;
+}
+
+.icon-box-300 {
+  height: 300px;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 30px 0;
+    font-size: 90%;
+  }
+  #faq .faq-list .question {
+    font-size: 16px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -253,6 +275,15 @@ padding: 10px 30px;
   }
 }
 @media (max-width: 768px) {
+  #hero2 {
+    height: 40vh !important;
+  }
+  #hero, #hero2 {
+    background-attachment: fixed;
+  }
+  #hero .hero-container h1 {
+    margin-top: 50px;
+  }
   #hero2 h1 {
     font-size: 28px;
     line-height: 36px;
