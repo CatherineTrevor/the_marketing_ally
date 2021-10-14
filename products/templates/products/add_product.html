@@ -15,22 +15,35 @@
                 Add a new product
             </p>           
         </div>
-        <div class="row">
-            <p>
-                NB: If adding a new product for Project Hours, <strong>do not </strong> attach an image file.
-            </p>
-            <p>
-                NB: If adding a new product for Marketing Templates, you must <strong>attach an image </strong>, but <strong>enter 0 for 
-                Time allocation mins and max time multiplier.</strong>
-            </p>              
-        </div>
         <div class="row" id="add_product_row">
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {% for field in form %}
-                        {{ field | as_crispy_field }}
-                    {% endfor %}
+                        {{ product_form.category | as_crispy_field }}
+                        {{ product_form.name | as_crispy_field }}
+                        <p class="description">
+                            For marketing templates this should be €15.
+                        </p>
+                        {{ product_form.price | as_crispy_field }}
+                        <p class="description">
+                            Ensure an image is added for marketing templates. DO NOT add for project hours.
+                        </p>
+                        {{ product_form.image | as_crispy_field }}
+                        <p class="description">
+                            Enter 0 for marketing templates.
+                        </p>
+                        {{ product_form.time_allocation_mins | as_crispy_field }}
+                        <p class="description">
+                            Priorities 1, 2 and 3 are displayed in the pricing section on the homepage.
+                        </p>
+                        {{ product_form.pricing_priority | as_crispy_field }}
+                        <p class="description">
+                            Only enter descriptions for project hours, to be displayed on the pricing structure information section.
+                        </p>
+                        {{ product_form.description_1 | as_crispy_field }}
+                        {{ product_form.description_2 | as_crispy_field }}
+                        {{ product_form.description_3 | as_crispy_field }}
+                        {{ product_form.description_4 | as_crispy_field }}                        
                     <div class="text-right">
                         <a class="btn-action" href="{% url 'products' %}">Cancel</a>
                         <button class="btn-action" type="submit">Add Product</button>
