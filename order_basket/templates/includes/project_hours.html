@@ -2,13 +2,14 @@
         <div class="col-lg-6 col-sm-12">
             <h3 class="title">Purchase project hours</h3>
             <p class="description">
-                Select the options below to book and pay for hours required. 
+                Select the options below to book and pay for hours required.
             </p>
             {% if user.is_authenticated %}
             {% else %}
-                <p class="description">
-                    You must be <a href="{% url 'account_login' %}">logged into your account</a> to purchase hours and book a timeslot.
-                </p>
+            <p class="description">
+                You must be <a href="{% url 'account_login' %}">logged into your account</a> to purchase hours and book
+                a timeslot.
+            </p>
             {% endif %}
         </div>
     </div>
@@ -18,32 +19,33 @@
                 <thead>
                     <tr>
                         <th scope="col">Digital or Face-to-face</th>
-                        <th scope="col">Time allocation (minutes)</th>  
-                        <th scope="col">Cost</th> 
-                        <th scope="col">Add to basket</th>                                                   
+                        <th scope="col">Time allocation (minutes)</th>
+                        <th scope="col">Cost</th>
+                        <th scope="col">Add to basket</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         {% for product in products %}
                         <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
-                            {% csrf_token %}                                  
+                            {% csrf_token %}
                             {% if product.category.name == 'project_hours' %}
-                                <tr>
-                                    <th scope="row" data-item_id="{{ product.id }}">{{ product.name }}</th>
-                                    <th scope="row"> {{ product.time_allocation_mins }}</th>
-                                    <th scope="row">€{{ product.price }}</th>  
-                                    <th scope="row">
-                                        {% if user.is_authenticated %}
-                                        <input type="submit" class="btn-action" value="Add to basket" id="add_to-basket" name="add_to_basket"></input>
-                                        {% endif %}
-                                    </th>                                                                
-                                </tr>                                                      
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}"></input>                               
+                    <tr>
+                        <th scope="row" data-item_id="{{ product.id }}">{{ product.name }}</th>
+                        <th scope="row"> {{ product.time_allocation_mins }}</th>
+                        <th scope="row">€{{ product.price }}</th>
+                        <th scope="row">
+                            {% if user.is_authenticated %}
+                            <input type="submit" class="btn-action" value="Add to basket" id="add_to-basket"
+                                name="add_to_basket"></input>
                             {% endif %}
-                        </form>
-                    {% endfor %}   
-                    </tr>                                                                    
+                        </th>
+                    </tr>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}"></input>
+                    {% endif %}
+                    </form>
+                    {% endfor %}
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -54,11 +56,13 @@
                 Open my calendar and check availability before selecting your purchase option.
             </p>
             <p>
-                Once you have added the required project hours into your basket, you provide two timeslot options. I will confirm your booked time within 24 hours of receiving your order.
-            </p> 
+                Once you have added the required project hours into your basket, you provide two timeslot options. I
+                will confirm your booked time within 24 hours of receiving your order.
+            </p>
             <p>
-                In the future this process will be automated, thanks to the awesome power of <a href="https://calendly.com/" target="_blank">Calendly!</a>
-            </p>                               
+                In the future this process will be automated, thanks to the awesome power of <a
+                    href="https://calendly.com/" target="_blank">Calendly!</a>
+            </p>
         </div>
     </div>
     <div class="row">

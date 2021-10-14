@@ -26,8 +26,6 @@ def bag_contents(request):
                 'product': product,
             })
 
-            print('Middle of process', bag_items)
-
     grand_total = total
 
     context = {
@@ -36,7 +34,5 @@ def bag_contents(request):
         'total': total,
         'product_count': product_count,
     }
-
-    print('End of process', bag_items)
-
+    
     return context
