@@ -36,11 +36,6 @@
                         <p class="lead font-weight-bold mb-0">Company Name: {{ quote.company_name }}
                             {{ quote.consultation_status }}
                         </p>
-                        {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_quotes' quote.id %}">Edit</a>
-                        </small>
-                        {% endif %}
                     </div>
                     <div class="card-footer bg-white pt-0 border-0 text-left">
                         <div class="col">
@@ -64,6 +59,11 @@
                                 <strong>Project Description: </strong> {% if quote.project_description %}
                                 {{ quote.project_description }} {% else %} N/A {% endif %}
                             </p>
+                            {% if request.user.is_superuser %}
+                            <small class="ml-3">
+                                <a href="{% url 'edit_quotes' quote.id %}">Edit</a>
+                            </small>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

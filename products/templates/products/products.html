@@ -71,7 +71,7 @@
                                                 €{{ product.price|floatformat:0 }}
                                             </p>
                                             <p class="mt-1 mb-0">
-                                                Image: <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                                Image: <img class="card-img-top img-fluid card-image-admin" src="{{ product.image.url }}" alt="{{ product.name }}">
                                             </p>                     
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">

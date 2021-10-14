@@ -111,8 +111,11 @@
             {% else %}
             <a class="btn-action" href="{% url 'checkout' %}">Checkout as guest</a>
             {% endif %}
-            {% else %}
-            {% endif %}
+        {% else %}
+        <p>
+            Your basket is empty.
+        </p>
+        {% endif %}
         </div>
         <div class="d-flex justify-content-end col-lg-12 mb-3">
             <a class="btn-action" href="{% url 'order_basket' %}">Order page</a>

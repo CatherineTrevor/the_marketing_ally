@@ -420,3 +420,12 @@ Contact page
     font-size: 18px;
   }
 }
+
+/*--------------------------------------------------------------
+Administration pages
+--------------------------------------------------------------*/
+
+.card-img-top.card-image-admin {
+  height: 75px;
+  width: 75px;
+}
