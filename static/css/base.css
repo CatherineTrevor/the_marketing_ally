@@ -411,3 +411,12 @@ Contact page
 #quote .stripe-style-input {
   font-size: 20px;
 }
+
+@media (max-width: 768px) {
+  .contact .info .email a {
+    font-size: 16px;
+  }
+  #quote .form-fields {
+    font-size: 18px;
+  }
+}
