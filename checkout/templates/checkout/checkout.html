@@ -37,6 +37,16 @@
             </div>        
         </div>
         <div class="row">
+            <div class="col-lg-12 text-right">
+                <a href="{% url 'view_bag' %}" class="btn-action">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span>Adjust Bag</span>
+                </a>
+            </div>
+        </div>
+        <div class="row">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
@@ -66,16 +76,6 @@
                         {% endif %}
                     </div>
                 </fieldset>
-                <div class="row">
-                    <div class="col-lg-12 text-right">
-                        <a href="{% url 'view_bag' %}" class="btn-action">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span>Adjust Bag</span>
-                        </a>
-                    </div>
-                </div>
                 <fieldset class="px-3">
                     <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
                     <!-- A Stripe card element will go here -->

@@ -1,4 +1,4 @@
-<section id="services" class="services padding-bottom-30"><a name="products"></a>
+<section id="products" class="services padding-bottom-30"><a name="products"></a>
     <div class="container">
         <div class="section-title">
             <h2>
@@ -37,7 +37,7 @@
                                     {{ product.description_3 }}
                                 </p>                                                           
                                 <input type="submit" class="btn-action" value="Add to Bag" id="add_to-basket" name="add_to_basket"></input>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">                                    
+                                <input type="hidden" name="redirect_url" value="{% url 'view_bag' %}">                                    
                             </div>                  
                     </form>
                 </div>
