@@ -60,9 +60,9 @@
                                 {{ quote.project_description }} {% else %} N/A {% endif %}
                             </p>
                             {% if request.user.is_superuser %}
-                            <small class="ml-3">
-                                <a href="{% url 'edit_quotes' quote.id %}">Edit</a>
-                            </small>
+                            <p class="description">
+                                <a class="btn-action" href="{% url 'edit_quotes' quote.id %}">Edit</a>
+                            </p>
                             {% endif %}
                         </div>
                     </div>
