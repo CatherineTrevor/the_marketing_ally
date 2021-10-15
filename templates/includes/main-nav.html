@@ -39,7 +39,9 @@
         <li><a class="nav-link scrollto " href="{% url 'account_signup' %}">Register</a></li>
         <li><a class="nav-link scrollto" href="{% url 'account_login' %}" title="Log in"><i class="icon bx bi-person-circle"></i></a></li>        
     {% endif %}
-        <li><a class="nav-link scrollto" href="{% url 'view_bag' %}" title="View order basket"><i class="icon bx bi-basket3-fill"></i></a></li>     
+    {% if not request.user.is_authenticated  %}
+        <li><a class="nav-link scrollto" href="{% url 'view_bag' %}" title="View order basket"><i class="icon bx bi-basket3-fill"></i></a></li>
+        {% endif %} 
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
