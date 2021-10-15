@@ -71,8 +71,6 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                          null=False, blank=False,
                                          editable=False)
-    timeslot_option_1 = models.CharField(max_length=80, null=False, blank=False)
-    timeslot_option_2 = models.CharField(max_length=80, null=False, blank=False)
 
     def save(self, *args, **kwargs):
         """

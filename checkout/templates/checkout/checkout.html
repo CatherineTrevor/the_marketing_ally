@@ -31,10 +31,10 @@
                             <p>
                                 {{ item.product.name }}
                             </p>
+                            <p class="mb-2">Price: €{{ item.product.price }}</p>
                             {% if item.product.category.name == 'marketing_templates' %}
                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="template_img">
                             {% endif %}
-                            <p class="mb-2">Price: €{{ item.product.price }}</p>
                         </div>
                     {% endfor %}
                 </div>        

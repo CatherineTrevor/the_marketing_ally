@@ -21,7 +21,6 @@ class QuoteRequestForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone': '',
-            'free_consultation_request': '',
             'project_name': 'Project Name',
             'project_description': 'Project description',
         }
