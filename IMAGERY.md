@@ -6,7 +6,7 @@
 
 Logo: created by myself using MS PowerPoint and [Remove BG](https://www.remove.bg/) to remove the background color.
 
-<img src="static/media/logo.jpg">
+<img src="media/logo.jpg" width="200">
 
 Icons
 
@@ -24,10 +24,10 @@ Icons
 
 Images
 
-<img src="static/media/hero.jpg">
+<img src="media/hero.jpg" width="600">
 
 [Sourced from Pixaby](https://pixabay.com/) Image by <a href="https://pixabay.com/photos/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336378">Free-Photos</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=336378">Pixabay</a>
 
-<img src="static/media/hero2.jpg">
+<img src="media/hero2.jpg" width="600">
 
 [Sourced from Pixaby](https://pixabay.com/) Image by <a href="https://pixabay.com/users/nietjuh-2218222/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3076954">Ylanite Koppens</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3076954">Pixabay</a>

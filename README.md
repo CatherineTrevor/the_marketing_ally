@@ -1,7 +1,7 @@
 # The Marketing Ally
 
 <div align="center">
-    <img src="static/media/am_i_responsive.jpg" width="600">
+    <img src="media/am_i_responsive.jpg" width="600">
 </div>
 
 <a href="" target="_blank">View the live site here</a>
