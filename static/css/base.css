@@ -56,10 +56,22 @@ Navigation
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
+  color: white;
 }  
 
-.navbar-dropdown {
-    font-size: 20px !important;
+#navbar .dropdown-item {
+  color: black;
+}  
+
+#navbar .show {
+  background-color: black;
+  color:white;
+  text-align: right;
+}
+
+#navbar .show .dropdown-item {
+  color: white;
+  text-align: right;
 }
 
 .nav-link .icon {
@@ -200,6 +212,9 @@ Homepage all sections
 }
 
 @media (max-width: 768px) {
+  #hero .hero-container {
+    padding-top: 250px;
+  }
   section {
     padding: 30px 0;
     font-size: 90%;
