@@ -6,134 +6,186 @@
         </div>
         <ul class="faq-list">
             <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq1"></a>
-                    How does it work?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq1" class="collapse" data-bs-parent=".faq-list">
-                   <p>
-                       You sign up for an account, and purchase up to 3 hours maximum, either digital work, or a face-to-face meeting, within the Gothenburg area.
-                   </p>
-                    <p>
-                        When purchasing these hours you can access my calendar to see when I am available, and provide the chose of 2 timeslots that suit you. Project hours are limited 
-                        to three hours for any single purchase and must be the same type ie. 3 hours face-to-face or digital.
-                    </p>
-                    <p>
-                        You receive a confirmation email (usually within a few hours) confirming the timed slot for your project hours. In the future this part of the process will be automated.
-                    </p> 
-                    <p>
-                        Make sure to give a brief explanation of the project and work required, so I can get up to speed. If I have any questions, I will get in touch.
-                    </p>                                
-                </div>
-            </li>            
-            <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq2"></a>
-                    I think I need some help with marketing, but am not really sure...
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq2" class="collapse" data-bs-parent=".faq-list">
-                   <p>
-                       It's very normal to question whether you need a marketing strategy, plan, digital marketing etc! A detailed, lengthy plan is not always necessary, but it's worth evaluating your 
-                       options.
-                   </p>
-                    <p>
-                        Take advantage of my <a href="{% url 'contact' %}#request_a_quote">free 20 minute consultation</a> available to all new clients. Together we can discuss what help you might need, and then put together a solution. 
-                        It allows us both to understand if we should work together and what I can do to help.
-                    </p>
-                    <p>
-                        It might be that actually there is a simple (and free!) fix available!
-                    </p>            
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq1"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        How does it work?
+                    </button>
+                </p>
+                <div class="collapse" id="faq1">
+                    <div class="card card-body">
+                        <p>
+                            You sign up for an account, and purchase up to 3 hours maximum, either digital work, or a
+                            face-to-face meeting, within the Gothenburg area.
+                        </p>
+                        <p>
+                            When purchasing these hours you can access my calendar to see when I am available, and
+                            provide the chose of 2 timeslots that suit you. Project hours are limited
+                            to three hours for any single purchase and must be the same type ie. 3 hours face-to-face or
+                            digital.
+                        </p>
+                        <p>
+                            You receive a confirmation email (usually within a few hours) confirming the timed slot for
+                            your project hours. In the future this part of the process will be automated.
+                        </p>
+                        <p>
+                            Make sure to give a brief explanation of the project and work required, so I can get up to
+                            speed. If I have any questions, I will get in touch.
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq3"></a>
-                    I am a sole trader, with a small client base - does everybody need a marketing strategy?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-                    <p>
-                        This answer really depends on your business and what you want to acheive.
-                    </p>
-                    <p>
-                        I'm sure many people will disagree with me, but no, I do not believe that it is beneficial for every business to have a detailed marketing strategy, I do however believe all 
-                        businesses would benefit from some sort of marketing plan, with goals in mind.
-                    </p>
-                    <p>
-                        An example: as a local cafe you have an amazing amount of wonderful, regular customers who you see on a weekly basis. They have been with you for years and you are very grateful.
-                        However, do you have a plan in place to encourage new customers in, should your regular customers stop coming in for any reason?
-                    </p>  
-                    <p>
-                        It is so important to look after your regulars; but it is also important to find new ones too.
-                    </p>   
-                    <p>
-                        Benefit from a <a href="{% url 'contact' %}#request_a_quote">free 20-minute consultation</a> and we can chat about your personal situation.
-                    </p>                                                                            
-                </div>
-            </li>            
-            <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq4"></a>
-                    What happens if the work doesn't take the full hour I have paid for?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-                    <p>
-                        Without honesty I wouldn't have a business, therefore it is important that we are as upfront and honest with each other as possible.
-                    </p>
-                    <p>
-                        If it takes me less time to complete the work than you have paid for, you can select to receive a reimbursement to the value of the time not worked (terms and conditions apply),
-                        or you can select to have the time transferred to other project work, at a time to suit us both.
-                    </p> 
-                    <p>
-                        Alternatively, come into the city and I'll treat you to Fika!
-                    </p>                                  
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq2"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        I think I need some help with marketing, but am not really sure...
+                    </button>
+                </p>
+                <div class="collapse" id="faq2">
+                    <div class="card card-body">
+                        <p>
+                            It's very normal to question whether you need a marketing strategy, plan, digital marketing
+                            etc! A detailed, lengthy plan is not always necessary, but it's worth evaluating your
+                            options.
+                        </p>
+                        <p>
+                            Take advantage of my <a href="{% url 'contact' %}#request_a_quote">free 20 minute
+                                consultation</a> available to all new clients. Together we can discuss what help you
+                            might need, and then put together a solution.
+                            It allows us both to understand if we should work together and what I can do to help.
+                        </p>
+                        <p>
+                            It might be that actually there is a simple (and free!) fix available!
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq5"></a>
-                    I purchased a marketing template months ago and forgot to use it - can I still send it to you for review?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-                    <p>
-                        Free template reviews are only available to registered users at the time of purchase.
-                    </p>
-                    <p>
-                        If you are a registered users, you have 6 months from the date of purchase to send the document to me.
-                    </p>                    
-                    <p>
-                        Email it to <a href="mailto:sophie%40themarketingally%2ecom?subject=Enquiry for The Marketing Ally&body=Thanks in advance for your message!%0A%0APlease add your message here and I'll get back to you as soon as I can.%0A%0AThanks!%0A%0ASophie - The Marketing Ally">sophie@themarketingally.com</a>
-                        and I will reply within 5 working days (usually quicker).
-                    </p>                             
-                </div>
-            </li>  
-            <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq6"></a>
-                    Do you provide graphics and copy writing?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                </div>
-                <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-                    <p>
-                        I do not offer a graphics service, however I can recommend someone and either you work with them directly, or I can act as your agent and work with them for you.
-                    </p>
-                    <p>
-                        I offer copywriting reviews where you have put something together yourself - I am native English, with over 15 years of experience in proof reading.
-                    </p>                    
-                    <p>
-                        If you need email wording put together for an event invitation, or a press release for example, I can also help here. Take a look at the <a href="{% url 'home' %}#services">services</a> I 
-                        offer for more information.
-                    </p>                             
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq3"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        I am a sole trader, with a small client base - does everybody need a marketing strategy?
+                    </button>
+                </p>
+                <div class="collapse" id="faq3">
+                    <div class="card card-body">
+                        <p>
+                            This answer really depends on your business and what you want to acheive.
+                        </p>
+                        <p>
+                            I'm sure many people will disagree with me, but no, I do not believe that it is beneficial
+                            for every business to have a detailed marketing strategy, I do however believe all
+                            businesses would benefit from some sort of marketing plan, with goals in mind.
+                        </p>
+                        <p>
+                            An example: as a local cafe you have an amazing amount of wonderful, regular customers who
+                            you see on a weekly basis. They have been with you for years and you are very grateful.
+                            However, do you have a plan in place to encourage new customers in, should your regular
+                            customers stop coming in for any reason?
+                        </p>
+                        <p>
+                            It is so important to look after your regulars; but it is also important to find new ones
+                            too.
+                        </p>
+                        <p>
+                            Benefit from a <a href="{% url 'contact' %}#request_a_quote">free 20-minute consultation</a>
+                            and we can chat about your personal situation.
+                        </p>
+                    </div>
                 </div>
             </li>
             <li>
-                <div data-bs-toggle="collapse" class="collapsed question"><a href="#faq7"></a>
-                    I have a Christmas campaign I want help with - but it would require a few hours work a week, can you help?
-                    <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq4"
+                        aria-expanded="false" aria-controls="collapseExample">
+                        What happens if the work doesn't take the full hour I have paid for?
+                    </button>
+                </p>
+                <div class="collapse" id="faq4">
+                    <div class="card card-body">
+                        <p>
+                            Without honesty I wouldn't have a business, therefore it is important that we are as upfront and
+                            honest with each other as possible.
+                        </p>
+                        <p>
+                            If it takes me less time to complete the work than you have paid for, you can select to receive a
+                            reimbursement to the value of the time not worked (terms and conditions apply),
+                            or you can select to have the time transferred to other project work, at a time to suit us both.
+                        </p>
+                        <p>
+                            Alternatively, come into the city and I'll treat you to Fika!
+                        </p>
+                    </div>
                 </div>
-                <div id="faq7" class="collapse" data-bs-parent=".faq-list">
-                    <p>
-                        Certainly - to get the best value for a longer term project, complete the <a href="{% url 'contact' %}#request_a_quote">request a quote form</a> and I will get in touch to discuss a package with you.                        
+             </li>
+            <li>
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq5" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        I purchased a marketing template months ago and forgot to use it - can I still send it to you for
+                        review?
+                    </button>
+                </p>
+                <div class="collapse" id="faq5">
+                    <div class="card card-body">
+                        <p>
+                            Free template reviews are only available to registered users at the time of purchase.
+                        </p>
+                        <p>
+                            If you are a registered users, you have 6 months from the date of purchase to send the document to
+                            me.
+                        </p>
+                        <p>
+                            Email it to <a
+                                href="mailto:sophie%40themarketingally%2ecom?subject=Enquiry for The Marketing Ally&body=Thanks in advance for your message!%0A%0APlease add your message here and I'll get back to you as soon as I can.%0A%0AThanks!%0A%0ASophie - The Marketing Ally">sophie@themarketingally.com</a>
+                            and I will reply within 5 working days (usually quicker).
+                        </p>
+                    </div>
                 </div>
-            </li>                                            
+            </li>
+            <li>
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq6" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        Do you provide graphics and copy writing?
+                    </button>
+                </p>
+                <div class="collapse" id="faq6">
+                    <div class="card card-body">
+                        <p>
+                            I do not offer a graphics service, however I can recommend someone and either you work with them
+                            directly, or I can act as your agent and work with them for you.
+                        </p>
+                        <p>
+                            I offer copywriting reviews where you have put something together yourself - I am native English,
+                            with over 15 years of experience in proof reading.
+                        </p>
+                        <p>
+                            If you need email wording put together for an event invitation, or a press release for example, I
+                            can also help here. Take a look at the <a href="{% url 'home' %}#services">services</a> I
+                            offer for more information.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#faq7" aria-expanded="false"
+                        aria-controls="collapseExample">
+                        I have a Christmas campaign I want help with - but it would require a few hours work a week, can you
+                        help?
+                    </button>
+                </p>
+                <div class="collapse" id="faq7">
+                    <div class="card card-body">
+                        <p>
+                            Certainly - to get the best value for a longer term project, complete the <a
+                                href="{% url 'contact' %}#request_a_quote">request a quote form</a> and I will get in touch to
+                            discuss a package with you.
+                    </div>
+                </div>
+            </li>
         </ul>
     </div>
 </section>

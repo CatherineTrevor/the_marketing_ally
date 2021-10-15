@@ -1,22 +1,26 @@
-<div class="row closed-quotes">
-    <div data-bs-toggle="collapse" class="collapsed question" href="#closed_quotes">
-        <h3>
-            Closed Quote / Contact Requests
-            <span>
-                <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-            </span>
-        </h3>
-    </div>
-    <div id="closed_quotes" class="collapse" data-bs-parent=".closed-quotes">
-        {% for quote in customer_contact %}
-        {% if quote.query_closed == True %}
-        <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
-            <p class="description"> <strong>Company Name:</strong> {{ quote.company_name }} </p>
-            <p class="description"> <strong>Project Name:</strong> {% if quote.project_name %} {{ quote.project_name }}
-                {% else %} N/A {% endif %} </p>
-            <p class="description"> <strong>Administration Notes:</strong> {{ quote.notes }}</p>
-        </div>
-        {% endif %}
-        {% endfor %}
-    </div>
+<div class="row">
+    <ul>
+        <li>
+            <p>
+                <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#closed_contacts" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    Closed Quote / Contact Requests
+                </button>
+            </p>
+            <div class="collapse" id="closed_contacts">
+                <div class="card card-body">
+                    {% for quote in customer_contact %}
+                    {% if quote.query_closed == True %}
+                    <div class="col-sm-6 col-md-4 col-lg-2 col-xl-2">
+                        <p class="description"> <strong>Company Name:</strong> {{ quote.company_name }} </p>
+                        <p class="description"> <strong>Project Name:</strong> {% if quote.project_name %} {{ quote.project_name }}
+                            {% else %} N/A {% endif %} </p>
+                        <p class="description"> <strong>Administration Notes:</strong> {{ quote.notes }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
