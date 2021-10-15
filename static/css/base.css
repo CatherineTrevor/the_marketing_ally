@@ -179,7 +179,7 @@ Toasts - taken from Code Institute Boutique Ado project and modified
 Homepage all sections
 --------------------------------------------------------------*/
 #sophie_image {
-    background: url("/media/sophie.jpg") no-repeat center;
+    background: url("../media/sophie.jpg") no-repeat center;
     background-size: contain;
     background-color: #4444;
     height: 500px;

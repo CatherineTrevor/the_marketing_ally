@@ -8,40 +8,12 @@
 {% endblock %}
 
 {% block content %}
-  <section>
-      <div>
-        <h1 class="section title">
-            Oops! Error 404!
-        </h1>
-        <a href="{% url 'home' %}" class="btn-action">
-            Home
-        </a>
-      </div>
-  </section>
-  <section id="homepage-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>The Marketing Ally</h3>
-          <p>
-              1 Kungsgatan, Next to Domkyrkan<br>
-              Gothenburg<br>                
-              422 400<br>
-            <strong>Phone:</strong> +46 (0)76-321 234 567<br>
-            <strong>Email:</strong> sophie@themarketingally.com<br>
-          </p>
-        </div>
-        <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}#about">About</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}#services">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Privacy policy</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>            
+  <div class="container row">
+    <h1 class="section title">
+        Oops! Error 404!
+    </h1>
+    <a href="{% url 'home' %}" class="btn-action">
+        Home
+    </a>
+  </div>     
 {% endblock %}
