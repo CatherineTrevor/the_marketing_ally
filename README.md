@@ -4,7 +4,7 @@
     <img src="media/am_i_responsive.jpg" width="600">
 </div>
 
-<a href="" target="_blank">View the live site here</a>
+<a href="https://the-marketing-ally.herokuapp.com/" target="_blank">View the live site here</a>
 
 # Contents
 
@@ -30,7 +30,7 @@ A site promoting the marketing services offered from The Marketing Ally: a marke
 
 Site visitors can purchase online marketing templates (plans, budgets etc.) using Stripe payments as a guest. Account owners receive a free review of the templates once completed.
 
-Account owners can also purchase work hours required for a project, and see their order history. Time slots for project work can be requested via Calendly, but require confirmation from site admin. In the future signed in account owners can book timeslots and pay for hours within one transaction, using the Calendly and Stripe integration.
+Account owners can also purchase work hours required for a project, and see their order history. Time slots for project work can be requested in the booking form, but require confirmation from site admin. In the future signed in account owners can book timeslots and pay for hours within one transaction, using the Calendly and Stripe integration.
 
 # User Experience Design
 
@@ -80,7 +80,7 @@ It is unnecessary and expensive for them to hire a full marketing agency, consul
 
 Businesses in the main are local to Gothenburg to provide physical meetings, however digital hours can be purchased, allowing for custom further afield, as well as tapping into the remote work culture that exists due to covid. When purchasing digital hours, users are offered slightly longer for the same rate to compensate for the lack of travel needed from the consultant.
 
-Site visitors can only purchase a maximum of 3 hours worth of project hours. For any more they are advised to get in touch.
+Site visitors can only purchase one type of product ie. 1 face-to-face. In the future, the connection with Calendly booking will automate this process and make it possible to purchase multiple options in one transaction.
 
 ### User stories
 
@@ -127,7 +127,7 @@ Site visitors can only purchase a maximum of 3 hours worth of project hours. For
 | Social links | Bottom right of all pages using Django templating | N/A |
 | Previous projects / Companies worked with | Information on the homepage | N/A |
 | Secure purchase project hours | Using Stripe payments | N/A |
-| Booking hours | Access to the consultants calendar to request a timeslot | N/A |
+| Request timeslot hours | Access to the consultants calendar to request a timeslot | N/A |
 | Securely purchase online templates | Using Stripe payments | N/A |
 | Toasts | Live feedback to the user | N/A |
 | Account profile | Basic account information and purchase history | N/A |
@@ -139,10 +139,11 @@ Site visitors can only purchase a maximum of 3 hours worth of project hours. For
 
 **Future features**
 
-* Calendly and Stripe integration: rather than having different transactions, the site will benefit from the existing integration between Calendly and Stripe when booking and paying for project hours. At the moment the process is the user can request a timeslot, but it needs to be confirmed by the consultant and payment is an additional transaction.
+* Calendly and Stripe integration: rather than having different transactions, the site will benefit from the existing integration between Calendly and Stripe when booking and paying for project hours. At the moment the process is the user can request a timeslot, but it needs to be confirmed by the consultant and payment is an additional transaction and is a note on the booking form.
 * Blog to enhance the consulant's presence in the market and encourage site visitors.
 * Online portal personal to the account owner, which contains their digital work and messages, reducing the need for emails and the risk of missed telephone conversations. This will streamline the collaboration process between consultant and client.
 * Partners: connect with local marketing professionals such as graphic designers, photographers, copy writers to collaborate on projects and recommend the business to their clients.
+* Administration process: in the future this will be automated so only certain fields show for different products, when adding a new product via the site ie. images are only required for marketing templates.
 
 ## Structure
 
