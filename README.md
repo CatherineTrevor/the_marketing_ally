@@ -206,6 +206,7 @@ The project was created on GitHub and uses the following libraries and framework
  - [Google Fonts](https://fonts.google.com/) - Caveat, Montserrat, sans-serif
  - [Django](https://www.djangoproject.com/) - the main site framework, including Allauth and Admin
  - [Heroku](https://id.heroku.com/login) - for site deployment
+ - [Amazon Web Services](https://aws.amazon.com/free/) - S3 for file storage
  - [DB Diagram](https://dbdiagram.io/home) - used to generate the database schema layout
  - [PEP 8](https://www.python.org/dev/peps/pep-0008) - help following PEP 8 styling guidelines
  - [Free Formatter HTML](https://www.freeformatter.com/html-formatter.html) - for HTML code formatting
@@ -246,7 +247,8 @@ Forking the repository allows you to make a copy of the original in your GitHub 
 
 # Credits
 
-* [Help with calendar input](https://tutorialdeep.com/live-editor/bootstrap-datepicker-with-inputbox/)(https://stackoverflow.com/questions/40035730/bootstrap-date-time-picker/40035938)
+* [Help with calendar input](https://tutorialdeep.com/live-editor/bootstrap-datepicker-with-inputbox/)
+* [Stack overflow](https://stackoverflow.com/questions/40035730/bootstrap-date-time-picker/40035938)
 * [Add Django dropdown in admin](https://stackoverflow.com/questions/8252101/django-admin-drop-down-selections)
 * [Code to add a personalised message inside an email template](https://www.joehageonline.com/marketing/html-code-to-open-an-email-window-with-subject-body-copy/)
 * [Remove BG - remove the white background from the logo](https://www.remove.bg/)
