@@ -15,10 +15,12 @@ class OrderRequestAdmin(admin.ModelAdmin):
                        'stripe_pid')
 
     fields = ('order_number', 'user_profile', 'order_date', 'full_name',
-              'email', 'phone_number', 'note',
-              'country', 'postcode', 'town_or_city',
-              'street_address1', 'street_address2', 'county',
-              'grand_total', 'stripe_pid')
+              'email', 'phone_number', 'timeslot_option_1',
+              'timeslot_option_2' 'country',
+              'postcode', 'town_or_city', 'street_address1',
+              'street_address2', 'county', 'delivery_cost',
+              'order_total', 'grand_total', 'original_bag',
+              'stripe_pid')
 
     list_display = ('order_number', 'order_date', 'full_name',
                     'grand_total',)

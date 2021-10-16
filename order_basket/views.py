@@ -4,7 +4,6 @@ from django.shortcuts import (
 from django.contrib import messages
 
 from products.models import Product
-from checkout.forms import OrderRequestForm
 
 
 def calendar(request):
@@ -48,24 +47,6 @@ def add_to_bag(request, product_id):
 
     request.session['bag'] = bag
     return redirect(redirect_url)
-
-
-def add_timeslot_note(request, item_id):
-    
-    if request.method == "POST":
-        form_data = {
-            'note': request.POST['note'],
-        }
-        product = get_object_or_404(Product, pk=item_id)
-        bag = request.session.get('bag', {})
-        order_request = OrderRequestForm(form_data)
-        bag.update(item_id)
-        messages.success(request, f'Succesfully added timeslot')
-        context = {
-            'order_request': order_request,
-        }
-        request.session['bag'] = bag
-    return (request, context)
 
 
 def remove_from_bag(request, item_id):

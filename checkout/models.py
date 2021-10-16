@@ -30,7 +30,6 @@ class OrderRequest(models.Model):
     original_bag = models.TextField(null=False, blank=False, default='')
     stripe_pid = models.CharField(max_length=254, null=False, blank=False,
                                   default='')
-    note = models.CharField(max_length=254, blank=True, null=True)
 
     def _generate_order_number(self):
         """

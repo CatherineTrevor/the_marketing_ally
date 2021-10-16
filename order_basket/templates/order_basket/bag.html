@@ -36,10 +36,6 @@
                     <a class="btn-action" href="{% url 'remove_from_bag' item.item_id %}">Delete from bag</a>
                 </div>
             </div>
-            <form method='POST' action="{% url 'add_timeslot_note' item.item_id %}" class="form-fields">
-                {% csrf_token %}
-                {{ order_request.note | as_crispy_field }}
-            </form>
             {% endif %}
             {% endfor %}
             {% endif %}
