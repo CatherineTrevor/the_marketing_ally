@@ -17,7 +17,7 @@ class QuoteRequest(models.Model):
     request_date = models.DateTimeField(default=datetime.now)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone = PhoneField(blank=True)
-    free_consultation_request = models.BooleanField(blank=True)
+    free_consultation_request = models.BooleanField(blank=True, null=True)
     project_name = models.CharField(max_length=254, blank=True)
     project_description = models.CharField(max_length=254, blank=True)
     request_date = models.DateTimeField(auto_now_add=True)

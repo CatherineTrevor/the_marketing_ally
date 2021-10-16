@@ -4,7 +4,7 @@ from .models import QuoteRequest
 
 class QuoteRequestAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('free_consultation_request', 'request_date',
+    readonly_fields = ('request_date',
                        'project_name', 'project_description')
 
     fields = ('query_closed', 'status', 'company_name', 'full_name',
