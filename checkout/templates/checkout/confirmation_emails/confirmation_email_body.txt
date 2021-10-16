@@ -1,13 +1,13 @@
-Hello {{ order.full_name }}!
+Hello {{ order_request.full_name }}!
 
 Thank you for your order!
 
 This is confirmation of your order at The Marketing Ally
 
-Order Number: {{ order.order_number }}
-Order Date: {{ order.date }}
+Order Number: {{ order_request.order_number }}
+Order Date: {{ order_request.date }}
 
-Total: ${{ order.grand_total }}
+Total: ${{ order_request.grand_total }}
 
 For purchase project hours, you will receive confirmation of your booking slot within 2 working days maximum, normally sooner.
 
@@ -19,7 +19,7 @@ Timeslot option 2
 
 
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have any questions, feel free to contact us at sophie@themarketingally.com.
 
 Thank you for your order - I look forward to working with you soon!
 

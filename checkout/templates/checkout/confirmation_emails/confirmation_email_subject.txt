@@ -1,1 +1,1 @@
-The Marketing Ally order confirmation {{ order.order_number }}
+The Marketing Ally order confirmation {{ order_request.order_number }}

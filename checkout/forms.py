@@ -25,7 +25,8 @@ class OrderRequestForm(forms.ModelForm):
             'street_address1': 'Street Address 1',
             'street_address2': 'Street Address 2',
             'county': 'County, State or Locality',
-            'note': 'For project hours please add your prefered timeslot option here',
+            'note':
+                   'For project hours please add your prefered timeslot option here',
         }
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
