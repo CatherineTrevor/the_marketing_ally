@@ -4,12 +4,12 @@
 
 **Desktop**
 
-![wireframes_desktop](https://user-images.githubusercontent.com/76033080/133989023-62a0288c-a168-40f0-aa0b-05829782cdaa.png)
+![marketing_ally_desktop_wireframe](https://user-images.githubusercontent.com/76033080/137586100-c092dc78-8011-4817-938c-13d56611813c.png)
 
 **Tablet**
 
-![wireframes_tablet](https://user-images.githubusercontent.com/76033080/133998513-282a7eff-a882-4918-b3c6-1558729ec0da.png)
+![marketing_ally_tablet_wireframe](https://user-images.githubusercontent.com/76033080/137586103-4c5b0cdf-00dc-45af-be7d-cfb0f34de6b5.png)
 
 **Mobile**
 
-![wireframes_mobile](https://user-images.githubusercontent.com/76033080/133998520-d920583d-c4c7-47df-85bf-1bb6e67003f3.png)
+![marketing_ally_mobile_wireframe](https://user-images.githubusercontent.com/76033080/137586101-e7828012-6273-4f6d-81e2-63ff21ce2d6d.png)
