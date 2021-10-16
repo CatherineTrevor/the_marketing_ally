@@ -1,6 +1,65 @@
 # Deployment process
 
-Deployment on Heroku
+## AWS S3 Bucket account
+* Create a new account, or log into [AWS Cloud services](https://aws.amazon.com/).
+* Search for S3 and create a new bucket with a unique Bucket name. Select the relevant region.
+* Untick Block public access and create bucket.
+* Select the bucket, and under Properties go to static website hosting. 
+* Select Host a static website, under Index document type 'index.html' and for Error 'error.html'. Save
+* Within the permissions tab, edit Bucket policy.
+* Generate bucket policy and copy the bucket ARN and generate the policy
+* Copy the Policy JSON Document and paste into Bucket policy. Save
+* Scroll to Access Control List (ACL) and select public access.
+* Within the Permissions tab, scroll to CORS and edit using:
+* 
+                ``` [
+                    {
+                        "AllowedHeaders": [
+                            "Authorization"
+                        ],
+                        "AllowedMethods": [
+                            "GET"
+                        ],
+                        "AllowedOrigins": [
+                            "*"
+                         ],
+                        "ExposeHeaders": []
+                    }
+                ] ```
+
+## AWS IAM
+* Still logged in, from the Services dropdown select IAM (Identity and Access Management)
+* Select User Groups and create a new group
+* Within Policies, select Create policy > Import managed policy
+* Under Permissions > Add permissions > Attach policies
+* Search AmazonS3FullAccess and import
+* Under Action add the ARN using the following code:
+* 
+           ``` "Resource": [
+                "<ARN here>",
+                "<ARN here>/*"```
+* Review policy and provide name and description, then Create policy
+* Within the created User Groups, Permissions > Add permissions, choose Attach Policies and select the relevant policy
+* Add a new user, selecting 'Access key - Programmatic access' 
+* Add the user to the group just created
+**IMPORTANT**
+* Download the `.csv` containing the access key and secret access keys. They cannot be downloaded a second time.
+
+## Connecting Heroku to AWS S3
+
+* On Gitpod, install boto3 and django-storages, and freeze into requirements.txt
+* Add the values from the .csv you downloaded to the Heroku config vars as:
+  * AWS_ACCESS_KEY_ID 
+  * AWS_SECRET_ACCESS_KEY
+* Remove 'DISABLE_COLLECT_STATIC = 1' from the config vars
+* Within gitpod create a custom_storage.py file with the following code:
+* 
+        ```from django.conf import settings
+        from storages.backends.s3boto3 import S3Boto3Storage
+        class StaticStorage(S3Boto3Storage): location = settings.STATICFILES_LOCATION
+        class MediaStorage(S3Boto3Storage): location = settings.MEDIAFILES_LOCATION```
+
+## Deployment on Heroku
 
 This project was developed using Gitpod, committed to git and pushed to Github using the built-in functionality.
 
