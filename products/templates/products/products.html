@@ -38,7 +38,10 @@
                                             </p>
                                             <p class="mt-1 mb-0">
                                                 Digital work: {{ product.is_digital }}
-                                            </p>                                                
+                                            </p>       
+                                            <p class="mt-1 mb-0">
+                                                Pricing priority: {{ product.pricing_priority }}
+                                            </p>                                                                                         
                                             {% if request.user.is_superuser %}
                                                 <small class="ml-3">
                                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 

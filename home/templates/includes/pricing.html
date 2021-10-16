@@ -21,7 +21,7 @@
                 <li>{{ product.description_4 }}</li>             
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-action">Select</a>
+                <a href="{% url 'order_basket' %}" class="btn-action">Select</a>
               </div>
             {% endif %}
           {% endfor %}
@@ -41,7 +41,7 @@
                 <li>{{ product.description_4 }}</li>                                
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-action">Select</a>
+                <a href="{% url 'order_basket' %}" class="btn-action">Select</a>
               </div>
             {% endif %}
           {% endfor %}
@@ -60,7 +60,7 @@
                 <li>{{ product.description_4 }}</li>                                
               </ul>        
               <div class="btn-wrap">
-                <a href="#" class="btn-action">Select</a>
+                <a href="{% url 'order_basket' %}" class="btn-action">Place an order</a>
               </div>
             {% endif %}
           {% endfor %}
