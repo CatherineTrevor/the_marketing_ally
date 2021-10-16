@@ -13,7 +13,8 @@ def contact(request):
             'company_name': request.POST['company_name'],
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
-            'free_consultation_request': request.POST.get('free_consultation_request'),
+            'free_consultation_request': request.POST.get(
+                'free_consultation_request'),
             'project_name': request.POST['project_name'],
             'project_description': request.POST['project_description'],
         }
@@ -35,9 +36,10 @@ def contact(request):
     return render(request, template, context)
 
 
-def contact_received(request, id):
+def contact_received(request, quote_request_id):
 
-    quote_request = get_object_or_404(QuoteRequest, id=id)
+    quote_request = get_object_or_404(QuoteRequest,
+                                      quote_request_id=quote_request_id)
 
     messages.success(request, (f'Request received!'))
 

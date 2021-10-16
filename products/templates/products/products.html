@@ -8,88 +8,88 @@
 {% endblock %}
 
 {% block content %}
-    <section id="products_overview">
-        <div class="container">
-            <div class="section-title">
-                <h3>Site <span>Administration</span></h3>
-                <p>
-                  Product overview
-                </p>
-              </div>
-            <div class="row">
-                <h1>
-                    Project hours
-                </h1>
-                {% for product in products %}                    
-                    {% if product.category.name == "project_hours" %}                        
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-                                    <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mt-1 mb-0">
-                                                €{{ product.price|floatformat:0 }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                Minutes: {{ product.time_allocation_mins|floatformat:0 }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                Digital work: {{ product.is_digital }}
-                                            </p>       
-                                            <p class="mt-1 mb-0">
-                                                Pricing priority: {{ product.pricing_priority }}
-                                            </p>                                                                                         
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+<section id="products_overview">
+    <div class="container padding-bottom-100">
+        <div class="section-title">
+            <h3>Site <span>Administration</span></h3>
+            <p>
+                Product overview
+            </p>
             </div>
-            <div class="row mt-5">
-                <h1>
-                    Marketing Templates
-                </h1>
-                {% for product in products %}                    
-                    {% if product.category.name == "marketing_templates" %}                        
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-                                    <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="mt-1 mb-0">
-                                                €{{ product.price|floatformat:0 }}
-                                            </p>
-                                            <p class="mt-1 mb-0">
-                                                Image: <img class="card-img-top img-fluid card-image-admin" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                            </p>                     
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
+        <div class="row">
+            <h1>
+                Project hours
+            </h1>
+            {% for product in products %}                    
+                {% if product.category.name == "project_hours" %}                        
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="mt-1 mb-0">
+                                            €{{ product.price|floatformat:0 }}
+                                        </p>
+                                        <p class="mt-1 mb-0">
+                                            Minutes: {{ product.time_allocation_mins|floatformat:0 }}
+                                        </p>
+                                        <p class="mt-1 mb-0">
+                                            Digital work: {{ product.is_digital }}
+                                        </p>       
+                                        <p class="mt-1 mb-0">
+                                            Pricing priority: {{ product.pricing_priority }}
+                                        </p>                                                                                         
+                                        {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            </small>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    {% endif %}
-                {% endfor %}
-            </div>            
+                    </div>
+                {% endif %}
+            {% endfor %}
         </div>
-    </section>
+        <div class="row mt-5">
+            <h1>
+                Marketing Templates
+            </h1>
+            {% for product in products %}                    
+                {% if product.category.name == "marketing_templates" %}                        
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card h-100 border-0">
+                            <div class="card-body pb-0">
+                                <p class="lead font-weight-bold mb-0">Name: {{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="mt-1 mb-0">
+                                            €{{ product.price|floatformat:0 }}
+                                        </p>
+                                        <p class="mt-1 mb-0">
+                                            Image: <img class="card-img-top img-fluid card-image-admin" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </p>                     
+                                        {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                            </small>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>            
+    </div>
+</section>
 {% endblock %}

@@ -38,7 +38,7 @@ def edit_quotes(request, quote_id):
         form = QuoteRequestForm(request.POST, request.FILES, instance=quote)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Quote succesfully update!')
+            messages.success(request, 'Quote succesfully updated!')
             return redirect(reverse('view_quotes'))
 
         messages.error(request,

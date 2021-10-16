@@ -1,6 +1,6 @@
+from datetime import datetime
 from django.db import models
 from phone_field import PhoneField
-from datetime import datetime
 
 
 class QuoteRequest(models.Model):

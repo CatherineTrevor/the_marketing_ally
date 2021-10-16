@@ -47,7 +47,7 @@ class Product(models.Model):
     time_allocation_mins = models.DecimalField(
         max_digits=6, decimal_places=0, blank=True, null=True)
     pricing_priority = models.DecimalField(
-        max_digits=6, decimal_places=0, null=True, 
+        max_digits=6, decimal_places=0, null=True,
         default='4', choices=priority)
 
     objects = models.Manager()
