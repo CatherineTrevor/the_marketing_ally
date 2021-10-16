@@ -169,7 +169,21 @@ See separate [SKELETON.md](/SKELETON.md) file for wireframes.
 
 The database schema has been generated using [DB Diagram](https://dbdiagram.io/home)
 
-![database_schema](https://user-images.githubusercontent.com/76033080/134001763-e9dfbf1e-90f5-4e8e-af04-3dc4c69a86a0.png)
+![database_schema](https://user-images.githubusercontent.com/76033080/137586593-5c1b9796-7bc5-4f84-8f44-68031a63f633.jpg)
+
+**Database models**
+
+**guest_user_purchase:** allows anoynmous users to purchase marketing templates, without a user profile. Connects to the products, via order_request. Administration can review these purchases, but no profile information is saved on the site.
+
+**user / profile**: allows for registration, sign in and for the site user to view previous purchases, as well as for the administrator to manage bookings.
+
+**product:** management of the information required for the two product categories.
+
+**category:** connected to the product table above.
+
+**order_request:** used to manage the secure checkout and if a user is signed in, update their profile.
+
+**quote_request_form:** disconnected from any other table, this enables a user to request a free consultation, or specific quote, allowing administration to make contact with the potential customer.
 
 ## Surface
 
@@ -224,9 +238,9 @@ The project was created on GitHub and uses the following libraries and framework
 
 # Deployment
 
-**How to fork the GitHub Repository**
-
 [See separate Deployment file](DEPLOYMENT.md) for information about site deployment using Heroku.
+
+**How to fork the GitHub Repository**
 
 Forking the repository allows you to make a copy of the original in your GitHub account, and make changes without affecting the original.
 
