@@ -36,10 +36,9 @@ def contact(request):
     return render(request, template, context)
 
 
-def contact_received(request, quote_request_id):
+def contact_received(request, id):
 
-    quote_request = get_object_or_404(QuoteRequest,
-                                      quote_request_id=quote_request_id)
+    quote_request = get_object_or_404(QuoteRequest, id=id)
 
     messages.success(request, (f'Request received!'))
 
