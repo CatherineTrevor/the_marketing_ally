@@ -116,3 +116,13 @@ Timeslot options added to calendar.html use datetimepicker from Bootstrap. Upon 
 Remove items from bag functionality added but not working.
 
 ## Code validators
+
+**HTML**
+
+<img src="media/html.jpg" width="300">
+
+**CSS**
+
+<img src="media/css.jpg" width="300">
+
+Only the two css files created for the project (base.css and checkout.css) have been checked using the validator: third party files have not been checked.

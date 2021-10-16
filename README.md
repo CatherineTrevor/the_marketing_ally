@@ -144,6 +144,7 @@ Site visitors can only purchase one type of product ie. 1 face-to-face. In the f
 * Online portal personal to the account owner, which contains their digital work and messages, reducing the need for emails and the risk of missed telephone conversations. This will streamline the collaboration process between consultant and client.
 * Partners: connect with local marketing professionals such as graphic designers, photographers, copy writers to collaborate on projects and recommend the business to their clients.
 * Administration process: in the future this will be automated so only certain fields show for different products, when adding a new product via the site ie. images are only required for marketing templates.
+* Emails: confirmation emails are not working on the deployed site. A future feature is that the customer will receive an automated email upon order receipt and once project hours have been booked, including regarding the review of the marketing templates.
 
 ## Structure
 

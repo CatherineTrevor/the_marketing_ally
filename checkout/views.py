@@ -167,8 +167,8 @@ def checkout_confirmation(request, order_number):
                 user_profile_form.save()
 
     messages.success(request, f'Order successfully processed! \
-        Your order number is {order_number}. A confirmation \
-        email will be sent to {order_request.email}.')
+        Your order number is {order_number}. If you purchased \
+        project hours we will be in touch to confirm a timeslot.')
 
     if 'bag' in request.session:
         del request.session['bag']
