@@ -90,6 +90,7 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
+                    note=shipping_details.note,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
