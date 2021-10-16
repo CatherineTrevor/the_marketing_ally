@@ -255,6 +255,7 @@ Forking the repository allows you to make a copy of the original in your GitHub 
 * [Help with the logo](https://stackoverflow.com/questions/14775507/link-my-logo-to-homepage-html/14775562)
 * [Phone field help on contact form](https://pypi.org/project/django-phone-field/)
 * [Google maps help](https://developers.google.com/maps/documentation/embed/map-generator)
+* [Help with favicon](https://stackoverflow.com/questions/9371378/warning-not-found-favicon-ico)
 * [Telusko MVC tutorial](https://www.youtube.com/watch?v=GGkFg52Ot5o)
 * [Django apps research](https://stackoverflow.com/questions/32795227/what-is-the-purpose-of-apps-py-in-django-1-9)
 * [Django signals research](https://simpleisbetterthancomplex.com/tutorial/2016/07/28/how-to-create-django-signals.html)
