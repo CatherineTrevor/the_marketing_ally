@@ -1,9 +1,7 @@
 {% load static %}
 <header id="header" class="fixed-top">
   <div class="container d-flex align-items-center justify-content-between">
-    <a class="navbar-brand" href="{% url 'home' %}">
-      <img src="{{ MEDIA_URL }}logo.jpg" style="width:50px;height:50px;" alt="The Marketing Ally logo"/>
-    </a>  
+    <div id="logo"><a href="{% url 'home' %}"></a></div>
     <nav id="navbar" class="navbar navbar-expand-sm navbar-dark" role="navigation" aria-current="page">  
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
